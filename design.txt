@@ -1,0 +1,18 @@
+primary color -
+secondary color -
+default color - 
+
+https://colorhunt.co/palette/7bd3eaa1eebdf6f7c4f6d6d6
+https://colorhunt.co/palette/ace1afb0ebb4bff6c3e0fbe2
+https://www.color-meanings.com/cool-color-palettes/
+
+fontName - done
+font-weight - all weight
+
+letter spacing -
+line height -
+
+Heading 1 = 128px/8rem
+Heading 2 = 56px/3.5rem
+Heading 3 = 24px/1.5rem
+Heading 4(paragraph)= 16px/1rem
