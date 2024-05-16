@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+
+# Testing
+coverage/
+test_output/
+
+# Build
+build/
+
+# Temporary files
+.tmp/
+
+# IDE and Editor files
+.vscode/
+.idea/
+.eslintcache
+
+# Secret files
+.env*
+.secret*
+
+# Optional: npm cache
+.npm
+
+# Optional: yarn cache
+.yarn/cache
+.yarn/unplugged
+
+# Optional: dotenv environment variables
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Optional: Browsersync
+bs-config.json

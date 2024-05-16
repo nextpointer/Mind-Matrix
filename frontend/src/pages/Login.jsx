@@ -1,6 +1,6 @@
 
 
-export const Auth = () => {
+export const Login = () => {
   return (
     <div>Auth</div>
   )

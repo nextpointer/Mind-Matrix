@@ -5,7 +5,7 @@ import {
 import { Root } from "./Root";
 import { Home } from "./pages/Home";
 import { Error } from "./pages/Error";
-import { Auth } from "./pages/Auth";
+import { Login } from "./pages/Login";
 
 
 
@@ -17,7 +17,7 @@ function App() {
       errorElement: <Error />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/auth", element: <Auth /> }
+        { path: "/user/login", element: <Login /> }
       ],
     },
   ]);
