@@ -6,6 +6,7 @@ import { Root } from "./Root";
 import { Home } from "./pages/Home";
 import { Error } from "./pages/Error";
 import { Login } from "./pages/Login";
+import { Dashboard } from "./pages/Dashboard";
 
 
 
@@ -17,7 +18,9 @@ function App() {
       errorElement: <Error />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/user/login", element: <Login /> }
+        { path: "/user/login", element: <Login /> },
+        { path: "/user/dashboard", element: <Dashboard/> },
+
       ],
     },
   ]);

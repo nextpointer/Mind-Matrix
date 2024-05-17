@@ -1,2 +1,2 @@
-export const DB_NAME = "SAP-Management";
+export const DB_NAME = "sap-management";
 

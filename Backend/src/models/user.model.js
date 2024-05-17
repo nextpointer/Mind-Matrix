@@ -4,47 +4,51 @@ import jwt from "jsonwebtoken";
 
 const userSchema = new Schema(
   {
-    username: {
+    FirstName: {
       type: String,
+      // required: true,
+    },
+    LastName: {
+      type: String,
+      required: true,
+    },
+    Email: {
+      type: String,
+      required: true,
       unique: true,
-      required: true,
       trim: true,
-      index: true,
-      lowercase: true,
+      lowercase: true
     },
-    email: {
+    Password: {
       type: String,
-      unique: true,
-      required: true,
-      trim: true,
-      lowercase: true,
+      required: true
     },
-    fullname: {
-      type: String,
+    Age: {
+      type: Number,
       required: true,
-      trim: true,
-      index: true,
+      min: 0
     },
-    avatar: {
+    Gender: {
       type: String,
       required: true,
+      enum: ['Male', 'Female', 'Other'],
+      trim: true
     },
-    coverImage: {
+    IsStudent: {
+      type: Boolean,
+      required: true
+    },
+    IsSubscribed: {
+      type: Boolean,
+      required: true
+    },
+    IsCounsellor: {
+      type: Boolean,
+      required: true
+    },
+    RefreshToken: {
       type: String,
-    },
-    watchHistory: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "video",
-      },
-    ],
-    password: {
-      type: String,
-      required: [true, "password is required"],
-    },
-    refreshToken: {
-      type: String,
-    },
+    }
   },
   {
     timestamps: true,
@@ -52,24 +56,25 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save", async function (next) {
-  if (this.isModified("password")) return next();
-  this.password = await bcrypt.hash(this.password, 10, (e) => {
-    console.log(e);
-  });
-  next();
+  if (!this.isModified("Password")) return next();
+  try {
+    this.Password = await bcrypt.hash(this.Password, 10);
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
 
 userSchema.methods.IsPasswordCorrect = async function (password) {
-  return await bcrypt.compare(password, this.password);
+  return await bcrypt.compare(password, this.Password);
 };
 
 userSchema.methods.generateAccessToken = async function (){
-  jwt.sign(
+  return jwt.sign(
     {
       _id:this.id,
-      email:this.email,
-      username:this.username,
-      fullname:this.fullname
+      Email:this.Email,
+      FirstName:this.FirstName
     },
     process.env.ACCESSTOKENSECRET,
     {
@@ -78,7 +83,7 @@ userSchema.methods.generateAccessToken = async function (){
   )
 }
 userSchema.methods.generateRefreshToken = async function (){
-  jwt.sign(
+  return jwt.sign(
     {
       _id:this.id
     },
