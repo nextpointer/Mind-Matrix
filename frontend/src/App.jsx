@@ -7,6 +7,7 @@ import { Home } from "./pages/Home";
 import { Error } from "./pages/Error";
 import { Login } from "./pages/Login";
 import { Dashboard } from "./pages/Dashboard";
+import { Register } from "./pages/Register";
 
 
 
@@ -19,7 +20,9 @@ function App() {
       children: [
         { path: "/", element: <Home /> },
         { path: "/user/login", element: <Login /> },
+        { path: "/user/register", element: <Register/> },
         { path: "/user/dashboard", element: <Dashboard/> },
+
 
       ],
     },

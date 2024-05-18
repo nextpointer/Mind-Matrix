@@ -20,7 +20,7 @@ export const registerUser = asyncHandler(async (req, res) => {
 
   //   validate empty or not
   if (
-   !FirstName ||
+    !FirstName ||
     !LastName ||
     !Email ||
     !Password ||
@@ -92,6 +92,8 @@ export const loginUser = asyncHandler(async (req, res) => {
   const option = {
     httpOnly: true,
     secure: true,
+    sameSite: "strict"
+    // Set path to root
   };
 
   // return the response
@@ -110,6 +112,7 @@ export const loginUser = asyncHandler(async (req, res) => {
         "User LoggedIn Successfully"
       )
     );
+  
 });
 
 export const LogOutUser = asyncHandler(async (req, res) => {
