@@ -5,8 +5,8 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173", // Add protocol here
-    credentials: true // Use 'credentials' instead of 'withCredentials'
+    origin: "http://localhost:5173", 
+    credentials: true // allow session cookie from browser to pass through
   })
 );
 
