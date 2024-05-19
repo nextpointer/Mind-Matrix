@@ -8,6 +8,7 @@ import { Error } from "./pages/Error";
 import { Login } from "./pages/Login";
 import { Dashboard } from "./pages/Dashboard";
 import { Register } from "./pages/Register";
+import { ChatBot } from "./pages/ChatBot";
 
 
 
@@ -22,6 +23,9 @@ function App() {
         { path: "/user/login", element: <Login /> },
         { path: "/user/register", element: <Register/> },
         { path: "/user/dashboard", element: <Dashboard/> },
+        { path: "/user/ai", element: <ChatBot/> },
+        // { path: "/user/screeningtest/:testtype", element: </> },
+
 
 
       ],

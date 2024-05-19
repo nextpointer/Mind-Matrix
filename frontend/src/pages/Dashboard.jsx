@@ -1,25 +1,11 @@
+import { NavSection } from '../Components/NavSection.jsx';
 import '../styles/dashboard.css';
 
 export const Dashboard = () => {
   return (
     <>
         <div id="dashboard-conatainer">
-            <div id="dashboard-profile-navbar-section">
-                <div id="dashboard-logo">
-
-                </div>
-                <div id="dashboard-profile-section">
-
-                </div>
-                <div id="dashboard-navbar-section">
-
-                </div>
-                <div id="dashboard-logout-section">
-
-                </div>
-
-
-            </div>
+            <NavSection/>
             <div id="dashboard-test-stat-section">
                 <div id="dashboard-greeting">
                     
@@ -42,6 +28,12 @@ export const Dashboard = () => {
             </div>
             <div id="dashboard-recommendation-section">
                 <div id="dashboard-music">
+                    
+                </div>
+                <div id="dashboard-video">
+                    
+                </div>
+                <div id="dashboard-counsellor">
                     
                 </div>
             </div>

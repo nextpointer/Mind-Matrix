@@ -1,0 +1,87 @@
+#dashboard-profile-navbar-section{
+    height: inherit;
+    width: 260px;
+    min-width: 260px;
+    /* background-color: rgb(200, 166, 121); */
+    border-radius: 24px;
+    /* border: 1px solid black; */
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 5px;
+}
+#dashboard-logo{
+    height: 8vh;
+    width: 98%;
+    border-radius: 24px;
+    /* border: 1px solid black; */
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        font-size: 1.2rem;
+    }
+}
+
+
+#dashboard-profile-section{
+    height: 24vh;
+    width: 98%;
+    border-radius: 24px;
+    /* border: 1px solid black; */
+    background-color: rgb(215, 215, 215);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.outline-profile-pic{
+    border: 1px dotted rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.inline-profile-pic{
+    background-color: rgb(123, 123, 123);
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+.profile-name{
+    font-size: 1.2rem;
+}
+.profile-type{
+    font-size: 1rem;
+    position: relative;
+    bottom:8px ;
+}
+
+#dashboard-navbar-section{
+    height: 54vh;
+    width: 98%;
+    border-radius: 24px;
+    /* border: 1px solid black; */
+    background-color: rgb(213, 213, 213);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+#dashboard-logout-section{
+    height: 9vh;
+    width: 98%;
+    border-radius: 24px;
+    /* border: 1px solid black; */
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: aliceblue; */
+}
