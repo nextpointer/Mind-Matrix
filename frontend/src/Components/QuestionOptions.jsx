@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import PropTypes from "prop-types"; // Import PropTypes
+import PropTypes from "prop-types";
 import RadioGroup from "./RadioGroup";
 
-export const QuestionOptions = ({ question, onAnswerChange }) => {
+export const QuestionOptions = ({ question, onAnswerChange,answers }) => {
   return (
     <>
       <Container>
@@ -10,7 +10,10 @@ export const QuestionOptions = ({ question, onAnswerChange }) => {
           <p>{question.questionName}</p>
         </Question>
         <Options>
-          <RadioGroup questionId={question._id} onAnswerChange={onAnswerChange} />
+          <RadioGroup
+            value={question._id in answers ? answers[question._id] : ""}
+            onChange={(value) => onAnswerChange(question._id, value)}
+          />
         </Options>
       </Container>
     </>
@@ -24,6 +27,7 @@ QuestionOptions.propTypes = {
     _id: PropTypes.string.isRequired,
   }).isRequired,
   onAnswerChange: PropTypes.func.isRequired,
+  answers: PropTypes.object.isRequired,
 };
 
 const Container = styled.div`

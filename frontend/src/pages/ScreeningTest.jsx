@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import  { useState, useEffect } from "react";
+import { useParams,useNavigate } from "react-router-dom";
 import axios from "axios";
 import { NavSection } from "../Components/NavSection";
 import NormalButtons from "../Components/NormalButton";
+import Loader from "../Components/Loader";
 import { QuestionOptions } from "../Components/QuestionOptions";
 import "../styles/screeningtest.css";
-import Loader from "../Components/Loader";
 
 export const ScreeningTest = () => {
   const { testtype } = useParams();
@@ -14,10 +14,11 @@ export const ScreeningTest = () => {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchQuestions = async () => {
+    const fetchQuestions = async () => { 
       try {
         const response = await axios.get(
           `http://localhost:8000/api/v1/questions/test/${testtype}`
@@ -54,14 +55,16 @@ export const ScreeningTest = () => {
     event.preventDefault();
     console.log("Submitted answers:", answers);
 
-    axios
-      .post("/api/submit", { answers })
-      .then((response) => {
-        console.log("Submission successful:", response);
-      })
-      .catch((error) => {
-        console.error("Error submitting answers:", error);
-      });
+    // axios
+    //   .post("/api/submit", { answers })
+    //   .then((response) => {
+    //     console.log("Submission successful:", response);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error submitting answers:", error);
+    //   });
+
+    navigate("/user/screeningtest/result/hh");
   };
 
   if (loading) {
@@ -103,6 +106,7 @@ export const ScreeningTest = () => {
                   key={question._id}
                   question={question}
                   onAnswerChange={handleAnswerChange}
+                  answers={answers}
                 />
               ))}
             </div>

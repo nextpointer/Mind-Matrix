@@ -1,11 +1,22 @@
+// RadioGroup.js
 import * as React from "react";
 import Radio from "@mui/material/Radio";
+import PropTypes from "prop-types";
 import "../styles/ComponentStyle/radiogroup.css";
 
-export default function RadioGroup() {
-  const [selectedValue, setSelectedValue] = React.useState("a");
+export default function RadioGroup({ value, onChange }) {
+  const [selectedValue, setSelectedValue] = React.useState(value);
+
+  // Update selected value when the parent component changes it
+  React.useEffect(() => {
+    setSelectedValue(value);
+  }, [value]);
+
   const handleChange = (event) => {
-    setSelectedValue(event.target.value);
+    const newValue = event.target.value;
+    setSelectedValue(newValue);
+    // Call the parent onChange function with the new value
+    onChange(newValue);
   };
 
   const controlProps = (item) => ({
@@ -19,7 +30,7 @@ export default function RadioGroup() {
   return (
     <div className="radio">
       <Radio
-        {...controlProps("a")}
+        {...controlProps("1")}
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 28,
@@ -27,7 +38,7 @@ export default function RadioGroup() {
         }}
       />
       <Radio
-        {...controlProps("b")}
+        {...controlProps("2")}
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 32,
@@ -35,7 +46,7 @@ export default function RadioGroup() {
         }}
       />
       <Radio
-        {...controlProps("c")}
+        {...controlProps("3")}
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 38,
@@ -43,7 +54,7 @@ export default function RadioGroup() {
         }}
       />
       <Radio
-        {...controlProps("d")}
+        {...controlProps("4")}
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 32,
@@ -51,7 +62,7 @@ export default function RadioGroup() {
         }}
       />
       <Radio
-        {...controlProps("e")}
+        {...controlProps("5")}
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 28,
@@ -61,3 +72,9 @@ export default function RadioGroup() {
     </div>
   );
 }
+
+// Define prop types for the component
+RadioGroup.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
