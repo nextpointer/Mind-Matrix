@@ -1,0 +1,7 @@
+.radio{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: rgb(122, 112, 100); */
+    width: 80%;
+
+}

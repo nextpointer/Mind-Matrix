@@ -1,0 +1,127 @@
+#test-container {
+  height: 100vh;
+  width: 100%;
+  /* background-color: rgb(255, 255, 255); */
+  border-radius: 24px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#test-section {
+  height: inherit;
+  width: calc(100% - 260px);
+  /* background-color: aquamarine; */
+  /* background-color: #131314; */
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  background-color: #ff9a8b;
+  background-image: linear-gradient(
+    90deg,
+    #ff9a8b 0%,
+    #ff6a88 55%,
+    #ff99ac 100%
+  );
+
+  color: #000000;
+  flex-direction: column;
+  padding: 20px 15px 10px 25px;
+  border-radius: 24px;
+}
+
+.testHeader {
+  height:auto;
+  width: 60%;
+  /* background-color: rgb(152, 148, 148); */
+  color: #000000;
+  padding: 0 0 0 20px;
+  p {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+}
+
+.testAbout {
+  height: 80px;
+  width: 80%;
+  /* background-color: #fff; */
+  color: #000000;
+  padding: 5px;
+  padding-left: 20px;
+  position: relative;
+  bottom: 15px;
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.01rem;
+  }
+}
+
+.howto {
+  height: 5vh;
+  width: 95%;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #4e4e4e;
+  /* border-bottom: 1px solid black; */
+  position: relative;
+  left: 18px;
+  border-radius: 24px;
+}
+
+.howto .about {
+  height: inherit;
+  width: 65%;
+  /* background-color: #000000; */
+  padding: 5px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  border-right: 1px solid #4e4e4e;
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+  }
+}
+.howto .optionDetails {
+  height: inherit;
+  width: 35%;
+  /* background-color: #868282; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+  }
+}
+
+.QuestionList {
+  margin-top: 20px;
+  overflow-y: scroll;
+  height: 60vh;
+  width: 95%;
+  /* background-color: #000000; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+  left: 20px;
+  flex-wrap: wrap;
+  scrollbar-color: transparent;
+  scrollbar-width: none;
+}
+
