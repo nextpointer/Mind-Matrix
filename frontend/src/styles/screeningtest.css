@@ -27,13 +27,13 @@
 
   color: #000000;
   flex-direction: column;
-  padding: 20px 15px 10px 25px;
+  padding: 20px 15px 0px 25px;
   border-radius: 24px;
 }
 
 .testHeader {
   height:auto;
-  width: 60%;
+  width: 90%;
   /* background-color: rgb(152, 148, 148); */
   color: #000000;
   padding: 0 0 0 20px;
@@ -45,7 +45,7 @@
 }
 
 .testAbout {
-  height: 80px;
+  height: auto;
   width: 80%;
   /* background-color: #fff; */
   color: #000000;
@@ -99,7 +99,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 0 25px 0 15px;
   p {
     font-size: 0.9rem;
     font-weight: 500;
@@ -125,3 +125,8 @@
   scrollbar-width: none;
 }
 
+form{
+    /* background-color: aquamarine; */
+    position: relative;
+    top: 30px;
+}

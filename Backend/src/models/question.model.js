@@ -17,6 +17,10 @@ const questionSchema = new Schema({
       required: true,
     },
     Questions: [questionSchema],
-  });
+  },
+  {
+    timestamps: true,
+  }
+);
 
-  const Question = mongoose.model('Question', questionsSchema);
+  export const Questions = mongoose.model('Question', questionsSchema);

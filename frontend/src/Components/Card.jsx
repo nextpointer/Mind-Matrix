@@ -4,10 +4,10 @@ import NormalButtons from './NormalButton';
 export const Card = () => {
   return (
       < div className="box">
-        <span className="title">GLASS EFFECT</span>
+        <span className="title">Anxiety</span>
         <div>
           <strong>JOE WATSON SBF</strong>
-          <NormalButtons text='Take Test'/>
+          <NormalButtons text='Take Test' />
         </div>
     </div>
   );

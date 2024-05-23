@@ -1,22 +1,32 @@
 import styled from "styled-components";
+import PropTypes from "prop-types"; // Import PropTypes
 import RadioGroup from "./RadioGroup";
 
-export const QuestionOptions = () => {
+export const QuestionOptions = ({ question, onAnswerChange }) => {
   return (
     <>
-      <Conatainer>
+      <Container>
         <Question>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias beatae debitis nemo totam nihil tenetur nisi corrupti laudantium tempora ipsam.</p>
+          <p>{question.questionName}</p>
         </Question>
         <Options>
-            <RadioGroup/>
+          <RadioGroup questionId={question._id} onAnswerChange={onAnswerChange} />
         </Options>
-      </Conatainer>
+      </Container>
     </>
   );
 };
 
-const Conatainer = styled.div`
+// Define prop types for the component
+QuestionOptions.propTypes = {
+  question: PropTypes.shape({
+    questionName: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
+  }).isRequired,
+  onAnswerChange: PropTypes.func.isRequired,
+};
+
+const Container = styled.div`
   height: 100px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.074);
@@ -27,7 +37,7 @@ const Conatainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  &:hover{
+  &:hover {
     box-shadow: 0px 0px 20px 1px #ffbb763f;
     border: 1px solid rgba(255, 255, 255, 0.454);
   }
@@ -36,21 +46,18 @@ const Conatainer = styled.div`
 const Question = styled.div`
   height: inherit;
   width: 65%;
-  /* background-color: blueviolet; */
   padding: 20px;
   color: #ffffff;
-  p{
+  p {
     font-size: 1.1rem;
     font-weight: 200;
     letter-spacing: 0.01rem;
-    
   }
 `;
 
 const Options = styled.div`
   height: inherit;
   width: 35%;
-  /* background-color: #2be2ab; */
   display: flex;
   justify-content: center;
   align-items: center;

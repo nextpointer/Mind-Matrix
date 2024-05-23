@@ -27,7 +27,7 @@ function App() {
         { path: "/user/dashboard", element: <Dashboard/> },
         { path: "/user/ai", element: <ChatBot/> },
         { path: "/user/screeningtest/catagory", element: <Catagory/> },
-        { path: "/user/screeningtest/anxiety", element: <ScreeningTest/> },
+        { path: "/user/screeningtest/:testtype", element: <ScreeningTest/> },
 
 
 
