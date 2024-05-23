@@ -9,6 +9,7 @@ import { Login } from "./pages/Login";
 import { Dashboard } from "./pages/Dashboard";
 import { Register } from "./pages/Register";
 import { ChatBot } from "./pages/ChatBot";
+import { Catagory } from "./pages/Catagory";
 
 
 
@@ -24,6 +25,7 @@ function App() {
         { path: "/user/register", element: <Register/> },
         { path: "/user/dashboard", element: <Dashboard/> },
         { path: "/user/ai", element: <ChatBot/> },
+        { path: "/user/screeningtest/catagory", element: <Catagory/> }
         // { path: "/user/screeningtest/:testtype", element: </> },
 
 

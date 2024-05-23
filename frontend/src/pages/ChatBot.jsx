@@ -6,18 +6,15 @@ import { NavSection } from '../Components/NavSection';
 import '../styles/chatbot.css';
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
 
-import dotenv from "dotenv";
-dotenv.config({
-  path: "./.env",
-});
+
 
 export const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [headerVisible, setHeaderVisible] = useState(true);
   const chatSessionRef = useRef(null);
 
-//   const apiKey = "AIzaSyB_k5gIbVgSUJ1EZE3b5KSL982fUurnCVA";
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = "AIzaSyB_k5gIbVgSUJ1EZE3b5KSL982fUurnCVA";
+  // const apiKey = process.env.GEMINI_API_KEY;
   const genAI = new GoogleGenerativeAI(apiKey);
 
   const model = genAI.getGenerativeModel({

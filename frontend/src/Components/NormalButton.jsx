@@ -4,12 +4,13 @@ import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.primary.main,
+  color: '#fff',
   '&:hover': {
     color: theme.palette.primary.dark,
   },
   padding: '8px 16px',
   borderRadius: '24px',
+  border:'1px solid #ffffff',
 }));
 
 export default function NormalButtons(props) {
