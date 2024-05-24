@@ -42,8 +42,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   &:hover {
-    box-shadow: 0px 0px 20px 1px #ffbb763f;
-    border: 1px solid rgba(255, 255, 255, 0.454);
+    box-shadow: 0px 0px 20px 1px #8483833c;
+    border: 1px solid rgba(96, 95, 95, 0.454);
   }
 `;
 
@@ -51,7 +51,9 @@ const Question = styled.div`
   height: inherit;
   width: 65%;
   padding: 20px;
-  color: #ffffff;
+  color: #000000;
+  display: flex;
+  align-items: center;
   p {
     font-size: 1.1rem;
     font-weight: 200;

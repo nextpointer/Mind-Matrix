@@ -17,13 +17,14 @@
   justify-content: start;
   align-items: start;
   flex-wrap: wrap;
-  background-color: #ff9a8b;
+  /* background-color: #ff9a8b;
   background-image: linear-gradient(
     90deg,
     #ff9a8b 0%,
     #ff6a88 55%,
     #ff99ac 100%
-  );
+  ); */
+  background-color: #A1EEBD;
 
   color: #000000;
   flex-direction: column;
@@ -129,4 +130,10 @@ form{
     /* background-color: aquamarine; */
     position: relative;
     top: 30px;
+}
+
+.testForm button:nth-child(1){
+  position: relative;
+  left: 33vw;
+  top: 4vh;
 }

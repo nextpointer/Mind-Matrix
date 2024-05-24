@@ -2,6 +2,7 @@ import "../styles/Home.css"
 import { Button } from "../Components/Button"
 import { MainHeading } from "../Components/MainHeading"
 import { SubHeading } from "../Components/SubHeading"
+import { Link } from "react-router-dom"
 
 export const Home = () => {
   return (
@@ -23,7 +24,7 @@ export const Home = () => {
               <SubHeading text="You're not alone. Take control of your mental health with SAP Management"/>
             </div>
             <div className="hero-getting-start">
-              <Button/>
+              <Link to={'/user/login'} className="linkdashboard"><Button/></Link>
             </div>
           </div>
           <div className="hero-illustration">

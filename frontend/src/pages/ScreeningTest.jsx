@@ -99,7 +99,7 @@ export const ScreeningTest = () => {
               <p>Agree</p>
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="testForm">
             <div className="QuestionList">
               {questions.map((question) => (
                 <QuestionOptions

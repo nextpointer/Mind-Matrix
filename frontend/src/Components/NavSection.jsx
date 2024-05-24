@@ -17,13 +17,13 @@ export const NavSection = () => {
                     <p className='profile-type'>Student</p>
                 </div>
                 <div id="dashboard-navbar-section">
-                    <Nav label='Home' icon='/Icons/home.svg' value={true}/>
-                    <Nav label='Music' icon='/Icons/music.svg' value={true}/>
-                    <Nav label='Meditation' icon='/Icons/meditation.svg' value={true}/>
-                    <Nav label='AI' icon='/Icons/AI.svg' value={true}/>
-                    <Nav label='Counsellor' icon='/Icons/doctor.svg' value={true}/>
-                    <Nav label='Videos' icon='/Icons/videos.svg' value={true}/>
-                    <Nav label='About' icon='/Icons/about.svg' value={true}/>
+                    <Nav label='Home' icon='/Icons/home.svg' value={true} link='/user/dashboard'/>
+                    <Nav label='Music' icon='/Icons/music.svg' value={true}  link='/user/music'/>
+                    <Nav label='Meditation' icon='/Icons/meditation.svg' value={true}  link='/user/meditation'/>
+                    <Nav label='AI' icon='/Icons/AI.svg' value={true} link='/user/ai'/>
+                    <Nav label='Counsellor' icon='/Icons/doctor.svg' value={true}  link='/user/counsellor'/>
+                    <Nav label='Videos' icon='/Icons/videos.svg' value={true} link='/user/videos'/>
+                    <Nav label='About' icon='/Icons/about.svg' value={true}  link='/about'/>
                     
                     
                 </div>

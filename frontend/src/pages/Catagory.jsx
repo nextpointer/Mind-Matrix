@@ -8,12 +8,12 @@ export const Catagory = () => {
         <div id="catagory-container">
             <NavSection/>
         <div id="catagory-section">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            <Card link='/user/screeningtest/Emotional Intelligence' header='Anxiety' about='Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi nisi, nobis quam labore ill'/>
+            <Card link='/user/screeningtest/Emotional Intelligence' header='Emotional Intelligence' about='Lorem ipsum dolor sit amet consectetu'/>
+            <Card link='/user/screeningtest/Emotional Intelligence' header='Addiction' about='Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi nisi, nobis quam labore ill'/>
+            <Card link='/user/screeningtest/Emotional Intelligence' header='Stress' about='Lorem ipsum dolor sit amet consectetur adipisicing elit'/>
+            <Card link='/user/screeningtest/Emotional Intelligence' header='Depression' about='Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi nisi, nobis quam labore il!'/>
+            <Card link='/user/screeningtest/Emotional Intelligence' header='Others' about='Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi nisi, nobis quam labore ill'/>
         </div>
         </div>
     </>

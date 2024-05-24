@@ -12,7 +12,7 @@
     transition: all ease 0.3s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
     /* margin: 5px; */
   }
   
@@ -25,10 +25,17 @@
    .box div strong {
     display: block;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 200;
   }
   
    .box:hover {
-    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    box-shadow: 0px 0px 20px 1px #fefdfd3f;
     border: 1px solid rgba(255, 255, 255, 0.454);
+  }
+
+  .box button:nth-child(1){
+    position: relative;
+    
   }
   

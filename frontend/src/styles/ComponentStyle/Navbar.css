@@ -2,7 +2,7 @@
     height: inherit;
     width: 260px;
     min-width: 260px;
-    /* background-color: rgb(200, 166, 121); */
+    background-color: rgb(255, 255, 255);
     border-radius: 24px;
     /* border: 1px solid black; */
     display:flex;
@@ -19,12 +19,13 @@
     /* border: 1px solid black; */
     /* background-color: rgb(255, 255, 255); */
     background-color: rgba(255, 255, 255, 0.074);
-    border: 1px solid rgba(255, 255, 255, 0.494);
+    border: 1px solid rgba(196, 196, 196, 0.574);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     p{
         font-size: 1.2rem;
     }
@@ -38,7 +39,7 @@
     /* border: 1px solid black; */
     /* background-color: rgb(255, 255, 255); */
     background-color: rgba(255, 255, 255, 0.074);
-    border: 1px solid rgba(255, 255, 255, 0.512);
+    border: 1px solid rgba(194, 192, 192, 0.512);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     display: flex;
@@ -46,6 +47,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .outline-profile-pic{
     border: 1px dotted rgb(0, 0, 0);
@@ -78,7 +80,7 @@
     /* border: 1px solid black; */
     /* background-color: rgb(255, 255, 255); */
     background-color: rgba(255, 255, 255, 0.074);
-    border: 1px solid rgba(255, 255, 255, 0.436);
+    border: 1px solid rgba(194, 192, 192, 0.512);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     display: flex;
@@ -86,6 +88,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 #dashboard-logout-section{
     height: 9vh;
@@ -94,11 +97,12 @@
     /* border: 1px solid black; */
     /* background-color: rgb(255, 255, 255); */
     background-color: rgba(255, 255, 255, 0.185);
-    border: 1px solid rgba(255, 255, 255, 0.53);
+    border: 1px solid rgba(194, 192, 192, 0.512);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     /* color: aliceblue; */
 }

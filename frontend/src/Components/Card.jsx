@@ -1,14 +1,29 @@
 import '../styles/ComponentStyle/card.css/';
 import NormalButtons from './NormalButton';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export const Card = () => {
+export const Card = (props) => {
+  const navigate = useNavigate()
+  const handlesubmit = (event) => {
+    event.preventDefault();
+    navigate(props.link);
+  };
   return (
-      < div className="box">
-        <span className="title">Anxiety</span>
+      < div className="box" >
+        <span className="title" style={{color:"black"}}>{props.header}</span>
         <div>
-          <strong>JOE WATSON SBF</strong>
-          <NormalButtons text='Take Test' />
+          <strong style={{color:"black"}}>{props.about}</strong>
+          <form onSubmit={handlesubmit}>
+          <NormalButtons text='Take Test' type='submit' />
+          </form>
         </div>
     </div>
   );
+};
+
+Card.propTypes = {
+link: PropTypes.string.isRequired,
+header: PropTypes.string.isRequired,
+about: PropTypes.string.isRequired,
 };

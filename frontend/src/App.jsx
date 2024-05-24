@@ -12,6 +12,7 @@ import { ChatBot } from "./pages/ChatBot";
 import { Catagory } from "./pages/Catagory";
 import { ScreeningTest } from "./pages/ScreeningTest";
 import { TestResult } from "./pages/TestResult";
+import { Music } from "./pages/Music";
 
 
 
@@ -27,6 +28,7 @@ function App() {
         { path: "/user/register", element: <Register/> },
         { path: "/user/dashboard", element: <Dashboard/> },
         { path: "/user/ai", element: <ChatBot/> },
+        { path: "/user/music", element: <Music/> },
         { path: "/user/screeningtest/catagory", element: <Catagory/> },
         { path: "/user/screeningtest/:testtype", element: <ScreeningTest/> },
         { path: "/user/screeningtest/result/:testtype", element: <TestResult/> },
