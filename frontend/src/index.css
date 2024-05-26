@@ -15,7 +15,8 @@
   line-height: 1.5;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
-  background-color: #A1EEBD;
+  --primary-color: #A1EEBD;
+  background-color:var(--primary-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -17,7 +17,9 @@ app.use(cookieParser());
 
 import UserRouter from "./routes/user.routes.js";
 import QuestionRouter from "./routes/question.routes.js";
+import CounsellorRouter from "./routes/counsellor.routes.js"
 app.use("/api/v1/user",UserRouter)
 app.use("/api/v1/questions", QuestionRouter);
+app.use("/api/v1/counsellors", CounsellorRouter);
 
 export { app };

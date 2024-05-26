@@ -8,29 +8,37 @@ dotenv.config({
 });
 
 export const verifyToken = asyncHandler(async (req, _, next) => {
-  // retrieve the accessToken from the cookie
+  console.log("verifyToken middleware called");
   try {
+    // retrieve the accessToken from the cookie
     const token =
       req.cookies?.AccessToken ||
-      req.Header("Authorization")?.replace("Bearer", "");
+      req.header("Authorization")?.replace("Bearer ", "").trim();
+
+    console.log("Retrieved token:", token);
 
     // throw error if token is not available
     if (!token) {
-      throw new ApiError(401, "Unauthorized Access");
+      throw new ApiError(401, "Unauthorized Access - No Token Provided");
     }
-    //   if token available then decode it
-    const decodedToken = await jwt.decode(token, process.env.ACCESSTOKENSECRET);
-    //   finding the user
+
+    // decode the token
+    const decodedToken = await jwt.verify(token, process.env.ACCESSTOKENSECRET);
+    console.log("Decoded Token:", decodedToken);
+
+    // finding the user
     const presentUser = await user
       .findById(decodedToken?._id)
       .select("-password -RefreshToken");
+
     if (!presentUser) {
-      throw new ApiError(401, "Invalid Access Token");
+      throw new ApiError(401, "Invalid Access Token - User Not Found");
     }
 
     req.User = presentUser;
     next();
   } catch (error) {
+    console.error("Token verification error:", error);
     throw new ApiError(401, "Invalid Access Token");
   }
 });

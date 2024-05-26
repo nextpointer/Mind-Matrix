@@ -50,7 +50,7 @@
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .outline-profile-pic{
-    border: 1px dotted rgb(0, 0, 0);
+    border: 1px solid rgb(128, 127, 127);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,10 +59,16 @@
     border-radius: 50%;
 }
 .inline-profile-pic{
-    background-color: rgb(123, 123, 123);
+    /* background-color: rgb(123, 123, 123); */
     height: 80px;
     width: 80px;
     border-radius: 50%;
+    border: 1px solid rgb(140, 138, 138);
+    img{
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+    }
 }
 .profile-name{
     font-size: 1.2rem;

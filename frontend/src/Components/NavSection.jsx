@@ -10,7 +10,8 @@ export const NavSection = () => {
                 </div>
                 <div id="dashboard-profile-section">
                     <div className="outline-profile-pic">
-                        <div className="inline-profile-pic">  
+                        <div className="inline-profile-pic"> 
+                            <img src="/images/beard.svg" alt="" /> 
                         </div>
                     </div>
                     <p className='profile-name'>John Doe</p>
@@ -28,7 +29,7 @@ export const NavSection = () => {
                     
                 </div>
                 <div id="dashboard-logout-section">
-                <Nav label='Logout' icon='/Icons/logout.svg' value={false}/>
+                <Nav label='Logout' icon='/Icons/logout.svg' value={false} link='/logout'/>
                 </div>
             </div>
     </>

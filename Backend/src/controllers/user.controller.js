@@ -92,8 +92,8 @@ export const loginUser = asyncHandler(async (req, res) => {
   const option = {
     httpOnly: true,
     secure: true,
-    sameSite: "strict"
-    // Set path to root
+    sameSite: "strict",
+    path: '/'
   };
 
   // return the response
@@ -116,6 +116,7 @@ export const loginUser = asyncHandler(async (req, res) => {
 });
 
 export const LogOutUser = asyncHandler(async (req, res) => {
+  
   await user.findByIdAndUpdate(
     req.User._id,
     {
