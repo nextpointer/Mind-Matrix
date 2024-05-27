@@ -1,13 +1,13 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
-import { Questions } from "../models/question.model.js";
+import { Question } from "../models/question.model.js";
 
 // Get questions by category
 export const getQuestionsByCategory = asyncHandler(async (req, res) => {
   const { category } = req.params;
 
-  const questions = await Questions.findOne({ TestCategory: category });
+  const questions = await Question.findOne({ TestCategory: category });
   if (!questions) {
     throw new ApiError(404, "Test category not found");
   }
@@ -23,7 +23,7 @@ export const addTestQuestions = asyncHandler(async (req, res) => {
     throw new ApiError(400, "All fields are required");
   }
 
-  const newTest = await Questions.create({
+  const newTest = await Question.create({
     TestCategory,
     About,
     Questions,

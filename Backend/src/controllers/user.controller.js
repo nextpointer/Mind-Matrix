@@ -90,7 +90,6 @@ export const loginUser = asyncHandler(async (req, res) => {
 
   // configure the cookie option
   const option = {
-    httpOnly: true,
     secure: true,
     sameSite: "strict",
     path: '/'
@@ -138,4 +137,13 @@ export const LogOutUser = asyncHandler(async (req, res) => {
     .clearCookie("AccessToken", option)
     .clearCookie("RefreshToken", option)
     .json(new ApiResponse(200, {}, "User Logout Successfully"));
+});
+
+export const getUserInfo = asyncHandler(async (req, res) => {
+  const userId = req.User._id;
+  const userInfo = await user.findById(userId).select('-Password -RefreshToken');
+  if (!userInfo) {
+    throw new ApiError(404, "User not found");
+  }
+  res.status(200).json({ user: userInfo });
 });

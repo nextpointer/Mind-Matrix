@@ -24,12 +24,10 @@ export const ScreeningTest = () => {
           `http://localhost:8000/api/v1/questions/test/${testtype}`
         );
         const data = response.data.data; // Access the data property directly
-        console.log("API response:", data);
         if (data && data.Questions) {
           setTestCategory(data.TestCategory);
           setTestAbout(data.About);
           setQuestions(data.Questions);
-          console.log("Questions set:", data.Questions);
         } else {
           setError("Invalid response structure");
         }
@@ -53,18 +51,18 @@ export const ScreeningTest = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted answers:", answers);
+    const theAns  = JSON.stringify(answers)
+    console.log("this is lewda data:",theAns);
+    axios
+      .post(`http://localhost:8000/api/v1/result/${testtype}`, { theAns })
+      .then((response) => {
+        console.log("Submission successful:", response.data.data);
+        navigate("/user/screeningtest/result/Anxiety",{ state: { resultData: response.data.data } });
+      })
+      .catch((error) => {
+        console.error("Error submitting answers:", error);
+      });
 
-    // axios
-    //   .post("/api/submit", { answers })
-    //   .then((response) => {
-    //     console.log("Submission successful:", response);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error submitting answers:", error);
-    //   });
-
-    navigate("/user/screeningtest/result/hh");
   };
 
   if (loading) {

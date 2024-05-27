@@ -29,7 +29,7 @@ export default function RadioGroup({ value, onChange }) {
 
   return (
     <div className="radio">
-      <Radio
+      <Radio 
         {...controlProps("1")}
         sx={{
           "& .MuiSvgIcon-root": {
@@ -61,7 +61,7 @@ export default function RadioGroup({ value, onChange }) {
           },
         }}
       />
-      <Radio
+      <Radio 
         {...controlProps("5")}
         sx={{
           "& .MuiSvgIcon-root": {

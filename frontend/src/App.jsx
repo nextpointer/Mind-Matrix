@@ -1,3 +1,5 @@
+// src/App.js
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -14,6 +16,8 @@ import { ScreeningTest } from './pages/ScreeningTest';
 import { TestResult } from './pages/TestResult';
 import { Music } from './pages/Music';
 import { Counsellor } from './pages/Counsellor';
+import { AuthProvider } from './authContext';
+// import ProtectedRoute from './lib/ProtectedRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -28,23 +32,25 @@ function App() {
         {
           path: '/user/dashboard',
           element: (
+            
               <Dashboard />
+            
           ),
         },
         {
           path: '/user/ai',
           element: (
             
-              <ChatBot />
+              <ChatBot/>
             
           ),
         },
         {
           path: '/user/music',
           element: (
-           
+            
               <Music />
-           
+            
           ),
         },
         {
@@ -60,7 +66,7 @@ function App() {
           element: (
             
               <Catagory />
-           
+            
           ),
         },
         {
@@ -76,7 +82,7 @@ function App() {
           element: (
             
               <TestResult />
-           
+            
           ),
         },
       ],
@@ -84,9 +90,9 @@ function App() {
   ]);
 
   return (
-    <>
+    <AuthProvider>
       <RouterProvider router={router} />
-    </>
+    </AuthProvider>
   );
 }
 

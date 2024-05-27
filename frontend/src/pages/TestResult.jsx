@@ -1,11 +1,20 @@
 import { NavSection } from '../Components/NavSection'
+import { useLocation } from "react-router-dom";
 import Progressbar from '../Components/Progressbar'
 import '../styles/TestResult.css'
 
+
 export const TestResult = () => {
+  const location = useLocation();
+  const resultData = location.state?.resultData;
+  
+  if (!resultData) {
+    return <p>No result data found</p>;
+  }
+
   return (
     <>
-      <div id="testresult-container">
+       <div id="testresult-container">
         <NavSection/>
         <div id="testresult-section">
             <div id="result">
@@ -13,11 +22,12 @@ export const TestResult = () => {
                 <Progressbar/>
                 </div>
                 <div className="result-data">
-                   <p>Your axiety level is very High</p>
+                   <p>{resultData.responseLevelData[0]}</p>
+                   <p>{resultData.responseLevelData[1]}</p>
                 </div>
             </div>
         </div>
-      </div>
+      </div> 
     </>
   )
 }

@@ -12,7 +12,7 @@ export const Dashboard = () => {
   };
   const handleSurvey = (event) => {
     event.preventDefault();
-    navigate("/user/screeningtest/Emotional Intelligence");
+    navigate("/user/screeningtest/Daily");
   };
   return (
     <>

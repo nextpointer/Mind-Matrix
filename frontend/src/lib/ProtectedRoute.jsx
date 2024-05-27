@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
+// src/components/PrivateRoute.js
+
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../authContext'; // Assuming you will create this context
+import { useAuth } from '../authContext';
+import Cookies from 'js-cookie';
 
 const ProtectedRoute = ({ children }) => {
-  console.log(useAuth());
-  const { isAuthenticated } = useAuth();
-  if (!isAuthenticated) {
-    return <Navigate to="/user/login" />;
-  }
+  const { currentUser } = useAuth();
+  const token = Cookies.get('AccessToken');
 
-  return children;
+  return currentUser && token ? children : <Navigate to="/user/login" />;
 };
 
 export default ProtectedRoute;
