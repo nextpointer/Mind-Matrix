@@ -1,10 +1,12 @@
 import { NavSection } from "../Components/NavSection.jsx";
 import NormalButtons from "../Components/NormalButton.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "../styles/dashboard.css";
 import Chart from "../Components/Chart.jsx";
+import { useAuth } from "../authContext.jsx";
 
 export const Dashboard = () => {
+  
   const navigate = useNavigate();
   const handleScreeningTest = (event) => {
     event.preventDefault();
@@ -14,13 +16,32 @@ export const Dashboard = () => {
     event.preventDefault();
     navigate("/user/screeningtest/Daily");
   };
+  
+  
+  // if (!resultData) {
+  //   return <p>No result data found</p>;
+  // }
+
+  const getGreeting = () => {
+    const hours = new Date().getHours();
+    if (hours < 12) {
+      return "Good Morning";
+    } else if (hours < 18) {
+      return "Good Afternoon";
+    } else if (hours < 22) {
+      return "Good Evening";
+    } else {
+      return "Good Night";
+    }
+  };
+
   return (
     <>
       <div id="dashboard-conatainer">
-        <NavSection />
+        <NavSection FirstName='john' LastName='Doe'/>
         <div id="dashboard-test-stat-section">
           <div id="dashboard-greeting">
-            <p>Good Afternoon John</p>
+            <p>{getGreeting()} John</p>
           </div>
           <div id="dashboard-test">
             <div id="dashboard-screening-test">

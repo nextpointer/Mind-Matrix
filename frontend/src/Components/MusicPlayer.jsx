@@ -46,9 +46,21 @@ const TinyText = styled(Typography)({
 
 export default function MusicPlayer() {
   const theme = useTheme();
-  const duration = 200; // seconds
-  const [position, setPosition] = React.useState(32);
-  const [paused, setPaused] = React.useState(false);
+  const duration = 600; // 10 minutes in seconds
+  const [position, setPosition] = React.useState(0);
+  const [paused, setPaused] = React.useState(true);
+
+  React.useEffect(() => {
+    let timer;
+    if (!paused && position < duration) {
+      timer = setInterval(() => {
+        setPosition((prev) => Math.min(prev + 1, duration));
+      }, 1000);
+    } else if (position >= duration) {
+      setPaused(true);
+    }
+    return () => clearInterval(timer);
+  }, [paused, position, duration]);
 
   function formatDuration(value) {
     const minute = Math.floor(value / 60);

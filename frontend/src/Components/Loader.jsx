@@ -1,4 +1,3 @@
-
 import styled, { keyframes } from 'styled-components';
 
 const moving = keyframes`
@@ -15,7 +14,7 @@ const moving = keyframes`
 const LoaderContainer = styled.div`
   display: block;
   --height-of-loader: 4px;
-  --loader-color: #00e297;
+  --loader-color: ${({ barcolor }) => barcolor};
   width: 130px;
   height: var(--height-of-loader);
   border-radius: 30px;
@@ -33,23 +32,23 @@ const LoaderBar = styled.div`
   border-radius: 30px;
   animation: ${moving} 1s ease-in-out infinite;
 `;
+
 const Container = styled.div`
-    height: 100vh;
-    width: 100%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-const Loader = () => {
+  height: 100%;
+  width: 100%;
+  background-color: ${({ bg }) => bg}; /* Use the bg prop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Loader = ({ bg, barcolor }) => {
   return (
-    <>
-    <Container>
-    <LoaderContainer>
-      <LoaderBar />
-    </LoaderContainer>
+    <Container bg={bg}>
+      <LoaderContainer barcolor={barcolor}>
+        <LoaderBar />
+      </LoaderContainer>
     </Container>
-    </>
   );
 };
 

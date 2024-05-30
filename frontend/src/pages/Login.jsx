@@ -19,8 +19,7 @@ export const Login = () => {
         withCredentials: true, // Important: allows cookies to be included in requests
       });
       // Handle successful login
-      console.log(response.data);
-      navigate("/user/dashboard");
+      navigate("/user/dashboard",);
     } catch (error) {
       console.error("Error logging in:", error);
       // Handle login error (e.g., display error message)

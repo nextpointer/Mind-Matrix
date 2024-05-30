@@ -1,7 +1,8 @@
 import '../styles//ComponentStyle/Navbar.css'
 import { Nav } from './Nav'
+import PropTypes from 'prop-types'
 
-export const NavSection = () => {
+export const NavSection = ({FirstName,LastName}) => {
   return (
     <>
         <div id="dashboard-profile-navbar-section">
@@ -14,7 +15,7 @@ export const NavSection = () => {
                             <img src="/images/beard.svg" alt="" /> 
                         </div>
                     </div>
-                    <p className='profile-name'>John Doe</p>
+                    <p className='profile-name'>{FirstName} {LastName}</p>
                     <p className='profile-type'>Student</p>
                 </div>
                 <div id="dashboard-navbar-section">
@@ -23,7 +24,7 @@ export const NavSection = () => {
                     <Nav label='Meditation' icon='/Icons/meditation.svg' value={true}  link='/user/meditation'/>
                     <Nav label='AI' icon='/Icons/AI.svg' value={true} link='/user/ai'/>
                     <Nav label='Counsellor' icon='/Icons/doctor.svg' value={true}  link='/user/counsellor'/>
-                    <Nav label='Videos' icon='/Icons/videos.svg' value={true} link='/user/videos'/>
+                    <Nav label='Videos' icon='/Icons/videos.svg' value={true} link='/user/video'/>
                     <Nav label='About' icon='/Icons/about.svg' value={true}  link='/about'/>
                     
                     
@@ -35,3 +36,8 @@ export const NavSection = () => {
     </>
   )
 }
+NavSection.propTypes = {
+    FirstName: PropTypes.string.isRequired,
+    LastName: PropTypes.string.isRequired,
+
+  };

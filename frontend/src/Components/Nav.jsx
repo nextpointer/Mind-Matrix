@@ -17,7 +17,7 @@ export const Nav = (props) => {
     } catch (error) {
       console.error("Logout failed:", error);
     }
-  };
+};
 
   return (
     <StyledLink

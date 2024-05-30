@@ -17,6 +17,8 @@ import { TestResult } from './pages/TestResult';
 import { Music } from './pages/Music';
 import { Counsellor } from './pages/Counsellor';
 import { AuthProvider } from './authContext';
+import { Meditation } from './pages/Meditation';
+import { Video } from './pages/Video';
 // import ProtectedRoute from './lib/ProtectedRoute';
 
 function App() {
@@ -50,6 +52,22 @@ function App() {
           element: (
             
               <Music />
+            
+          ),
+        },
+        {
+          path: '/user/video',
+          element: (
+            
+              <Video />
+            
+          ),
+        },
+        {
+          path: '/user/meditation',
+          element: (
+            
+              <Meditation/>
             
           ),
         },
