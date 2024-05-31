@@ -21,6 +21,10 @@ const counselorSchema = new Schema({
         type: String,
         required: true,
     },
+    ImgLink: {
+        type: String,
+        required: true,
+    },
     PhoneNumber: {
         type: String,
         required: true,

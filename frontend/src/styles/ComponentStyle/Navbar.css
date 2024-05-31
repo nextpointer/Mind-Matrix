@@ -27,7 +27,9 @@
     align-items: center;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     p{
-        font-size: 1.2rem;
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+        font-weight: 400;
     }
 }
 
@@ -57,6 +59,10 @@
     height: 100px;
     width: 100px;
     border-radius: 50%;
+    transition: all ease .1s;
+    &:hover{
+        box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    }
 }
 .inline-profile-pic{
     /* background-color: rgb(123, 123, 123); */
@@ -64,10 +70,15 @@
     width: 80px;
     border-radius: 50%;
     border: 1px solid rgb(140, 138, 138);
+    transition: all ease .2s;
     img{
         height: 100%;
         width: 100%;
         border-radius: 50%;
+    }
+    &:hover{
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+
     }
 }
 .profile-name{

@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 
 export const CounsellorBar = ({ imglink, _id, name, specialization, bio }) => {
   const [isProfileVisible, setProfileVisible] = useState(false);
+  console.log(imglink);
 
   const handleViewProfileClick = () => {
     setProfileVisible(!isProfileVisible);
@@ -36,6 +37,7 @@ export const CounsellorBar = ({ imglink, _id, name, specialization, bio }) => {
             text="View Profile"
             onClick={handleViewProfileClick}
             
+            
           />
         </FunctionTab>
       </MainDiv>
@@ -43,6 +45,7 @@ export const CounsellorBar = ({ imglink, _id, name, specialization, bio }) => {
         isVisible={isProfileVisible}
         onClose={handleViewProfileClick}
         _id={_id}
+        img={imglink}
       />
     </>
   );

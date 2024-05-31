@@ -1,5 +1,5 @@
-import  { useState, useEffect } from "react";
-import { useParams,useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { NavSection } from "../Components/NavSection";
 import NormalButtons from "../Components/NormalButton";
@@ -18,7 +18,7 @@ export const ScreeningTest = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchQuestions = async () => { 
+    const fetchQuestions = async () => {
       try {
         const response = await axios.get(
           `http://localhost:8000/api/v1/questions/test/${testtype}`
@@ -51,22 +51,23 @@ export const ScreeningTest = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const theAns  = JSON.stringify(answers)
-    console.log("this is lewda data:",theAns);
+    const theAns = JSON.stringify(answers);
+    console.log("this is lewda data:", theAns);
     axios
       .post(`http://localhost:8000/api/v1/result/${testtype}`, { theAns })
       .then((response) => {
         console.log("Submission successful:", response.data.data);
-        navigate("/user/screeningtest/result/Anxiety",{ state: { resultData: response.data.data } });
+        navigate("/user/screeningtest/result/Anxiety", {
+          state: { resultData: response.data.data },
+        });
       })
       .catch((error) => {
         console.error("Error submitting answers:", error);
       });
-
   };
 
   if (loading) {
-    return <Loader />;
+    return <Loader bg={"#fff"} barcolor={"#A1EEBD"} />;
   }
 
   if (error) {

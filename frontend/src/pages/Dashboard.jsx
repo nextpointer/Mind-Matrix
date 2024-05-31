@@ -1,12 +1,19 @@
 import { NavSection } from "../Components/NavSection.jsx";
 import NormalButtons from "../Components/NormalButton.jsx";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/dashboard.css";
 import Chart from "../Components/Chart.jsx";
-import { useAuth } from "../authContext.jsx";
+// import { useAuth } from "../authContext.jsx";
+import Slider from "../Components/Slider.jsx";
+
+// import bred from "/images/beard.svg";
+import hero from "/images/mA.jpg";
+import coun from "/images/image.png";
+
+const photos = [hero,hero,hero];
+const counphotes = [coun,coun]
 
 export const Dashboard = () => {
-  
   const navigate = useNavigate();
   const handleScreeningTest = (event) => {
     event.preventDefault();
@@ -16,8 +23,8 @@ export const Dashboard = () => {
     event.preventDefault();
     navigate("/user/screeningtest/Daily");
   };
-  
-  
+
+
   // if (!resultData) {
   //   return <p>No result data found</p>;
   // }
@@ -38,7 +45,7 @@ export const Dashboard = () => {
   return (
     <>
       <div id="dashboard-conatainer">
-        <NavSection FirstName='john' LastName='Doe'/>
+        <NavSection FirstName="john" LastName="Doe" />
         <div id="dashboard-test-stat-section">
           <div id="dashboard-greeting">
             <p>{getGreeting()} John</p>
@@ -66,17 +73,27 @@ export const Dashboard = () => {
             </div>
           </div>
           <div id="dashboard-stat">
-            <Chart/>
+            <Chart />
           </div>
           <div id="dashboard-motivationalQuote">
-            <p>When I look at the world, I&apos;m pessimistic, but when I look at people I am optimistic.</p>
+            <p>
+              When I look at the world, I&apos;m pessimistic, but when I look at
+              people I am optimistic.
+            </p>
             <p>— Carl Rogers</p>
           </div>
         </div>
         <div id="dashboard-recommendation-section">
-          <div id="dashboard-music"></div>
-          <div id="dashboard-video"></div>
-          <div id="dashboard-counsellor"></div>
+          <div id="dashboard-music">
+            <Slider photos={photos} />
+          </div>
+          <div id="dashboard-video">
+            <Slider photos={photos} />
+          </div>
+
+          <div id="dashboard-counsellor">
+            <Slider photos={counphotes} />
+          </div>
         </div>
       </div>
     </>

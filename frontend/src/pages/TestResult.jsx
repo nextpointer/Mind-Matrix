@@ -19,7 +19,7 @@ export const TestResult = () => {
         <div id="testresult-section">
             <div id="result">
                 <div className="progress">
-                <Progressbar/>
+                <Progressbar percentage={resultData.points}/>
                 </div>
                 <div className="result-data">
                    <p>{resultData.responseLevelData[0]}</p>

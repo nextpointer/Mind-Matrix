@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const moving = keyframes`
   50% {
@@ -34,7 +35,7 @@ const LoaderBar = styled.div`
 `;
 
 const Container = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: ${({ bg }) => bg}; /* Use the bg prop */
   display: flex;
@@ -53,3 +54,10 @@ const Loader = ({ bg, barcolor }) => {
 };
 
 export default Loader;
+
+
+Loader.propTypes = {
+  bg: PropTypes.string.isRequired,
+  barcolor: PropTypes.string.isRequired,
+
+};

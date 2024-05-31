@@ -6,9 +6,9 @@ import Ratings from "./Ratings";
 import NormalButtons from "./NormalButton";
 import Axios from "axios";
 
-const ProfileModal = ({ isVisible, onClose, _id }) => {
+const ProfileModal = ({ isVisible, onClose, _id,img }) => {
   const [counsellorData, setCounsellorData] = useState(null);
-
+  console.log(img);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -51,7 +51,7 @@ const ProfileModal = ({ isVisible, onClose, _id }) => {
           <ProfileDetails>
             <ProfileNameimg>
               <Img>
-                <img src="/images/beard.svg" alt={CounsellorName} />
+                <img src={img} alt={CounsellorName} />
               </Img>
               <Name>
                 <SubHeading text={CounsellorName} />
@@ -110,7 +110,8 @@ const ProfileModal = ({ isVisible, onClose, _id }) => {
 ProfileModal.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  _id: PropTypes.string.isRequired
+  _id: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired
 };
 
 ProfileModal.propTypes = {

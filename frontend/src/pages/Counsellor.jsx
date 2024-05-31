@@ -34,7 +34,7 @@ export const Counsellor = () => {
   }, []);
 
   if (loading) {
-    return <Loader />;
+    return <Loader bg={'#fff'} barcolor={'#A1EEBD'}/>;
   }
 
   if (error) {
@@ -49,7 +49,7 @@ export const Counsellor = () => {
           {counselors.map((counselor) => (
             <CounsellorBar
               key={counselor._id}
-              imglink="/images/beard.svg"
+              imglink={counselor.ImgLink}
               name={counselor.CounsellorName}
               specialization={counselor.SpecializedBio}
               bio={counselor.ShortBio}

@@ -46,16 +46,35 @@ export const Video = () => {
 
     ],
     [
-      "https://www.youtube.com/embed/Eaoh89a0YD8?si=KNOSSPOlIrmVgEOc",
-      "https://www.youtube.com/embed/SnXWEXmVMnk?si=hKn19H0mlIvkesth"
+      "https://www.youtube.com/embed/15GaKTP0gFE?si=TSVkIen7ma5kW3m0",
+      "https://www.youtube.com/embed/v-t1Z5-oPtU?si=cTnPXRZKEHV0CiGf",
+      "https://www.youtube.com/embed/WuyPuH9ojCE?si=N2h-D_2RTI_2beyy",
+      "https://www.youtube.com/embed/hnpQrMqDoqE?si=kgR3Cuu4VjZWcKJq",
+      "https://www.youtube.com/embed/tMcw-7cHD7A?si=z8RU0sXjPRAOztmS",
+      "https://www.youtube.com/embed/TZZlIKXcolo?si=YcYQt5EPsjQQaVqm",
+      "https://www.youtube.com/embed/f9yCYlV-gNM?si=iQS5Bnqb1ZrkZoxi",
+      "https://www.youtube.com/embed/9Hto1HeMrYQ?si=VokAytmWdAu-K-Mn"
     ],
     [
-      "https://www.youtube.com/embed/QhukM33VLgo?si=ApkXH_Ox3Jm9TCR4",
-      "https://www.youtube.com/embed/dhYF3AqVhgU?si=oC9uSqRa35Byd5jn"
+      "https://www.youtube.com/embed/DxIDKZHW3-E?si=Uy1xdPHoB4Moufjt",
+      "https://www.youtube.com/embed/do8mqz6XmTE?si=sDxF4_jX6dKjn9ti",
+      "https://www.youtube.com/embed/lh068GG3N98?si=JayLTfLDS_vhXbBN",
+      "https://www.youtube.com/embed/II5h6uJPvvs?si=WCBjPhwTAX2lPR5Y",
+      "https://www.youtube.com/embed/iNyUmbmQQZg?si=iUxJAJZzPBxGdb6_",
+      "https://www.youtube.com/embed/eBz7iUJu9UM?si=70RxFux-LV7WPcCK",
+      "https://www.youtube.com/embed/2XZNNZnGhGY?si=EKAfg1BSp_6UW_yI",
+      "https://www.youtube.com/embed/49mfPFTZsHs?si=tWozJ1GzJt5gMSyG"
+
     ],
     [
-      "https://www.youtube.com/embed/-MNp9bmNI60?si=ZBeiSoJ2yuW5R_vV",
-      "https://www.youtube.com/embed/75d_29QWELk?si=Yn6cTcJGtaGK21C4"
+      "https://www.youtube.com/embed/nCrjevx3-Js?si=NS9h9h3X7Z0SdXmP",
+      "https://www.youtube.com/embed/0QXmmP4psbA?si=scxG6QmJGN96Fp7L",
+      "https://www.youtube.com/embed/gWs-AswW398?si=-7zUIXIWaFPJv-Jd",
+      "https://www.youtube.com/embed/LY4i5CSn7AA?si=ppGwr9VhNzd3DS8l",
+      "https://www.youtube.com/embed/Cg_GW7yhq20?si=XBx0KY9zLcrxASR6",
+      "https://www.youtube.com/embed/NastuJfCQm8?si=DmvOt3-oLTRn-g95",
+      "https://www.youtube.com/embed/w6T02g5hnT4?si=1FozRXW0yAhr0HAA",
+      "https://www.youtube.com/embed/ARmBCl4nid0?si=1CUWvejVTnC6UbFZ"
     ],
   ];
 

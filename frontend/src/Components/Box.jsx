@@ -1,13 +1,13 @@
 import "../styles/ComponentStyle/box.css";
+import PropTypes from "prop-types";
 
-export const Box = () => {
+export const Box = ({prompts,no}) => {
   return (
     <>
       <div className="card">
-        <p className="card-title">Promt</p>
+        <p className="card-title">Promt {no}</p>
         <p className="small-desc">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat
-          veritatis nobis saepe itaque rerum nostrum aliquid obcaecati odio
+          {prompts}
           
         </p>
         <div className="go-corner">
@@ -16,4 +16,10 @@ export const Box = () => {
       </div>
     </>
   );
+};
+Box.propTypes = {
+  prompts: PropTypes.string.isRequired,
+  no: PropTypes.string.isRequired,
+  
+
 };

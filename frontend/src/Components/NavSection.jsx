@@ -7,7 +7,7 @@ export const NavSection = ({FirstName,LastName}) => {
     <>
         <div id="dashboard-profile-navbar-section">
                 <div id="dashboard-logo">
-                    <p>Logos</p>
+                    <p>MINDMATRIX</p>
                 </div>
                 <div id="dashboard-profile-section">
                     <div className="outline-profile-pic">
@@ -20,7 +20,6 @@ export const NavSection = ({FirstName,LastName}) => {
                 </div>
                 <div id="dashboard-navbar-section">
                     <Nav label='Home' icon='/Icons/home.svg' value={true} link='/user/dashboard'/>
-                    <Nav label='Music' icon='/Icons/music.svg' value={true}  link='/user/music'/>
                     <Nav label='Meditation' icon='/Icons/meditation.svg' value={true}  link='/user/meditation'/>
                     <Nav label='AI' icon='/Icons/AI.svg' value={true} link='/user/ai'/>
                     <Nav label='Counsellor' icon='/Icons/doctor.svg' value={true}  link='/user/counsellor'/>

@@ -25,7 +25,6 @@ export const Nav = (props) => {
       isActive={location.pathname === props.link}
       onClick={props.label === 'Logout' ? handleLogout : null}
     >
-      {props.value && <span>|</span>}
       <NavContainer>
         <NavIcon>
           <img src={props.icon} alt="<>" />
@@ -60,7 +59,7 @@ const StyledLink = styled(Link)`
   }
 
   &:focus {
-    outline: 2px solid #0073e6; // Change this to your desired focus outline color
+    /* outline: 2px solid #0073e6; // Change this to your desired focus outline color */
   }
 
   &:active {
