@@ -2,6 +2,8 @@
 
 export const Error = () => {
   return (
-    <div>Error Page ha vai</div>
+    <div>
+      <p>This page does not exist</p>
+    </div>
   )
 }

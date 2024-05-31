@@ -2,7 +2,7 @@
     height: 60px;
     width: 100%;
     /* background-color: rgb(183, 200, 216); */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,11 +10,17 @@
 .homepage-logo-section{
     margin-left: 10px;
     height: 25px;
-    width: 70px;
-    border: 1px solid black;
+    width: 250px;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
+    p{
+        font-size: 1.2rem;
+        letter-spacing: 0.5rem;
+        font-weight: 400;
+    }
+
 }
 
 #homepage-hero-section{
@@ -86,6 +92,9 @@
 .hero-illustration img{
     height: 500px;
     width: auto;
+    position: relative;
+    right: 50px;
+    top: 7vh;
 
 }
 

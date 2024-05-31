@@ -23,6 +23,9 @@
     left: 100%;
     transition: left 0.5s ease-in-out;
     /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .slide.active {

@@ -53,6 +53,7 @@ export const Register = () => {
       console.log(dataToSend);
       const response = await axios.post("http://localhost:8000/api/v1/user/register", formData);
       console.log(response.data);
+      alert("Registered successfully");
       // Handle success (e.g., redirect to login page)
     } catch (error) {
       console.error("There was an error registering!", error);
@@ -149,7 +150,7 @@ export const Register = () => {
             </form>
           </div>
           <div className="register-illustration">
-          <div className="container"></div>
+          <img src="/images/signupp.svg" alt="" />
           </div>
         </div>
       </div>

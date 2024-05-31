@@ -15,8 +15,12 @@
 .register-illustration{
     height: inherit;
   width: 50%;
-  background-color: green;
+  /* background-color: green; */
   border-radius: 24px;
+  img{
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .form{

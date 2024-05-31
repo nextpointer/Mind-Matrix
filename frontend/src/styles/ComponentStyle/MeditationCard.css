@@ -1,7 +1,7 @@
 
 .cardsss {
   width: 19rem;
-  height: 25rem;
+  height: 20rem;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -23,6 +23,7 @@
     left: 0;
     opacity: 1;
     transition: opacity .2s ease-out;
+    
   }
 
   h2 {
@@ -55,19 +56,19 @@
     inset: auto auto 40px 30px;
     text-decoration: none;
     margin: 5px;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   &:hover h2 {
     inset: auto auto 220px 30px;
     transition: inset .3s ease-out;
-    color: #ffffff;
+    color: #000000;
   }
   
   &:hover p, &:hover .card-content button:nth-child(1) {
     opacity: 1;
     transition: opacity .5s .1s ease-in;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     
   }
   .card-content button:nth-child(1):hover{
@@ -77,7 +78,7 @@
   &:hover img {
     transition: opacity .3s ease-in;
     /* opacity: 0.2; */
-    -webkit-filter: blur(4px);
+    -webkit-filter: blur(10px);
     
   }
 

@@ -13,6 +13,7 @@ export const Nav = (props) => {
       withCredentials: true, // Important to send cookies
     });
       // Redirect to the login page after successful logout
+      alert("User logout Successfully");
       navigate('/user/login');
     } catch (error) {
       console.error("Logout failed:", error);

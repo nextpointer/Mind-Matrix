@@ -20,6 +20,7 @@ export const Login = () => {
       });
       // Handle successful login
       navigate("/user/dashboard",);
+      alert("Logged in successfully");
     } catch (error) {
       console.error("Error logging in:", error);
       // Handle login error (e.g., display error message)
@@ -30,7 +31,7 @@ export const Login = () => {
       <div id="login-page-container">
         <div className="login-box">
           <div className="login-illustration">
-            <div className="container"></div>
+            <img src="/images/login.svg" alt="" />
           </div>
           <div className="login-section">
             <form className="form"  onSubmit={handleSubmit}>

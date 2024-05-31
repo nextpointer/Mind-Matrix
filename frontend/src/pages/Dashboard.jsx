@@ -8,10 +8,25 @@ import Slider from "../Components/Slider.jsx";
 
 // import bred from "/images/beard.svg";
 import hero from "/images/mA.jpg";
-import coun from "/images/image.png";
+import coun1 from "/images/image.png";
+import coun2 from "/images/councelor2.png";
+import coun3 from "/images/counselor3.png";
+// import pic for meditation
 
-const photos = [hero,hero,hero];
-const counphotes = [coun,coun]
+import m1 from "/images/a1.jpg";
+import m2 from "/images/a3.jpg";
+import m3 from "/images/medi.svg";
+
+// import image for videos
+import yt1 from "/images/yt1.png"
+import yt2 from "/images/yt2.png"
+import yt3 from "/images/yt3.png"
+
+
+const ytphotos = [yt1,yt2,yt3];
+const counphotes = [coun1,coun2,coun3]
+const mediphotes = [m1,m2,m3]
+
 
 export const Dashboard = () => {
   const navigate = useNavigate();
@@ -54,8 +69,7 @@ export const Dashboard = () => {
             <div id="dashboard-screening-test">
               <p>Screening Test</p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor sit amet.
+              Screening testing in mental health helps identify potential issues early, facilitating timely intervention and treatment
               </p>
               <form onSubmit={handleScreeningTest} className="screenform">
                 <NormalButtons text="Take Test" type="submit" />
@@ -64,8 +78,7 @@ export const Dashboard = () => {
             <div id="dashboard-daily-test">
               <p>Daily Survey</p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor sit amet.
+              Daily surveys in mental health patients monitor symptoms and progress, aiding in personalized and effective care..
               </p>
               <form onSubmit={handleSurvey} className="screenform">
                 <NormalButtons text="Take Survey" type="submit" />
@@ -85,10 +98,10 @@ export const Dashboard = () => {
         </div>
         <div id="dashboard-recommendation-section">
           <div id="dashboard-music">
-            <Slider photos={photos} />
+            <Slider photos={mediphotes} />
           </div>
           <div id="dashboard-video">
-            <Slider photos={photos} />
+            <Slider photos={ytphotos} />
           </div>
 
           <div id="dashboard-counsellor">
