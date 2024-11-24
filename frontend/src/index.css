@@ -16,7 +16,7 @@
   font-weight: 400;
   color: rgba(0, 0, 0, 0.87);
   --primary-color: #A1EEBD;
-  background-color:var(--primary-color);
+  /* background-color:var(--primary-color); */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
