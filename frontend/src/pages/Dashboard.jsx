@@ -6,6 +6,8 @@ import Chart from "../Components/Chart.jsx";
 // import { useAuth } from "../authContext.jsx";
 import Slider from "../Components/Slider.jsx";
 
+import { useAuth } from "../lib/userContext.jsx";
+
 // import bred from "/images/beard.svg";
 import hero from "/images/mA.jpg";
 import coun1 from "/images/image.png";
@@ -30,6 +32,9 @@ const mediphotes = [m1,m2,m3]
 
 export const Dashboard = () => {
   const navigate = useNavigate();
+  const {currentUser}  = useAuth()
+  console.log("dasff",currentUser);
+  
   const handleScreeningTest = (event) => {
     event.preventDefault();
     navigate("/user/screeningtest/catagory");
@@ -63,7 +68,7 @@ export const Dashboard = () => {
         <NavSection FirstName="john" LastName="Doe" />
         <div id="dashboard-test-stat-section">
           <div id="dashboard-greeting">
-            <p>{getGreeting()} John</p>
+            <p>{getGreeting()} {currentUser.FirstName}</p>
           </div>
           <div id="dashboard-test">
             <div id="dashboard-screening-test">

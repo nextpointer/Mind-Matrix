@@ -1,15 +1,28 @@
 /* eslint-disable react/prop-types */
-// src/components/PrivateRoute.js
+// src/components/ProtectedRoute.js
 
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../authContext';
 import Cookies from 'js-cookie';
 
-const ProtectedRoute = ({ children }) => {
-  const { currentUser } = useAuth();
-  const token = Cookies.get('AccessToken');
+import { useAuth } from './userContext';
+import Loader from '../Components/Loader';
 
-  return currentUser && token ? children : <Navigate to="/user/login" />;
+const ProtectedRoute = ({ children }) => {
+  const token = Cookies.get('AccessToken');
+  const { currentUser, loading } = useAuth();
+
+
+  console.log("from protec",token);
+
+  if (loading) {
+    // If loading, return null or a loading screen
+    return (
+      <Loader/>
+    );
+  }
+  
+
+  return token ? children : <Navigate to="/user/login" />;
 };
 
 export default ProtectedRoute;

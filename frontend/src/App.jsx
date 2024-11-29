@@ -1,117 +1,123 @@
 // src/App.js
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom';
-import { Root } from './Root';
-import { Home } from './pages/Home';
-import { Error } from './pages/Error';
-import { Login } from './pages/Login';
-import { Dashboard } from './pages/Dashboard';
-import { Register } from './pages/Register';
-import { ChatBot } from './pages/ChatBot';
-import { Catagory } from './pages/Catagory';
-import { ScreeningTest } from './pages/ScreeningTest';
-import { TestResult } from './pages/TestResult';
-import { Music } from './pages/Music';
-import { Counsellor } from './pages/Counsellor';
-import { AuthProvider } from './authContext';
-import { Meditation } from './pages/Meditation';
-import { Video } from './pages/Video';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Root } from "./Root";
+import { Home } from "./pages/Home";
+import { Error } from "./pages/Error";
+import { Login } from "./pages/Login";
+import { Dashboard } from "./pages/Dashboard";
+import { Register } from "./pages/Register";
+import { ChatBot } from "./pages/ChatBot";
+import { Catagory } from "./pages/Catagory";
+import { ScreeningTest } from "./pages/ScreeningTest";
+import { TestResult } from "./pages/TestResult";
+import { Music } from "./pages/Music";
+import { Counsellor } from "./pages/Counsellor";
+import { Meditation } from "./pages/Meditation";
+import { Video } from "./pages/Video";
+import ProtectedRoute from "./lib/ProtectedRoute";
+import { AuthProvider } from "./lib/userContext.jsx";
 // import ProtectedRoute from './lib/ProtectedRoute';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Root />,
       errorElement: <Error />,
       children: [
-        { path: '/', element: <Home /> },
-        { path: '/user/login', element: <Login /> },
-        { path: '/user/register', element: <Register /> },
+        { path: "/", element: <Home /> },
+        { path: "/user/login", element: <Login /> },
+        { path: "/user/register", element: <Register /> },
         {
-          path: '/user/dashboard',
+          path: "/user/dashboard",
           element: (
-            
-              <Dashboard />
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
-          path: '/user/ai',
+          path: "/user/ai",
           element: (
-            
-              <ChatBot/>
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <ChatBot />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
-          path: '/user/music',
+          path: "/user/music",
+          element: <Music />,
+        },
+        {
+          path: "/user/video",
           element: (
-            
-              <Music />
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <Video />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
-          path: '/user/video',
+          path: "/user/meditation",
           element: (
-            
-              <Video />
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <Meditation />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
-          path: '/user/meditation',
+          path: "/user/counsellor",
           element: (
-            
-              <Meditation/>
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <Counsellor />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
-          path: '/user/counsellor',
+          path: "/user/screeningtest/catagory",
           element: (
-           
-              <Counsellor />
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <Catagory />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
-          path: '/user/screeningtest/catagory',
+          path: "/user/screeningtest/:testtype",
           element: (
-            
-              <Catagory />
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <ScreeningTest />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
-          path: '/user/screeningtest/:testtype',
+          path: "/user/screeningtest/result/:testtype",
           element: (
-            
-              <ScreeningTest />
-           
-          ),
-        },
-        {
-          path: '/user/screeningtest/result/:testtype',
-          element: (
-            
-              <TestResult />
-            
+            <AuthProvider>
+              <ProtectedRoute>
+                <TestResult />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
       ],
     },
   ]);
 
-  return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
