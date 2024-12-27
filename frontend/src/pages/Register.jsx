@@ -63,14 +63,25 @@ export const Register = () => {
 
   return (
     <>
+    <div id="homepage-logo-login-bar">
+              <div className="homepage-logo-section">
+              <Link to={"/"} className="logo-link">
+                <p>MIND MATRIX</p>
+              </Link>
+              </div>
+              
+            </div>
+        <h1 className="register-header">
+          <span>Create Your Account</span>
+        </h1>
       <div id="login-page-container">
         <div className="login-box">
           <div className="register-section">
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form-register" onSubmit={handleSubmit}>
               <div className="register-name">
                 <Input
                   label="FirstName"
-                  width="20ch"
+                  width="100%"
                   type="text"
                   name="FirstName"
                   value={formData.FirstName}
@@ -78,7 +89,7 @@ export const Register = () => {
                 />
                 <Input
                   label="Last Name"
-                  width="20ch"
+                  width="100%"
                   type="text"
                   name="LastName"
                   value={formData.LastName}
@@ -88,7 +99,7 @@ export const Register = () => {
               <div className="register-details">
                 <Input
                   label="Age"
-                  width="9ch"
+                  width="100%"
                   type="text"
                   name="Age"
                   value={formData.Age}
@@ -103,25 +114,17 @@ export const Register = () => {
               <div className="register-email">
                 <Input
                   label="Email"
-                  width="25ch"
+                  width="100%"
                   type="email"
                   name="Email"
                   value={formData.Email}
                   onChange={handleChange}
                 />
-                <div className="register-student">
-                  <p>Student</p>
-                  {/* <Toggle
-                    name="IsStudent"
-                    checked={formData.IsStudent}
-                    onChange={handleChange}
-                  /> */}
-                </div>
               </div>
               <div className="register-password">
                 <Input
                   label="Password"
-                  width="20ch"
+                  width="100%"
                   type="password"
                   name="Password"
                   value={formData.Password}
@@ -129,7 +132,7 @@ export const Register = () => {
                 />
                 <Input
                   label="ConfirmPassword"
-                  width="20ch"
+                  width="100%"
                   type="password"
                   name="ConfirmPassword"
                   value={formData.ConfirmPassword}

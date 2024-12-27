@@ -109,10 +109,12 @@ export const Home = () => {
 
         <div id="homepage-logo-login-bar">
           <div className="homepage-logo-section">
-            <p>MIND MATRIX</p>
+          <Link to={"/"} className="logo-link">
+                <p>MIND MATRIX</p>
+              </Link>
           </div>
           <div className="homepage-login-section">
-            <span>Already a User</span>
+            <span className="already-user">Already a User</span>
             <Link to={"/user/login"}>
               <NormalButtons text="Login" type="normal" />
             </Link>
@@ -136,7 +138,7 @@ export const Home = () => {
             You're not alone. Take control of your mental health with Mind
             Matrix
           </h2>
-          <Link to={"/user/login"} className="linkdashboard">
+          <Link to={"/user/register"} className="linkdashboard">
             <Button text="Get Started" />
           </Link>
           <div className="home-features">

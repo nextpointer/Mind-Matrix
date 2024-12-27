@@ -50,7 +50,11 @@ export const Login = () => {
       );
 
       // Display success alert
-      setAlert({ type: "success", message: "Login successful!", visible: true });
+      setAlert({
+        type: "success",
+        message: "Login successful!",
+        visible: true,
+      });
 
       // Navigate to dashboard after a short delay
       setTimeout(() => navigate("/user/dashboard"), 2000);
@@ -66,8 +70,19 @@ export const Login = () => {
 
   return (
     <>
+    <br />
+      <div className="homepage-logo-section">
+        <Link to={"/"} className="logo-link">
+          <p>MIND MATRIX</p>
+        </Link>
+      </div>
+      <h1 className="register-header">
+          <span>Welcome Back!</span>
+        </h1>
       {/* Show alert if visible */}
-      {alert.visible && <Alert type={alert.type} string={alert.message} duration={3000} />}
+      {alert.visible && (
+        <Alert type={alert.type} string={alert.message} duration={3000} />
+      )}
 
       <div id="login-page-container">
         <div className="login-box">

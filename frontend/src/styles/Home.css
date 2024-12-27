@@ -46,6 +46,10 @@
     }
 
 }
+.logo-link{
+    text-decoration: none;
+    color: #000;
+}
 
 .homepage-login-section{
     display: flex;
@@ -72,7 +76,10 @@
     flex-direction: column;
     padding-top: 5rem;
     
+    
 }
+
+
 
 
 .hero-header{
@@ -81,8 +88,6 @@
     font-weight: 500;
     line-height: 1.2;
     text-align: center;
-    /* opacity: 0; */
-    /* transform: translate(0,30px); */
 
 }
 
@@ -119,6 +124,7 @@
     border-radius: 80px;
     box-shadow: 6px 6px 12px 1px #8d8d8d;
     overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .home-cards::before {
@@ -157,3 +163,52 @@
     height: 320px;
     width: 320px;
 }
+
+
+/* Phones (Portrait) */
+@media (max-width: 480px) {
+    .svg-block{
+        display: none;
+    }
+    .already-user{
+        display: none;
+    }
+
+    #homepage-container{
+        overflow: scroll;
+    }
+    .hero-header{
+        font-size: 2.5rem;
+        margin: -30px 10px 0 10px;
+    }
+
+    .hero-subheader{
+        margin: 10px;
+        font-size: 1rem;
+        text-align: center;
+    }
+    #homepage-logo-login-bar{
+        padding: 0;
+    }
+    .home-cards:nth-child(2) {
+        height: 300px;
+        width: 300px;
+    }
+  }
+
+/* Phones (Landscape) */
+@media (max-width: 768px) {
+    .svg-block{
+        display: none;
+    }
+    .already-user{
+        display: none;
+    }
+    #homepage-container{
+        overflow: scroll;
+    }
+    .home-cards:nth-child(2) {
+        height: 300px;
+        width: 300px;
+    }
+  }

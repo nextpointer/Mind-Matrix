@@ -48,12 +48,13 @@ export default function RadioInput({ name, value, onChange }) {
 
 const Organise = styled.div`
   height: 7vh;
-  width: 300px;
+  width: 100%;
   /* background-color: #6d6d6d; */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 10px 0 10px;
-  border-radius: 24px;
-  border: 1px solid #a5a4a4;
+  border-radius: 5px;
+  margin-right: 10rem;
+  /* border: 1px solid #c7c4c4; */
 `;

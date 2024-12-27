@@ -1,94 +1,150 @@
-
-.register-section{
-    height: inherit;
-    width: 50%;
-    /* background-color: rgb(0, 128, 124); */
-    border-radius: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px);
+.register-section {
+  height: inherit;
+  width: 50%;
+  /* background-color: rgb(0, 128, 124); */
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.register-header {
+  color: #000;
+  position: absolute;
+  font-size: 4vw;
+  left: 11rem;
+  top: 5rem;
+  z-index: 999;
+}
 
-
-.register-illustration{
-    height: inherit;
+.register-illustration {
+  height: inherit;
   width: 50%;
   /* background-color: green; */
   border-radius: 24px;
-  img{
+  img {
     height: 100%;
     width: 100%;
   }
 }
 
-.form{
-    width: 550px;
+.form-register {
+  width: 70%;
+  /* background-color: rgb(233, 233, 233); */
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.register-name{
-    height: 8vh;
-    width: 98%;
-    /* background-color: aquamarine; */
+.register-name {
+  height: auto;
+  width: 98%;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.register-details {
+  height: auto;
+  width: 98%;
+  /* background-color: rgb(176, 149, 61); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.register-email {
+  height: auto;
+  width: 98%;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-password {
+  height: auto;
+  width: 98%;
+  /* background-color: rgb(255, 136, 127); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.register-submit {
+  height: 7vh;
+  width: 98%;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.regsiter-redirect-login {
+  height: 5vh;
+  width: 98%;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+/* Phones (Portrait) */
+@media (max-width: 480px) {
+.register-section {
+    width: 100%;
+   
+  }
+  .register-illustration {
+    display: none;
+  }
+  .form-register {
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-.register-details{
-    height: 7vh;
-    width: 98%;
-    /* background-color: aquamarine; */
-    display: flex;
     justify-content: center;
-    align-items: start;
-    gap: 20px;
-}
-.register-email{
-    height: 7vh;
-    width: 98%;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: center;
-    align-items: start;
-}
-.register-student{
-    height: inherit;
-    width: 160px;
-    /* background-color: rgb(111, 205, 114); */
-    display: flex;
-    align-items:center;
-    justify-content:space-around;
-    p{
-        font-size: 18px;
-        font-weight: 400;
-        
-    }
-}
-.register-password{
-    height: 7vh;
-    width: 98%;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: center;
-    align-items: start;
-}
-.register-submit{
-    height: 7vh;
-    width: 98%;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: center;
-    align-items: start;
-}
-.regsiter-redirect-login{
-    height: 5vh;
-    width: 98%;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: center;
-    align-items: start;
+  }
+
+  .register-name {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .register-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .register-password {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .register-header {
+    font-size: 2rem;
+    left: 3rem;
+  }
 }
 
-
-/* design */
-
+/* Phones (Landscape) */
+@media (max-width: 1400px) {
+  .register-illustration {
+    display: none;
+  }
+  .register-section {
+    width: 100%;
+  }
+  .register-illustration {
+    display: none;
+  }
+  .form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
