@@ -15,7 +15,7 @@ MainHeading.propTypes = {
 
 
 const Heading = styled.p`
-  font-size: 5rem; /* Set main heading size */
+  font-size: 5vw; /* Set main heading size */
   line-height: 1.2; /* Set suitable line height */
   font-weight: 500; /* Emphasize the heading */
   color: #333; /* Set a default dark color */

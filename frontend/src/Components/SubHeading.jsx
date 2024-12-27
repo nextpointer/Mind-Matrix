@@ -15,7 +15,7 @@ SubHeading.propTypes = {
 
 
 const Heading = styled.p`
-  font-size: 1.5rem; 
+  font-size: 1.5vw; 
   line-height: 1.2; 
   font-weight: 300; 
   color: #333; 
