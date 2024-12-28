@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const Box = ({prompts,no}) => {
   return (
     <>
-      <div className="card">
+      <div className="card" style={{ backgroundColor: "var(--primary-color)" }}>
         <p className="card-title">Promt {no}</p>
         <p className="small-desc">
           {prompts}

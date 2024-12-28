@@ -52,7 +52,7 @@ export const Nav = (props) => {
       )}
 
       {/* Show loader if logging out */}
-      {loading && <Loader />}
+      {loading && <Loader barcolor='var(--primary-color)' bg='white'/>}
 
       <StyledLink
         to={props.label === "Logout" ? "#" : props.link} // Prevent navigation for Logout

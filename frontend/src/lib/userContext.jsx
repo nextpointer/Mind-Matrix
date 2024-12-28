@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
   // While loading, show a loading spinner or message
   if (loading) {
     return (
-      <Loader/>
+      <Loader barcolor='var(--primary-color)' bg='white'/>
     ); // You can replace this with a loading spinner
   }
 

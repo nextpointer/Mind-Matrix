@@ -4,6 +4,7 @@ import ChatWindow from "../Components/ChatWindow";
 import MessageInput from "../Components/MessageInput";
 import { NavSection } from "../Components/NavSection";
 import "../styles/chatbot.css";
+import { useAuth } from "../lib/userContext";
 import {
   GoogleGenerativeAI,
   HarmCategory,
@@ -14,6 +15,7 @@ export const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [headerVisible, setHeaderVisible] = useState(true);
   const chatSessionRef = useRef(null);
+  const {currentUser}  = useAuth()
 
   const apiKey = "AIzaSyB_k5gIbVgSUJ1EZE3b5KSL982fUurnCVA";
   // const apiKey = process.env.GEMINI_API_KEY;
@@ -203,7 +205,7 @@ export const ChatBot = () => {
           <div className="chatbot-header-example">
             <div className="chatbot-header">
               <p>
-                Hello,<span> John</span>
+                Hello,<span> {currentUser.FirstName}</span>
               </p>
               <p>How can I help you?</p>
             </div>

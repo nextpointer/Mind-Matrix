@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }) => {
   if (loading) {
     // If loading, return null or a loading screen
     return (
-      <Loader/>
+      <Loader barcolor='var(--primary-color)' bg='white'/>
     );
   }
   

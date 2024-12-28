@@ -87,7 +87,7 @@ export const Video = () => {
             <Tabss value={tabValue} handleChange={handleTabChange} />
           </div>
           <div id="change-section">
-            {loading && <Loader bg={"transparent"} barcolor={"#fff"} />}
+            {loading && <Loader bg={"white"} barcolor={"var(--primary-color)"} />}
             <div style={{ display: loading ? "none" : "flex", gap: "20px", flexWrap: "wrap" }}>
               {videoSrc[tabValue].map((src, index) => (
                 <iframe

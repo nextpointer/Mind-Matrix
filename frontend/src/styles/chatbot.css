@@ -1,7 +1,7 @@
 #ChatBot-Container{
     height: 100vh;
     width: 100%;
-    /* background-color: rgb(255, 255, 255); */
+    /* background-color: rgb(215, 215, 215); */
     border-radius: 24px;
     display: flex;
     justify-content: start;
@@ -42,12 +42,12 @@
     font-size: 3.7rem;
     font-weight: 600;
     /* background-color: rgb(182, 182, 182); */
-    color: #fff;
+    color: #000000;
 }
 .chatbot-header>p:nth-child(2){
     font-size: 3.7rem;
     font-weight: 600;
-    color: #fff;
+    color: #000000;
     /* background-color: blanchedalmond; */
     position: relative;
     bottom: 25px;
@@ -64,7 +64,7 @@
 .chatbot-input{
     height: 8vh;
     width: 69%;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(67, 66, 66); */
     border-radius: 50px ;
     position: fixed;
     top: 90vh;
@@ -81,6 +81,7 @@
         font-size: 1.3rem;
         font-weight: 100;
         font-family: Arial,abinet-grotesk;
+        border: 1px solid #c3c3c3;
     }
 }
 .chatbot-send{

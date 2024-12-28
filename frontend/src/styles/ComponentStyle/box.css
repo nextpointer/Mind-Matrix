@@ -28,7 +28,7 @@
     top: 0;
     right: 0;
     /* background: linear-gradient(135deg, #6293c8, #384c6c); */
-    background-color: #707070;
+    background-color: #000000;
     border-radius: 0 4px 0 32px;
   }
   
@@ -62,7 +62,7 @@
     top: -16px;
     right: -16px;
     /* background: linear-gradient(135deg, #364a60, #384c6c); */
-    background-color: #707070;
+    background-color: #000000;
     height: 32px;
     width: 32px;
     border-radius: 32px;

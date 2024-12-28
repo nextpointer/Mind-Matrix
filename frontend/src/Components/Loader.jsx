@@ -45,7 +45,7 @@ const Container = styled.div`
 
 const Loader = ({ bg, barcolor }) => {
   return (
-    <Container bg={bg}>
+    <Container bg={bg }>
       <LoaderContainer barcolor={barcolor}>
         <LoaderBar />
       </LoaderContainer>

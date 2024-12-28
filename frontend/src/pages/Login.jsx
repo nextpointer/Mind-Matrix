@@ -91,7 +91,7 @@ export const Login = () => {
           </div>
           <div className="login-section">
             {loading ? (
-              <Loader /> // Display loader during request
+              <Loader barcolor="var(--primary-color)" bg="white"/> // Display loader during request
             ) : (
               <form className="form" onSubmit={handleSubmit}>
                 <div className="flex-column">
