@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import ReactMarkdown from "react-markdown";
 
 const MessageListContainer = styled.div`
   flex: 1;
@@ -31,7 +32,7 @@ const MessageList = ({ messages }) => {
           alignSelf={message.sender === 'You' ? 'flex-end' : 'flex-start'}
           backgroundColor={message.sender === 'You' ? '#ededed' : '#fff'}
         >
-          <strong>{message.sender}:</strong> {message.text}
+          <strong>{message.sender}:</strong><ReactMarkdown>{message.text}</ReactMarkdown>
         </MessageItem>
       ))}
     </MessageListContainer>

@@ -21,7 +21,7 @@ build/
 .eslintcache
 
 # Secret files
-.env*
+.env
 .secret*
 
 # Optional: npm cache

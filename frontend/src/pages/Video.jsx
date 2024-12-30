@@ -96,7 +96,6 @@ export const Video = () => {
                   height="200"
                   src={src}
                   title={`YouTube video player ${index + 1}`}
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen

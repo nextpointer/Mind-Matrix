@@ -5,8 +5,6 @@ import { Result } from "../models/result.model.js";
 
 
 export const getResults = asyncHandler(async (req, res) => {
-  console.log(req.body);
-
 
   // Extract and sum the points from req.body
   const pointsObject = JSON.parse(req.body.theAns);
