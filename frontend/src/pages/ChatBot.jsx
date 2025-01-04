@@ -5,17 +5,27 @@ import { NavSection } from "../Components/NavSection";
 import "../styles/chatbot.css";
 import { useAuth } from "../lib/userContext";
 import axios from "axios";
+import { useLoading } from "../Store/useLoading";
+import Alert from "../Components/Alert";
 
 export const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [headerVisible, setHeaderVisible] = useState(true);
+  const {_,setLoading} = useLoading();
+  const [alert, setAlert] = useState({ type: "", message: "", visible: false })
+  
+  
 
   const { currentUser } = useAuth();
 
   const handleChange = (e) => {
     setInputMessage(e.target.value);
   };
+
+  const onclicktoPromot = (promot) => {
+    setInputMessage(promot);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +35,7 @@ export const ChatBot = () => {
       const userMessage = { text: inputMessage, sender: "You" };
       setMessages((prevMessages) => [...prevMessages, userMessage]);
       setHeaderVisible(false); // Hide the header once user starts chatting
-
+      setLoading(true);
       // Send the message to the backend API
       try {
         const response = await axios.post("http://localhost:8000/api/v1/ai", { inputMessage });
@@ -39,6 +49,12 @@ export const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, botMessage]);
       } catch (error) {
         console.error("Error sending message to backend:", error);
+        const errorMessage =
+        error.response?.data?.message || "Something is wrong! Please try again.";
+      setAlert({ type: "error", message: errorMessage, visible: true });
+      }
+      finally{
+        setLoading(false);
       }
 
       // Clear the input field
@@ -50,6 +66,9 @@ export const ChatBot = () => {
     <div id="ChatBot-Container">
       <NavSection />
       <div id="ChatBot-Body">
+        {alert.visible && (
+                <Alert type={alert.type} string={alert.message} duration={9000} />
+              )}
         {headerVisible && (
           <div className="chatbot-header-example">
             <div className="chatbot-header">
@@ -59,10 +78,10 @@ export const ChatBot = () => {
               <p>How can I help you?</p>
             </div>
             <div className="chatbot-example">
-              <Box prompts="I'm feeling really stressed out lately. Can you help me with some stress management techniques?" no="1" />
-              <Box prompts="I've been having trouble sleeping. Do you have any tips to improve my sleep?" no="2" />
-              <Box prompts="I'm feeling anxious about a lot of things. Can we talk about ways to manage anxiety?" no="3" />
-              <Box prompts="I've been feeling down and unmotivated. What are some things I can do to feel better?" no="4" />
+              <Box prompts="I'm feeling really stressed out lately. Can you help me with some stress management techniques?" no="1" onclicks={onclicktoPromot} />
+              <Box prompts="I've been having trouble sleeping. Do you have any tips to improve my sleep?" no="2" onclicks={onclicktoPromot}/>
+              <Box prompts="I'm feeling anxious about a lot of things. Can we talk about ways to manage anxiety?" no="3" onclicks={onclicktoPromot}/>
+              <Box prompts="I've been feeling down and unmotivated. What are some things I can do to feel better?" no="4" onclicks={onclicktoPromot}/>
             </div>
           </div>
         )}

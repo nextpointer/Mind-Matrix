@@ -18,6 +18,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
+    // backgroundColor: '#c870b2',
+    padding: '20px',
   },
 };
 

@@ -52,7 +52,11 @@
     z-index: 0;
     overflow: hidden;
     /* background: linear-gradient(to bottom, #c3e6ec, #a7d1d9); */
-    /* background-color: #977676; */
+    /* background-color: #9n77676; */
+    cursor: pointer;
+    border: 0;
+    outline: none;
+
   }
   
   .card:before {
