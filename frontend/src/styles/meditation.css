@@ -10,7 +10,7 @@
 
 #meditation-section {
   height: inherit;
-  width: calc(100% - 260px);
+  width: 100%;
   /* background-color: aquamarine; */
   /* background-color: #131314; */
   display: flex;

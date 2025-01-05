@@ -9,7 +9,7 @@
 
 #video-section {
   height: inherit;
-  width: calc(100% - 260px);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: start;

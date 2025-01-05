@@ -33,7 +33,6 @@ const mediphotes = [m1,m2,m3]
 export const Dashboard = () => {
   const navigate = useNavigate();
   const {currentUser}  = useAuth()
-  console.log("dasff",currentUser);
   
   const handleScreeningTest = (event) => {
     event.preventDefault();
@@ -65,7 +64,7 @@ export const Dashboard = () => {
   return (
     <>
       <div id="dashboard-conatainer">
-        <NavSection FirstName="john" LastName="Doe" />
+        <NavSection />
         <div id="dashboard-test-stat-section">
           <div id="dashboard-greeting">
             <p>{getGreeting()} {currentUser.FirstName}</p>
