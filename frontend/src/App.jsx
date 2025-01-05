@@ -11,13 +11,11 @@ import { ChatBot } from "./pages/ChatBot";
 import { Catagory } from "./pages/Catagory";
 import { ScreeningTest } from "./pages/ScreeningTest";
 import { TestResult } from "./pages/TestResult";
-import { Music } from "./pages/Music";
 import { Counsellor } from "./pages/Counsellor";
 import { Meditation } from "./pages/Meditation";
 import { Video } from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
 import { AuthProvider } from "./lib/userContext.jsx";
-// import ProtectedRoute from './lib/ProtectedRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -48,10 +46,6 @@ function App() {
               </ProtectedRoute>
             </AuthProvider>
           ),
-        },
-        {
-          path: "/user/music",
-          element: <Music />,
         },
         {
           path: "/user/video",
