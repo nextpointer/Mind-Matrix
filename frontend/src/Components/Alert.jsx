@@ -12,6 +12,8 @@ const alertTypes = {
 
 export default function BasicAlerts({ type = 'info', duration = 3000, string }) {
   const [visible, setVisible] = useState(true);
+  console.log("called bro");
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {

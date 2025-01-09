@@ -3,18 +3,17 @@ import PropTypes from "prop-types";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import Alert from "../Components/Alert"; // Import Alert component
 import Loader from "../Components/Loader"; // Import Loader component
+import { useAlert } from "../Store/useAlert";
+import Alert from "../Components/Alert";
 
 export const Nav = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false); // Loading state for logout
-  const [alert, setAlert] = useState({ type: "", message: "", visible: false }); // Alert state
-
+  const {_,setAlert}  =useAlert()
   const handleLogout = async () => {
     setLoading(true); // Start loading
-    setAlert({ ...alert, visible: false }); // Reset alert
 
     try {
       await axios.post("http://localhost:8000/api/v1/user/logout", null, {
@@ -42,14 +41,6 @@ export const Nav = (props) => {
 
   return (
     <>
-      {/* Display alert if visible */}
-      {alert.visible && (
-        <Alert
-          type={alert.type}
-          string={alert.message}
-          duration={3000}
-        />
-      )}
 
       {/* Show loader if logging out */}
       {loading && <Loader barcolor='var(--primary-color)' bg='white'/>}

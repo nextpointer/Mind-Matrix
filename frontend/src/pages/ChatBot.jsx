@@ -7,13 +7,14 @@ import { useAuth } from "../lib/userContext";
 import axios from "axios";
 import { useLoading } from "../Store/useLoading";
 import Alert from "../Components/Alert";
+import { useAlert } from "../Store/useAlert";
 
 export const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [headerVisible, setHeaderVisible] = useState(true);
   const {_,setLoading} = useLoading();
-  const [alert, setAlert] = useState({ type: "", message: "", visible: false })
+  const {alert,setAlert}  = useAlert()
   
   
 

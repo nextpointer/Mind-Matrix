@@ -5,7 +5,7 @@ import "../styles/dashboard.css";
 import Chart from "../Components/Chart.jsx";
 // import { useAuth } from "../authContext.jsx";
 import Slider from "../Components/Slider.jsx";
-
+import Alert from "../Components/Alert.jsx"; 
 import { useAuth } from "../lib/userContext.jsx";
 
 // import bred from "/images/beard.svg";
@@ -23,6 +23,9 @@ import m3 from "/images/medi.svg";
 import yt1 from "/images/yt1.png"
 import yt2 from "/images/yt2.png"
 import yt3 from "/images/yt3.png"
+import { useAlert } from "../Store/useAlert.js";
+import { useEffect } from "react";
+
 
 
 const ytphotos = [yt1,yt2,yt3];
@@ -30,7 +33,14 @@ const counphotes = [coun1,coun2,coun3]
 const mediphotes = [m1,m2,m3]
 
 
+
 export const Dashboard = () => {
+  const {alert,setAlert} = useAlert()
+  useEffect(() => {
+    if (alert.visible) {
+        setAlert({ ...alert, visible: false });
+    }
+  }, [setAlert]);
   const navigate = useNavigate();
   const {currentUser}  = useAuth()
   
@@ -42,6 +52,9 @@ export const Dashboard = () => {
     event.preventDefault();
     navigate("/user/screeningtest/Daily");
   };
+
+  console.log(alert);
+  
 
 
   // if (!resultData) {
@@ -63,7 +76,16 @@ export const Dashboard = () => {
 
   return (
     <>
+    {/* Display alert if visible */}
+          {alert.visible && (
+            <Alert
+              type={alert.type}
+              string={alert.message}
+              duration={3000}
+            />
+          )}
       <div id="dashboard-conatainer">
+
         <NavSection />
         <div id="dashboard-test-stat-section">
           <div id="dashboard-greeting">
