@@ -12,6 +12,7 @@ export default function Chart() {
       ]}
       width={800}
       height={300}
+      colors={['#A1EEBD']}
     />
   );
 }

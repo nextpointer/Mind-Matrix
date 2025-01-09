@@ -75,8 +75,8 @@ const StyledLink = styled(Link)`
   ${(props) =>
     props.isActive &&
     `
-    background-color: #f0f0f0; 
-    color: #0073e6; 
+    // background-color: #f0f0f0; 
+    color: var(--primary-color); 
     font-weight: bold;
   `}
 
@@ -85,7 +85,7 @@ const StyledLink = styled(Link)`
   }
 
   &:active {
-    color: #005bb5; 
+    color: var(--primary-color); 
   }
 
   span {
