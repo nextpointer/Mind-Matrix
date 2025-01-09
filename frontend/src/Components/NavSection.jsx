@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { useAuth } from "../lib/userContext";
 import { useRef, useState } from "react";
 
-import leftArrow from '/Icons/left-arrow.svg'
-import rightArrow from '/Icons/right-arrow.svg'
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 
 
 
@@ -77,7 +77,7 @@ export const NavSection = () => {
         </div>
       </div>
       <button className="hide-and-seek" onClick={navHide}>
-        {visible?<img src={leftArrow} alt="<>" />:<img src={rightArrow} alt="<>" />}
+        {visible?<VisibilityOffOutlinedIcon/>:<VisibilityOutlinedIcon/>}
       </button>
     </>
   );

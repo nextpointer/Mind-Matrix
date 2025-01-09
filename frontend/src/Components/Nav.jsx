@@ -11,7 +11,7 @@ export const Nav = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false); // Loading state for logout
-  const {_,setAlert}  =useAlert()
+  const { _, setAlert } = useAlert();
   const handleLogout = async () => {
     setLoading(true); // Start loading
 
@@ -41,9 +41,8 @@ export const Nav = (props) => {
 
   return (
     <>
-
       {/* Show loader if logging out */}
-      {loading && <Loader barcolor='var(--primary-color)' bg='white'/>}
+      {loading && <Loader barcolor="var(--primary-color)" bg="white" />}
 
       <StyledLink
         to={props.label === "Logout" ? "#" : props.link} // Prevent navigation for Logout
@@ -72,10 +71,10 @@ const StyledLink = styled(Link)`
   align-items: center;
   justify-content: center;
   gap: 6px;
+
   ${(props) =>
     props.isActive &&
     `
-    // background-color: #f0f0f0; 
     color: var(--primary-color); 
     font-weight: bold;
   `}
@@ -94,6 +93,12 @@ const StyledLink = styled(Link)`
     position: relative;
     right: 37px;
   }
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
 `;
 
 const NavIcon = styled.div`
@@ -107,9 +112,26 @@ const NavIcon = styled.div`
     height: 25px;
     width: 25px;
   }
+
+  @media (max-width: 1300px) {
+    height: 30px;
+    width: 30px;
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
 `;
 
-const NavItemName = styled.div``;
+const NavItemName = styled.div`
+  @media (max-width: 1300px) {
+    p {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+`;
 
 const NavContainer = styled.div`
   height: inherit;
@@ -117,6 +139,14 @@ const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: start;
+  /* background-color: aqua; */
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 Nav.propTypes = {

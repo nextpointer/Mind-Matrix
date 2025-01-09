@@ -5,13 +5,16 @@ import { useState } from "react";
 import axios from "axios";
 import Loader from "../Components/Loader";
 import Alert from "../Components/Alert"; // Import your Alert component
+import { useAlert } from "../Store/useAlert.js";
 
 export const Login = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [alert, setAlert] = useState({ type: "", message: "", visible: false }); // Alert state
+  //const [alert, setAlert] = useState({ type: "", message: "", visible: false }); // Alert state
   const navigate = useNavigate();
+    const { alert, setAlert } = useAlert();
+
 
   // Form validation before sending the request
   const validateForm = () => {
@@ -70,6 +73,10 @@ export const Login = () => {
 
   return (
     <>
+          {/* Display alert if visible */}
+      {/* {alert.visible && (
+        <Alert type={alert.type} string={alert.message} duration={3000} />
+      )} */}
     <br />
       <div className="homepage-logo-section">
         <Link to={"/"} className="logo-link">
