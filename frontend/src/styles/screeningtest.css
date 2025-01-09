@@ -11,7 +11,7 @@
 #test-section {
   height: inherit;
   width: 100%;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   /* background-color: #131314; */
   display: flex;
   justify-content: start;
@@ -24,7 +24,7 @@
     #ff6a88 55%,
     #ff99ac 100%
   ); */
-  background-color: #A1EEBD;
+  /* background-color: #A1EEBD; */
 
   color: #000000;
   flex-direction: column;
@@ -48,7 +48,7 @@
 .testAbout {
   height: auto;
   width: 80%;
-  /* background-color: #fff; */
+  /* background-color: #ae2727; */
   color: #000000;
   padding: 5px;
   padding-left: 20px;
@@ -64,7 +64,7 @@
 .howto {
   height: 5vh;
   width: 95%;
-  /* background-color: #fff; */
+  /* background-color: #c76a6a; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +85,7 @@
   justify-content: center;
   align-items: center;
   color: #000000;
-  border-right: 1px solid #4e4e4e;
+  /* border-right: 1px solid #4e4e4e; */
 
   p {
     font-size: 0.9rem;
@@ -136,4 +136,52 @@ form{
   position: relative;
   left: 33vw;
   top: 4vh;
+}
+
+
+
+/* Phones (Portrait) */
+@media (max-width: 480px) {
+  .testHeader{
+    margin-bottom: 4px;
+    p{
+      font-size: 2rem;
+    }
+  }
+  .testAbout{
+    width: 95%;
+  }
+  .howto {
+    display: block;
+    height: 10vh;
+  }
+
+  .QuestionList{
+    position: relative;
+    left: 15px;
+  }
+
+  .howto .about {
+    width: 100%;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      font-size: 0.8rem;
+    }
+  }
+
+  .howto .optionDetails {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  /* #test-section {
+    padding: 0;
+  } */
+  
 }

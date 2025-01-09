@@ -31,9 +31,10 @@ QuestionOptions.propTypes = {
 };
 
 const Container = styled.div`
-  height: 100px;
+  height: auto; /* Adjust height for content-based sizing on small screens */
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.074);
+  margin-top: 16px;
+  background-color: var(--primary-color);
   border: 1px solid rgba(255, 255, 255, 0.222);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -41,9 +42,16 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row; /* Default layout */
+
   &:hover {
     box-shadow: 0px 0px 20px 1px #8483833c;
     border: 1px solid rgba(96, 95, 95, 0.454);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack question and options vertically */
+    padding: 10px; /* Add padding for spacing */
   }
 `;
 
@@ -54,10 +62,17 @@ const Question = styled.div`
   color: #000000;
   display: flex;
   align-items: center;
+  
   p {
     font-size: 1.1rem;
     font-weight: 200;
     letter-spacing: 0.01rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Full width for smaller screens */
+    padding: 10px;
+    text-align: center; /* Center-align text on smaller screens */
   }
 `;
 
@@ -67,4 +82,9 @@ const Options = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%; /* Full width for smaller screens */
+    margin-top: 10px; /* Add spacing between question and options */
+  }
 `;

@@ -115,3 +115,25 @@
     padding-bottom: 100px;
     /* background-color: rgb(20, 22, 22); */
 }
+
+@media (max-width: 480px) {
+    .chatbot-example{
+        display: none;
+    }
+
+    .chatbot-header{
+        line-height: 2.1;
+    }
+    .chatbot-header>p:nth-child(1){
+        font-size: 1.9rem;
+        
+    }
+    .chatbot-header>p:nth-child(2){
+        font-size: 1.9rem;
+        
+    }
+    .chatbot-input{
+        width: 90%;
+    }
+    
+}
