@@ -51,7 +51,6 @@ export const Dashboard = () => {
     navigate("/user/screeningtest/Daily");
   };
 
-  console.log(alert);
 
   // if (!resultData) {
   //   return <p>No result data found</p>;

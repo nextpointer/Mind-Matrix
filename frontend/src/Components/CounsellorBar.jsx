@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 
 export const CounsellorBar = ({ imglink, _id, name, specialization, bio }) => {
   const [isProfileVisible, setProfileVisible] = useState(false);
-  console.log(imglink);
 
   const handleViewProfileClick = () => {
     setProfileVisible(!isProfileVisible);

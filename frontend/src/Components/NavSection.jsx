@@ -82,7 +82,3 @@ export const NavSection = () => {
     </>
   );
 };
-NavSection.propTypes = {
-  FirstName: PropTypes.string.isRequired,
-  LastName: PropTypes.string.isRequired,
-};

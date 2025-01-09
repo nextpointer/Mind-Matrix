@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import MessageList from './MessageList';
 
 const ChatWindow = ({ messages }) => {
-  console.log('messages:', messages);
   
   return (
     <div style={styles.chatWindow}>

@@ -13,7 +13,6 @@ export const Counsellor = () => {
 
   const fetchCounselors = async () => {
     const response = await axios.get(API_URL);
-    console.log(response.data.data);
     return response.data.data; // Adjust based on actual API response structure
   };
 

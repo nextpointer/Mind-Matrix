@@ -10,8 +10,6 @@ export const getResults = asyncHandler(async (req, res) => {
   const pointsObject = JSON.parse(req.body.theAns);
   const points = Object.values(pointsObject).reduce((total, num) => total + Number(num), 0);
   const { catagory } = req.params;
-  console.log(catagory);
-  console.log(points);
 
   if (points < 0 || points > 100) {
     throw new ApiError(400, "Points must be a number between 0 and 100");
@@ -46,7 +44,6 @@ if (points >= 20 && points <= 39) {
 
 
   export const addResult = asyncHandler(async (req, res) => {
-    console.log(req.body);
     const { CatagoryType, Low, Moderate, High, Severe } = req.body;
   
     if (!CatagoryType || !Low || !Moderate || !High || !Severe) {

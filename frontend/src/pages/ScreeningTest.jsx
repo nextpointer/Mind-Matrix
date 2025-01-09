@@ -52,11 +52,9 @@ export const ScreeningTest = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const theAns = JSON.stringify(answers);
-    console.log("this is lewda data:", theAns);
     axios
       .post(`http://localhost:8000/api/v1/result/${testtype}`, { theAns })
       .then((response) => {
-        console.log("Submission successful:", response.data.data);
         navigate("/user/screeningtest/result/Anxiety", {
           state: { resultData: response.data.data },
         });

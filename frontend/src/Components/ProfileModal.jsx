@@ -8,7 +8,6 @@ import Axios from "axios";
 
 const ProfileModal = ({ isVisible, onClose, _id,img }) => {
   const [counsellorData, setCounsellorData] = useState(null);
-  console.log(img);
   useEffect(() => {
     const fetchData = async () => {
       try {

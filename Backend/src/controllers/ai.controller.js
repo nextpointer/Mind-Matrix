@@ -101,13 +101,11 @@ async function runAi(prompt) {
     });
   
     const result = await chatSession.sendMessage(prompt);
-    console.log(result.response.text());
     return result.response.text();
   }
 
 export const getTheprompt = asyncHandler(async (req, res) => {
     const {inputMessage}= req.body;
-    console.log(inputMessage);
     
     
     if (!inputMessage) {

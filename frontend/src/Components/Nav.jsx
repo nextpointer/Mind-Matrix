@@ -46,7 +46,7 @@ export const Nav = (props) => {
 
       <StyledLink
         to={props.label === "Logout" ? "#" : props.link} // Prevent navigation for Logout
-        isActive={location.pathname === props.link}
+        isactive={location.pathname === props.link?"true":"false"} // Set active link
         onClick={handleClick} // Handle logout or default click
       >
         <NavContainer>
@@ -73,7 +73,7 @@ const StyledLink = styled(Link)`
   gap: 6px;
 
   ${(props) =>
-    props.isActive &&
+    props.isactive=="true" &&
     `
     color: var(--primary-color); 
     font-weight: bold;

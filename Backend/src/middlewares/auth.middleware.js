@@ -8,14 +8,12 @@ dotenv.config({
 });
 
 export const verifyToken = asyncHandler(async (req, _, next) => {
-  console.log("verifyToken middleware called");
   try {
     // retrieve the accessToken from the cookie
     const token =
       req.cookies?.AccessToken ||
       req.header("Authorization")?.replace("Bearer ", "").trim();
 
-    console.log("Retrieved token:", token);
 
     // throw error if token is not available
     if (!token) {
@@ -24,7 +22,6 @@ export const verifyToken = asyncHandler(async (req, _, next) => {
 
     // decode the token
     const decodedToken = await jwt.verify(token, process.env.ACCESSTOKENSECRET);
-    console.log("Decoded Token:", decodedToken);
 
     // finding the user
     const presentUser = await user

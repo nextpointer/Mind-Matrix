@@ -11,7 +11,7 @@ const Slider = ({ photos, interval = 3000000 }) => {
     if (photos.length > 0) {
       const timer = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
-      }, interval);
+      }, 3000);
 
       return () => clearInterval(timer);
     }
@@ -41,8 +41,8 @@ Slider.propTypes = {
   interval: PropTypes.number,
 };
 
-Slider.defaultProps = {
-  interval: 3000,
-};
+// Slider.defaultProps = {
+//   interval: 3000,
+// };
 
 export default Slider;
