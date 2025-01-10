@@ -1,5 +1,5 @@
-import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/ApiError.js";
+import { asyncHandler } from "../utils/asyncHandler.mjs";
+import { ApiError } from "../utils/ApiError.mjs";
 import {
     GoogleGenerativeAI,
   } from "@google/generative-ai";

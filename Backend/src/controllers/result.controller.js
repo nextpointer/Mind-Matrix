@@ -1,6 +1,6 @@
-import { asyncHandler } from "../utils/asyncHandler.js";
-import { ApiError } from "../utils/ApiError.js";
-import { ApiResponse } from "../utils/ApiResponse.js";
+import { asyncHandler } from "../utils/asyncHandler.mjs";
+import { ApiError } from "../utils/ApiError.mjs";
+import { ApiResponse } from "../utils/ApiResponse.mjs";
 import { Result } from "../models/result.model.js";
 
 
