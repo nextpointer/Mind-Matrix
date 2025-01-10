@@ -5,7 +5,12 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    optionsSuccessStatus: 200,
+    maxAge: 3600,
   })
 );
 
