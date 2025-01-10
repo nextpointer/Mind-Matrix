@@ -6,6 +6,7 @@ import axios from "axios";
 import Loader from "../Components/Loader"; // Import Loader component
 import { useAlert } from "../Store/useAlert";
 import Alert from "../Components/Alert";
+import { api } from "../lib/axios.config";
 
 export const Nav = (props) => {
   const location = useLocation();
@@ -16,7 +17,7 @@ export const Nav = (props) => {
     setLoading(true); // Start loading
 
     try {
-      await axios.post("/go/api/v1/user/logout", null, {
+      await api.post("/user/logout", null, {
         withCredentials: true, // Include cookies
       });
 

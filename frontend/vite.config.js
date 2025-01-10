@@ -8,10 +8,10 @@ export default defineConfig({
     historyApiFallback: true, // This enables fallback for SPA
     proxy: {
       '/': 'https://mindrix.vercel.app/',
-      '/go': {
+      '/api': {
         target: 'https://mind-matrix.onrender.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/go/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

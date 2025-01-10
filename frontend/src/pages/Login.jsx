@@ -6,6 +6,7 @@ import axios from "axios";
 import Loader from "../Components/Loader";
 import Alert from "../Components/Alert"; // Import your Alert component
 import { useAlert } from "../Store/useAlert.js";
+import { api } from "../lib/axios.config.js";
 
 export const Login = () => {
   const [Email, setEmail] = useState("");
@@ -46,8 +47,8 @@ export const Login = () => {
     setAlert({ ...alert, visible: false }); // Reset alert before submitting
 
     try {
-      const response = await axios.post(
-        "/go/api/v1/user/login",
+      const response = await api.post(
+        "/login",
         { Email, Password },
         { withCredentials: true }
       );

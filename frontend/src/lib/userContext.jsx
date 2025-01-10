@@ -4,6 +4,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import Loader from "../Components/Loader";
+import { api } from "./axios.config";
 
 // Create the AuthContext
 const AuthContext = createContext();
@@ -27,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await axios.get("/go/api/v1/user/", {
+        const response = await api.get("/user/", {
           headers: { Authorization: `Bearer ${token}` }, // Correct Authorization header format
         });
         setCurrentUser(response.data.user); // Set the user data
