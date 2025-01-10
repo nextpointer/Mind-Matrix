@@ -5,7 +5,8 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
-    origin: "*", 
+    origin: process.env.CORS_ORIGIN, 
+    credentials: true // allow session cookie from browser to pass through
   })
 );
 
