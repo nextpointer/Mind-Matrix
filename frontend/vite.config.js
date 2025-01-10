@@ -5,8 +5,9 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   server: {
+    historyApiFallback: true, // This enables fallback for SPA
     proxy: {
-      '/foo': 'https://mindrix.vercel.app/',
+      '/': 'https://mindrix.vercel.app/',
       '/go': {
         target: 'https://mind-matrix.onrender.com',
         changeOrigin: true,
