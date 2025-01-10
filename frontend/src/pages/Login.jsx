@@ -50,7 +50,7 @@ export const Login = () => {
       const response = await api.post(
         "/login",
         { Email, Password },
-        { withCredentials: true, credentials: "include", crossDomain: true, headers: { "Content-Type": "application/json" } }
+        { crossDomain: true, headers: { "Content-Type": "application/json" } }
       );
 
       // Display success alert
