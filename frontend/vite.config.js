@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
+      '/foo': 'https://mindrix.vercel.app/',
       '/go': {
         target: 'https://mind-matrix.onrender.com',
         changeOrigin: true,
