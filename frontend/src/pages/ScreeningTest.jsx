@@ -6,6 +6,7 @@ import NormalButtons from "../Components/NormalButton";
 import Loader from "../Components/Loader";
 import { QuestionOptions } from "../Components/QuestionOptions";
 import "../styles/screeningtest.css";
+import { api } from "../lib/axios.config";
 
 export const ScreeningTest = () => {
   const { testtype } = useParams();
@@ -20,8 +21,8 @@ export const ScreeningTest = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get(
-          `/go/api/v1/questions/test/${testtype}`
+        const response = await api.get(
+          `/questions/test/${testtype}`
         );
         const data = response.data.data; // Access the data property directly
         if (data && data.Questions) {
@@ -52,8 +53,8 @@ export const ScreeningTest = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const theAns = JSON.stringify(answers);
-    axios
-      .post(`/go/api/v1/result/${testtype}`, { theAns })
+    api
+      .post(`/result/${testtype}`, { theAns })
       .then((response) => {
         navigate("/user/screeningtest/result/Anxiety", {
           state: { resultData: response.data.data },

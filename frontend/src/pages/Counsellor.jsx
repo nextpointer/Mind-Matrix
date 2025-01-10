@@ -3,16 +3,16 @@ import { CounsellorBar } from '../Components/CounsellorBar';
 import { NavSection } from '../Components/NavSection';
 import Loader from '../Components/Loader';
 import '../styles/counsellor.css';
-import axios from 'axios';
+import { api } from '../lib/axios.config';
 
 export const Counsellor = () => {
   const [counselors, setCounselors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_URL = '/go/api/v1/counsellors';
+  const API_URL = '/counsellors';
 
   const fetchCounselors = async () => {
-    const response = await axios.get(API_URL);
+    const response = await api.get(API_URL);
     return response.data.data; // Adjust based on actual API response structure
   };
 

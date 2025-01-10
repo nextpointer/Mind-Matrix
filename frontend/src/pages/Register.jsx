@@ -5,7 +5,7 @@ import RadioInput from "../Components/RadioInput";
 // import Toggle from "../Components/Toggle";
 import NormalButtons from "../Components/NormalButton";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { api } from "../lib/axios.config";
 import { useState } from "react";
 
 export const Register = () => {
@@ -50,7 +50,7 @@ export const Register = () => {
         IsCounsellor:formData.IsCounsellor
       };
       console.log(dataToSend);
-      const response = await axios.post("/go/api/v1/user/register", formData);
+      const response = await api.post("/user/register", formData);
       console.log(response.data);
       alert("Registered successfully");
       // Handle success (e.g., redirect to login page)

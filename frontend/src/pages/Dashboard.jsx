@@ -33,6 +33,7 @@ import yt2 from "/images/yt2.png";
 import yt3 from "/images/yt3.png";
 
 
+
 const ytphotos = [yt1, yt2, yt3];
 const counphotes = [coun1, coun2, coun3];
 const mediphotes = [m1, m2, m3];

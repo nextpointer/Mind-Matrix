@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 import { SubHeading } from "./SubHeading";
 import Ratings from "./Ratings";
 import NormalButtons from "./NormalButton";
-import Axios from "axios";
+import { api } from "../lib/axios.config";
 
 const ProfileModal = ({ isVisible, onClose, _id,img }) => {
   const [counsellorData, setCounsellorData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await Axios.get(`/go/api/v1/counsellors/${_id}`);
+        const response = await api.get(`/counsellors/${_id}`);
         setCounsellorData(response.data.data);
       } catch (error) {
         console.error("Error fetching counsellor data:", error);

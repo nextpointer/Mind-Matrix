@@ -6,15 +6,15 @@ import "../styles/chatbot.css";
 import { useAuth } from "../lib/userContext";
 import axios from "axios";
 import { useLoading } from "../Store/useLoading";
-import Alert from "../Components/Alert";
 import { useAlert } from "../Store/useAlert";
+import { api } from "../lib/axios.config";
 
 export const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [headerVisible, setHeaderVisible] = useState(true);
-  const {_,setLoading} = useLoading();
-  const {alert,setAlert}  = useAlert()
+  const {setLoading} = useLoading();
+  const {setAlert}  = useAlert()
   
   
 
@@ -39,7 +39,7 @@ export const ChatBot = () => {
       setLoading(true);
       // Send the message to the backend API
       try {
-        const response = await axios.post("/go/api/v1/ai", { inputMessage });
+        const response = await api.post("/ai", { inputMessage });
         
 
 
