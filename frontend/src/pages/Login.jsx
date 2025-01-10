@@ -50,7 +50,7 @@ export const Login = () => {
       const response = await api.post(
         "/login",
         { Email, Password },
-        { withCredentials: false }
+        { withCredentials: true }
       );
 
       // Display success alert
