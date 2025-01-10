@@ -1,7 +1,7 @@
-import { asyncHandler } from "../utils/asyncHandler.mjs";
-import { ApiError } from "../utils/ApiError.mjs";
-import { ApiResponse } from "../utils/ApiResponse.mjs";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
 import { user } from "../models/user.model.js";
+import { ApiError } from "../utils/APiError.js";
 import generateAccessAndRefreshToken from "../libs/tokenGen.js";
 
 export const registerUser = asyncHandler(async (req, res) => {

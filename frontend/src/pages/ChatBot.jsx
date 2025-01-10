@@ -67,9 +67,6 @@ export const ChatBot = () => {
     <div id="ChatBot-Container">
       <NavSection />
       <div id="ChatBot-Body">
-        {alert.visible && (
-                <Alert type={alert.type} string={alert.message} duration={9000} />
-              )}
         {headerVisible && (
           <div className="chatbot-header-example">
             <div className="chatbot-header">
