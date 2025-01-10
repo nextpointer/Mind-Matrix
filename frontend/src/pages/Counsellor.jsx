@@ -9,7 +9,7 @@ export const Counsellor = () => {
   const [counselors, setCounselors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_URL = 'http://localhost:8000/api/v1/counsellors';
+  const API_URL = '/go/api/v1/counsellors';
 
   const fetchCounselors = async () => {
     const response = await axios.get(API_URL);

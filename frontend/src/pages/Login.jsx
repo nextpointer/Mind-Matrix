@@ -47,7 +47,7 @@ export const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
+        "/go/api/v1/user/login",
         { Email, Password },
         { withCredentials: true }
       );

@@ -50,7 +50,7 @@ export const Register = () => {
         IsCounsellor:formData.IsCounsellor
       };
       console.log(dataToSend);
-      const response = await axios.post("http://localhost:8000/api/v1/user/register", formData);
+      const response = await axios.post("/go/api/v1/user/register", formData);
       console.log(response.data);
       alert("Registered successfully");
       // Handle success (e.g., redirect to login page)

@@ -11,7 +11,7 @@ const ProfileModal = ({ isVisible, onClose, _id,img }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await Axios.get(`http://localhost:8000/api/v1/counsellors/${_id}`);
+        const response = await Axios.get(`/go/api/v1/counsellors/${_id}`);
         setCounsellorData(response.data.data);
       } catch (error) {
         console.error("Error fetching counsellor data:", error);

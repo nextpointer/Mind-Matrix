@@ -34,6 +34,7 @@ export default function RadioGroup({ value, onChange }) {
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 28,
+            color: "rgba(0, 0, 0)",
           },
         }}
       />
@@ -42,6 +43,7 @@ export default function RadioGroup({ value, onChange }) {
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 32,
+            color: "rgba(0, 0, 0)",
           },
         }}
       />
@@ -50,6 +52,7 @@ export default function RadioGroup({ value, onChange }) {
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 38,
+            color: "rgba(0, 0, 0)",
           },
         }}
       />
@@ -58,6 +61,7 @@ export default function RadioGroup({ value, onChange }) {
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 32,
+            color: "rgba(0, 0, 0)",
           },
         }}
       />
@@ -66,6 +70,7 @@ export default function RadioGroup({ value, onChange }) {
         sx={{
           "& .MuiSvgIcon-root": {
             fontSize: 28,
+            color: "rgba(0, 0, 0)",
           },
         }}
       />

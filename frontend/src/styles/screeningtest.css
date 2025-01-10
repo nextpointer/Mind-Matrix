@@ -135,7 +135,8 @@ form{
 .testForm button:nth-child(1){
   position: relative;
   left: 33vw;
-  top: 4vh;
+  top: 3vh;
+  
 }
 
 
@@ -178,6 +179,11 @@ form{
     justify-content: space-around;
     align-items: center;
     padding-left: 10px;
+  }
+  .testForm button:nth-child(1){
+    left: 20vw;
+    margin-bottom: 2rem;
+    
   }
 
   /* #test-section {

@@ -21,7 +21,7 @@ export const ScreeningTest = () => {
     const fetchQuestions = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/questions/test/${testtype}`
+          `/go/api/v1/questions/test/${testtype}`
         );
         const data = response.data.data; // Access the data property directly
         if (data && data.Questions) {
@@ -53,7 +53,7 @@ export const ScreeningTest = () => {
     event.preventDefault();
     const theAns = JSON.stringify(answers);
     axios
-      .post(`http://localhost:8000/api/v1/result/${testtype}`, { theAns })
+      .post(`/go/api/v1/result/${testtype}`, { theAns })
       .then((response) => {
         navigate("/user/screeningtest/result/Anxiety", {
           state: { resultData: response.data.data },

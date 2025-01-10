@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const response = await axios.get("http://localhost:8000/api/v1/user/", {
+        const response = await axios.get("/go/api/v1/user/", {
           headers: { Authorization: `Bearer ${token}` }, // Correct Authorization header format
         });
         setCurrentUser(response.data.user); // Set the user data

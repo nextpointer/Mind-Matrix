@@ -39,7 +39,7 @@ export const ChatBot = () => {
       setLoading(true);
       // Send the message to the backend API
       try {
-        const response = await axios.post("http://localhost:8000/api/v1/ai", { inputMessage });
+        const response = await axios.post("/go/api/v1/ai", { inputMessage });
         
 
 

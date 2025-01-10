@@ -16,7 +16,7 @@ export const Nav = (props) => {
     setLoading(true); // Start loading
 
     try {
-      await axios.post("http://localhost:8000/api/v1/user/logout", null, {
+      await axios.post("/go/api/v1/user/logout", null, {
         withCredentials: true, // Include cookies
       });
 
