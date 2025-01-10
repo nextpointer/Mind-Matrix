@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 const app = express();
 app.use(
   cors({
-    origin: "https://mindrix.vercel.app/", 
+    origin: "*", 
     credentials: true // allow session cookie from browser to pass through
   })
 );
