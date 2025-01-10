@@ -49,8 +49,7 @@ export const Login = () => {
     try {
       const response = await api.post(
         "/login",
-        { Email, Password },
-        { withCredentials: false }
+        { Email, Password }
       );
 
       // Display success alert
