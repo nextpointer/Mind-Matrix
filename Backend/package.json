@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' node src/index.js"
   },
   "author": "",
   "license": "ISC",
