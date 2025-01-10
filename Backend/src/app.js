@@ -6,7 +6,6 @@ const app = express();
 app.use(
   cors({
     origin: "*", 
-    credentials: true // allow session cookie from browser to pass through
   })
 );
 
