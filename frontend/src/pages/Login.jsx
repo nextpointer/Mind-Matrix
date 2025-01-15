@@ -48,7 +48,7 @@ export const Login = () => {
 
     try {
       const response = await api.post(
-        "/login",
+        "/user/login",
         { Email, Password },
         { crossDomain: true, headers: { "Content-Type": "application/json" } }
       );
