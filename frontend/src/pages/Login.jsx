@@ -63,8 +63,7 @@ export const Login = () => {
       console.log("login successful");
       
 
-      // Navigate to dashboard after a short delay
-      setTimeout(() => navigate("user/dashboard"), 2000);
+      navigate("/user/dashboard")
     } catch (error) {
       // Display error alert
       const errorMessage =
