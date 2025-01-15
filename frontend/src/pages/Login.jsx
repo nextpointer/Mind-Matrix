@@ -64,7 +64,7 @@ export const Login = () => {
       
 
       // Navigate to dashboard after a short delay
-      setTimeout(() => navigate("https://mindrix.vercel.app/user/dashboard"), 2000);
+      setTimeout(() => navigate("/user/dashboard"), 2000);
     } catch (error) {
       // Display error alert
       const errorMessage =
