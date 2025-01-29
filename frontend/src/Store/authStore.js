@@ -41,7 +41,7 @@ export const useAuthStore = create((set) => ({
     }
 
     try {
-      const response = await api.get('/', {
+      const response = await api.get('/user', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
