@@ -54,7 +54,7 @@ export const Login = () => {
       );
       console.log(response);
       
-      login(response.data.user, response.data.token); // Login function from authStore
+      login(response.data.user, response.data.AccessToken); // Login function from authStore
       navigate("/user/dashboard")
 
       // Display success alert
