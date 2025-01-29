@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true, // This is crucial for cookies
   headers: {
@@ -9,14 +9,3 @@ const api = axios.create({
   },
 });
 
-
-// Add request interceptor to include token
-api.interceptors.request.use((config) => {
-  const token = Cookies.get('AccessToken');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
-
-export {api};
