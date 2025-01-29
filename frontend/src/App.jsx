@@ -1,21 +1,20 @@
 // src/App.js
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Root } from "./Root";
-import { Home } from "./pages/Home";
-import { Error } from "./pages/Error";
-import { Login } from "./pages/Login";
-import { Dashboard } from "./pages/Dashboard";
-import { Register } from "./pages/Register";
-import { ChatBot } from "./pages/ChatBot";
-import { Catagory } from "./pages/Catagory";
-import { ScreeningTest } from "./pages/ScreeningTest";
-import { TestResult } from "./pages/TestResult";
-import { Counsellor } from "./pages/Counsellor";
-import { Meditation } from "./pages/Meditation";
-import { Video } from "./pages/Video";
+import Root from "./Root";
+import Home from "./pages/Home";
+import Error from "./pages/Error";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Register from "./pages/Register";
+import ChatBot from "./pages/ChatBot";
+import Catagory from "./pages/Catagory";
+import ScreeningTest from "./pages/ScreeningTest";
+import TestResult from "./pages/TestResult";
+import Counsellor from "./pages/Counsellor";
+import Meditation from "./pages/Meditation";
+import Video from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
-
 
 function App() {
   const router = createBrowserRouter([
@@ -30,81 +29,65 @@ function App() {
         {
           path: "/user/dashboard",
           element: (
-            
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/ai",
           element: (
-            
-              <ProtectedRoute>
-                <ChatBot />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <ChatBot />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/video",
           element: (
-            
-              <ProtectedRoute>
-                <Video />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <Video />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/meditation",
           element: (
-            
-              <ProtectedRoute>
-                <Meditation />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <Meditation />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/counsellor",
           element: (
-            
-              <ProtectedRoute>
-                <Counsellor />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <Counsellor />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/screeningtest/catagory",
           element: (
-            
-              <ProtectedRoute>
-                <Catagory />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <Catagory />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/screeningtest/:testtype",
           element: (
-            
-              <ProtectedRoute>
-                <ScreeningTest />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <ScreeningTest />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/screeningtest/result/:testtype",
           element: (
-            
-              <ProtectedRoute>
-                <TestResult />
-              </ProtectedRoute>
-            
+            <ProtectedRoute>
+              <TestResult />
+            </ProtectedRoute>
           ),
         },
       ],
@@ -112,7 +95,7 @@ function App() {
   ]);
 
   return (
-    <>       
+    <>
       <RouterProvider router={router} />
     </>
   );

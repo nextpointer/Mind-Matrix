@@ -91,8 +91,10 @@ export const loginUser = asyncHandler(async (req, res) => {
   // configure the cookie option
   const option = {
     secure: true,
-    sameSite: "strict",
-    path: '/'
+    sameSite: "none",
+    domain: ".onrender.com",
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    path: "/",
   };
 
   // return the response
@@ -111,11 +113,9 @@ export const loginUser = asyncHandler(async (req, res) => {
         "User LoggedIn Successfully"
       )
     );
-  
 });
 
 export const LogOutUser = asyncHandler(async (req, res) => {
-  
   await user.findByIdAndUpdate(
     req.User._id,
     {
@@ -141,7 +141,9 @@ export const LogOutUser = asyncHandler(async (req, res) => {
 
 export const getUserInfo = asyncHandler(async (req, res) => {
   const userId = req.User._id;
-  const userInfo = await user.findById(userId).select('-Password -RefreshToken');
+  const userInfo = await user
+    .findById(userId)
+    .select("-Password -RefreshToken");
   if (!userInfo) {
     throw new ApiError(404, "User not found");
   }
