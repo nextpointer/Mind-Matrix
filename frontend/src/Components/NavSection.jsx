@@ -1,7 +1,6 @@
 import "../styles//ComponentStyle/Navbar.css";
 import { Nav } from "./Nav";
-import PropTypes from "prop-types";
-import { useAuth } from "../lib/userContext";
+import { useAuthStore } from "../Store/authStore";
 import { useRef, useState } from "react";
 
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
@@ -10,7 +9,7 @@ import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined
 
 
 export const NavSection = () => {
-  const { currentUser } = useAuth();
+  const { currentUser } = useAuthStore();
   const navRef = useRef();
   const [visible,setVisible]  = useState(true);
   const navHide = () => {

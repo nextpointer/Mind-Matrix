@@ -2,13 +2,13 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
 import Loader from "../Components/Loader"; // Import Loader component
 import { useAlert } from "../Store/useAlert";
-import Alert from "../Components/Alert";
 import { api } from "../lib/axios.config";
+import { useAuthStore } from "../Store/authStore";
 
 export const Nav = (props) => {
+  const { logout } = useAuthStore();
   const location = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false); // Loading state for logout
@@ -17,9 +17,8 @@ export const Nav = (props) => {
     setLoading(true); // Start loading
 
     try {
-      await api.post("/user/logout", null, {
-        withCredentials: true, // Include cookies
-      });
+      await api.post("/user/logout");
+      logout(); // Clear auth state
 
       // Display success alert and navigate to login
       setAlert({ type: "success", message: "Logout successful!", visible: true });

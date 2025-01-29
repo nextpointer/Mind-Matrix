@@ -3,8 +3,7 @@ import { Box } from "../Components/Box";
 import ChatWindow from "../Components/ChatWindow";
 import { NavSection } from "../Components/NavSection";
 import "../styles/chatbot.css";
-import { useAuth } from "../lib/userContext";
-import axios from "axios";
+import { useAuthStore } from "../Store/authStore";
 import { useLoading } from "../Store/useLoading";
 import { useAlert } from "../Store/useAlert";
 import { api } from "../lib/axios.config";
@@ -18,7 +17,7 @@ export const ChatBot = () => {
   
   
 
-  const { currentUser } = useAuth();
+  const { currentUser } = useAuthStore();
 
   const handleChange = (e) => {
     setInputMessage(e.target.value);

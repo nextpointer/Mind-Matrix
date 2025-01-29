@@ -50,8 +50,7 @@ export const Login = () => {
     try {
       const response = await api.post(
         "/user/login",
-        { Email, Password },
-        { crossDomain: true, headers: { "Content-Type": "application/json" } }
+        { Email, Password } 
       );
       login(response.data.user, response.data.token); // Login function from authStore
       navigate("/user/dashboard")
