@@ -9,7 +9,6 @@ export const useAuthStore = create((set) => ({
   error: null,
 
   login: (userData, token) => {
-    console.log("zus",token);
     
     Cookies.set('AccessToken', token, { 
       secure: true, 

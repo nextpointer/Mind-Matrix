@@ -52,10 +52,8 @@ export const Login = () => {
         "/user/login",
         { Email, Password } 
       );
-      console.log(response);
-      console.log("login page ",response.data.data.AccessToken); // Login function from authStore
       
-      login(response.data.user, response.data.data.AccessToken); // Login function from authStore
+      login(response.data.data.user, response.data.data.AccessToken); // Login function from authStore
       navigate("/user/dashboard")
 
       // Display success alert
