@@ -1,20 +1,21 @@
 // src/App.js
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./Root";
-import Home from "./pages/Home";
-import Error from "./pages/Error";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Register from "./pages/Register";
-import ChatBot from "./pages/ChatBot";
-import Catagory from "./pages/Catagory";
-import ScreeningTest from "./pages/ScreeningTest";
-import TestResult from "./pages/TestResult";
-import Counsellor from "./pages/Counsellor";
-import Meditation from "./pages/Meditation";
-import Video from "./pages/Video";
+import { Root } from "./Root";
+import { Home } from "./pages/Home";
+import { Error } from "./pages/Error";
+import { Login } from "./pages/Login";
+import { Dashboard } from "./pages/Dashboard";
+import { Register } from "./pages/Register";
+import { ChatBot } from "./pages/ChatBot";
+import { Catagory } from "./pages/Catagory";
+import { ScreeningTest } from "./pages/ScreeningTest";
+import { TestResult } from "./pages/TestResult";
+import { Counsellor } from "./pages/Counsellor";
+import { Meditation } from "./pages/Meditation";
+import { Video } from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
+import { AuthProvider } from "./lib/userContext.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,65 +30,81 @@ function App() {
         {
           path: "/user/dashboard",
           element: (
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
           path: "/user/ai",
           element: (
-            <ProtectedRoute>
-              <ChatBot />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <ChatBot />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
           path: "/user/video",
           element: (
-            <ProtectedRoute>
-              <Video />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <Video />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
           path: "/user/meditation",
           element: (
-            <ProtectedRoute>
-              <Meditation />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <Meditation />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
           path: "/user/counsellor",
           element: (
-            <ProtectedRoute>
-              <Counsellor />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <Counsellor />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
           path: "/user/screeningtest/catagory",
           element: (
-            <ProtectedRoute>
-              <Catagory />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <Catagory />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
           path: "/user/screeningtest/:testtype",
           element: (
-            <ProtectedRoute>
-              <ScreeningTest />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <ScreeningTest />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
         {
           path: "/user/screeningtest/result/:testtype",
           element: (
-            <ProtectedRoute>
-              <TestResult />
-            </ProtectedRoute>
+            <AuthProvider>
+              <ProtectedRoute>
+                <TestResult />
+              </ProtectedRoute>
+            </AuthProvider>
           ),
         },
       ],
@@ -95,7 +112,7 @@ function App() {
   ]);
 
   return (
-    <>
+    <>       
       <RouterProvider router={router} />
     </>
   );
