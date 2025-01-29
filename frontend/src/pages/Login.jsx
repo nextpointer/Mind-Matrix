@@ -2,13 +2,14 @@ import NormalButtons from "../Components/NormalButton";
 import "../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
 import Loader from "../Components/Loader";
 import Alert from "../Components/Alert"; // Import your Alert component
 import { useAlert } from "../Store/useAlert.js";
 import { api } from "../lib/axios.config.js";
+import { useAuthStore } from "../Store/authStore.js";
 
 export const Login = () => {
+  const { login } = useAuthStore();
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -52,6 +53,8 @@ export const Login = () => {
         { Email, Password },
         { crossDomain: true, headers: { "Content-Type": "application/json" } }
       );
+      login(response.data.user, response.data.token); // Login function from authStore
+      navigate("/user/dashboard")
 
       // Display success alert
       setAlert({
@@ -63,7 +66,6 @@ export const Login = () => {
       console.log("login successful");
       
 
-      navigate("/user/dashboard")
     } catch (error) {
       // Display error alert
       const errorMessage =
