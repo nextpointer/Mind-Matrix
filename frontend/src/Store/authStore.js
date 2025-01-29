@@ -41,7 +41,7 @@ export const useAuthStore = create((set) => ({
     }
 
     try {
-      const response = await api.get('/auth/verify', {
+      const response = await api.get('/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
