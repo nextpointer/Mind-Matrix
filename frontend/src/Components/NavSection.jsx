@@ -9,7 +9,7 @@ import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined
 
 
 export const NavSection = () => {
-  const { currentUser } = useAuthStore();
+  const { currentUser } = useAuthStore() || {};
   const navRef = useRef();
   const [visible,setVisible]  = useState(true);
   const navHide = () => {

@@ -17,7 +17,7 @@ export const ChatBot = () => {
   
   
 
-  const { currentUser } = useAuthStore();
+  const { currentUser } = useAuthStore() || {};
 
   const handleChange = (e) => {
     setInputMessage(e.target.value);

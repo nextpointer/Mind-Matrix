@@ -34,7 +34,7 @@ const mediphotes = [m1, m2, m3];
 // The component for the dashboard page
 export const Dashboard = () => {
   const navigate = useNavigate();
-  const { currentUser } = useAuthStore()
+  const { currentUser } = useAuthStore() || {}
 
   const handleScreeningTest = (event) => {
     event.preventDefault();

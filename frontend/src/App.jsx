@@ -15,7 +15,6 @@ import { Counsellor } from "./pages/Counsellor";
 import { Meditation } from "./pages/Meditation";
 import { Video } from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
-import { AuthProvider } from "./lib/userContext.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,81 +29,65 @@ function App() {
         {
           path: "/user/dashboard",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/ai",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <ChatBot />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <ChatBot />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/video",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <Video />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <Video />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/meditation",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <Meditation />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <Meditation />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/counsellor",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <Counsellor />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <Counsellor />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/screeningtest/catagory",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <Catagory />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <Catagory />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/screeningtest/:testtype",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <ScreeningTest />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <ScreeningTest />
+            </ProtectedRoute>
           ),
         },
         {
           path: "/user/screeningtest/result/:testtype",
           element: (
-            <AuthProvider>
-              <ProtectedRoute>
-                <TestResult />
-              </ProtectedRoute>
-            </AuthProvider>
+            <ProtectedRoute>
+              <TestResult />
+            </ProtectedRoute>
           ),
         },
       ],
@@ -112,7 +95,7 @@ function App() {
   ]);
 
   return (
-    <>       
+    <>
       <RouterProvider router={router} />
     </>
   );
