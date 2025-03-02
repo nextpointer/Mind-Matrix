@@ -18,6 +18,7 @@ export const Register = () => {
   const [errors, setErrors] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [touched, setTouched] = useState({}); // Track touched fields
 
   const validateField = (name, value) => {
     let error = "";
@@ -67,8 +68,10 @@ export const Register = () => {
   };
 
   useEffect(() => {
-    validateForm();
-  }, [formData]);
+    if (Object.keys(touched).length > 0) {
+      validateForm();
+    }
+  }, [formData, touched]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -76,10 +79,22 @@ export const Register = () => {
       ...prev,
       [name]: value,
     }));
+    setTouched((prev) => ({ ...prev, [name]: true })); // Mark field as touched
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setTouched({
+      FirstName: true,
+      LastName: true,
+      Age: true,
+      Email: true,
+      Password: true,
+      ConfirmPassword: true,
+      Gender: true,
+    }); // Mark all fields as touched on submit
+    validateForm();
+
     if (!formValid) return;
 
     try {
@@ -123,7 +138,7 @@ export const Register = () => {
                     onChange={handleChange}
                     required
                   />
-                  {errors.FirstName && (
+                  {touched.FirstName && errors.FirstName && (
                     <span className="error">{errors.FirstName}</span>
                   )}
                 </div>
@@ -137,7 +152,7 @@ export const Register = () => {
                     onChange={handleChange}
                     required
                   />
-                  {errors.LastName && (
+                  {touched.LastName && errors.LastName && (
                     <span className="error">{errors.LastName}</span>
                   )}
                 </div>
@@ -154,7 +169,9 @@ export const Register = () => {
                     min="13"
                     max="120"
                   />
-                  {errors.Age && <span className="error">{errors.Age}</span>}
+                  {touched.Age && errors.Age && (
+                    <span className="error">{errors.Age}</span>
+                  )}
                 </div>
 
                 <div className="input-field">
@@ -191,7 +208,7 @@ export const Register = () => {
                       Other
                     </label>
                   </div>
-                  {errors.Gender && (
+                  {touched.Gender && errors.Gender && (
                     <span className="error">{errors.Gender}</span>
                   )}
                 </div>
@@ -206,7 +223,9 @@ export const Register = () => {
                   onChange={handleChange}
                   required
                 />
-                {errors.Email && <span className="error">{errors.Email}</span>}
+                {touched.Email && errors.Email && (
+                  <span className="error">{errors.Email}</span>
+                )}
               </div>
 
               <div className="input-group">
@@ -219,7 +238,7 @@ export const Register = () => {
                     onChange={handleChange}
                     required
                   />
-                  {errors.Password && (
+                  {touched.Password && errors.Password && (
                     <span className="error">{errors.Password}</span>
                   )}
                 </div>
@@ -233,7 +252,7 @@ export const Register = () => {
                     onChange={handleChange}
                     required
                   />
-                  {errors.ConfirmPassword && (
+                  {touched.ConfirmPassword && errors.ConfirmPassword && (
                     <span className="error">{errors.ConfirmPassword}</span>
                   )}
                 </div>
@@ -248,7 +267,8 @@ export const Register = () => {
               </button>
 
               <div className="login-redirect">
-                Already have an account? <Link to="/user/login">Sign in here</Link>
+                Already have an account?{" "}
+                <Link to="/user/login">Sign in here</Link>
               </div>
             </form>
           </div>
