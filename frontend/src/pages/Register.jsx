@@ -99,7 +99,7 @@ export const Register = () => {
 
     try {
       const response = await api.post("/user/register", formData);
-      if (response.data.success) {
+      if (response.data) {
         alert("Registration successful! Redirecting to login...");
         // Redirect to login page
       }
