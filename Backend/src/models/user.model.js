@@ -34,18 +34,6 @@ const userSchema = new Schema(
       enum: ['Male', 'Female', 'Other'],
       trim: true
     },
-    IsStudent: {
-      type: Boolean,
-      required: true
-    },
-    IsSubscribed: {
-      type: Boolean,
-      required: true
-    },
-    IsCounsellor: {
-      type: Boolean,
-      required: true
-    },
     RefreshToken: {
       type: String,
     }
