@@ -19,6 +19,7 @@ export const Register = () => {
   const [formValid, setFormValid] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [touched, setTouched] = useState({}); // Track touched fields
+  const [isSubmitting, setIsSubmitting] = useState(false); // Track form submission state
 
   const validateField = (name, value) => {
     let error = "";
@@ -97,6 +98,9 @@ export const Register = () => {
 
     if (!formValid) return;
 
+    setIsSubmitting(true); // Start loading
+    setSubmitError(""); // Clear previous errors
+
     try {
       const response = await api.post("/user/register", formData);
       if (response.data) {
@@ -107,6 +111,8 @@ export const Register = () => {
       setSubmitError(
         err.response?.data?.message || "Registration failed. Please try again."
       );
+    } finally {
+      setIsSubmitting(false); // Stop loading
     }
   };
 
@@ -261,9 +267,13 @@ export const Register = () => {
               <button
                 type="submit"
                 className="submit-button"
-                disabled={!formValid}
+                disabled={!formValid || isSubmitting}
               >
-                Create Account
+                {isSubmitting ? (
+                  <div className="loader"></div> // Loader inside the button
+                ) : (
+                  "Create Account"
+                )}
               </button>
 
               <div className="login-redirect">
@@ -281,3 +291,4 @@ export const Register = () => {
     </div>
   );
 };
+
