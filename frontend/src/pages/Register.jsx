@@ -102,7 +102,9 @@ export const Register = () => {
     setSubmitError(""); // Clear previous errors
 
     try {
-      const response = await api.post("/user/register", formData);
+      const dataToSend = { ...formData };
+      delete dataToSend.ConfirmPassword;
+      const response = await api.post("/user/register", dataToSend);
       if (response.data) {
         alert("Registration successful! Redirecting to login...");
         // Redirect to login page
