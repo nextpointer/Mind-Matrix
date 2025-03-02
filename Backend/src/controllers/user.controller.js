@@ -12,10 +12,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     Email,
     Password,
     Age,
-    Gender,
-    IsStudent,
-    IsSubscribed,
-    IsCounsellor,
+    Gender
   } = req.body;
 
   //   validate empty or not
@@ -25,10 +22,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     !Email ||
     !Password ||
     Age === undefined ||
-    !Gender ||
-    IsStudent === undefined ||
-    IsSubscribed === undefined ||
-    IsCounsellor === undefined
+    !Gender
   ) {
     throw new ApiError(400, "All fields are required!");
   }
@@ -45,10 +39,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     Email,
     Password,
     Age,
-    Gender,
-    IsStudent,
-    IsSubscribed,
-    IsCounsellor,
+    Gender
   });
 
   const createdUser = await user
