@@ -3,7 +3,7 @@
   height: inherit;
   width: var(--nav-width);
   /* min-width: 260px; */
-  /* background-color: rgb(255, 255, 255); */
+  /* background-color: rgb(105, 27, 27); */
   border-radius: 24px;
   /* border: 1px solid black; */
   display: flex;
@@ -11,7 +11,7 @@
   justify-content: space-between;
   flex-direction: column;
   padding: 5px;
-  transition: all ease 0.8s;
+  transition: all ease 0.1s;
   overflow: hidden;
 }
 
@@ -71,17 +71,13 @@
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .outline-profile-pic {
-  border: 1px solid rgb(128, 127, 127);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   transition: all ease 0.1s;
-  &:hover {
-    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
-  }
 }
 .inline-profile-pic {
   /* background-color: rgb(123, 123, 123); */

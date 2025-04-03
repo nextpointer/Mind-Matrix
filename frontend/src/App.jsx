@@ -15,6 +15,7 @@ import { Counsellor } from "./pages/Counsellor";
 import { Meditation } from "./pages/Meditation";
 import { Video } from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
+import AboutPage from "./pages/About";
 
 function App() {
   const router = createBrowserRouter([
@@ -89,6 +90,10 @@ function App() {
               <TestResult />
             </ProtectedRoute>
           ),
+        },
+        {
+          path: "/about",
+          element: <AboutPage />,
         },
       ],
     },

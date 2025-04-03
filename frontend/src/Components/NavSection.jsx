@@ -2,9 +2,9 @@ import "../styles//ComponentStyle/Navbar.css";
 import { Nav } from "./Nav";
 import { useAuthStore } from "../Store/authStore";
 import { useRef, useState } from "react";
-
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
+import Avatar from '@mui/material/Avatar';
+import KeyboardDoubleArrowLeftTwoToneIcon from '@mui/icons-material/KeyboardDoubleArrowLeftTwoTone';
+import KeyboardDoubleArrowRightTwoToneIcon from '@mui/icons-material/KeyboardDoubleArrowRightTwoTone';
 
 
 
@@ -24,9 +24,7 @@ export const NavSection = () => {
         </div>
         <div id="dashboard-profile-section">
           <div className="outline-profile-pic">
-            <div className="inline-profile-pic">
-              <img src="/images/beard.svg" alt="" />
-            </div>
+          <Avatar  sx={{ width:"100%",height:"100%",bgcolor:"var(--primary-color)",color:"black",fontSize:"1.8rem",fontWeight:"normal"}}>{currentUser.FirstName.at(0)}</Avatar>
           </div>
           <p className="profile-name">
             {currentUser.FirstName} {currentUser.LastName}
@@ -76,7 +74,7 @@ export const NavSection = () => {
         </div>
       </div>
       <button className="hide-and-seek" onClick={navHide}>
-        {visible?<VisibilityOffOutlinedIcon/>:<VisibilityOutlinedIcon/>}
+        {visible?<KeyboardDoubleArrowLeftTwoToneIcon/>:<KeyboardDoubleArrowRightTwoToneIcon/>}
       </button>
     </>
   );

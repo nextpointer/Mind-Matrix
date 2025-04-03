@@ -15,6 +15,7 @@ dist-ssr
 .env.dev
 .env.production
 .env.local
+.env
 
 
 # Editor directories and files
