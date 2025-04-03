@@ -5,7 +5,7 @@
     height:15.875em;
     padding: 1rem;
     background-color: var(--primary-color);
-    border: 1px solid rgb(162, 162, 162);
+    /* border: 1px solid rgb(162, 162, 162); */
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-radius: 0.7rem;

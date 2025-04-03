@@ -10,7 +10,7 @@ export const Card = (props) => {
     navigate(props.link);
   };
   return (
-      < div className="box" >
+      <div className="box" >
         <span className="title" style={{color:"black"}}>{props.header}</span>
         <div>
           <strong style={{color:"black"}}>{props.about}</strong>
