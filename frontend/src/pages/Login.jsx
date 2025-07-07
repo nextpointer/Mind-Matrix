@@ -7,6 +7,8 @@ import { useAlert } from "../Store/useAlert";
 import { useAuthStore } from "../Store/authStore";
 import { api } from "../lib/axios.config";
 import "../styles/login.css";
+import "../styles/register.css";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export const Login = () => {
   const { login } = useAuthStore();
@@ -21,7 +23,10 @@ export const Login = () => {
   // Helper function to show alerts
   const showAlert = (type, message, duration = 3000) => {
     setAlert({ type, message, visible: true });
-    setTimeout(() => setAlert({ type: "", message: "", visible: false }), duration);
+    setTimeout(
+      () => setAlert({ type: "", message: "", visible: false }),
+      duration
+    );
   };
 
   // Form validation
@@ -74,24 +79,19 @@ export const Login = () => {
 
   return (
     <>
-      <br />
-      <div className="homepage-logo-section">
-        <Link to="/" className="logo-link">
-          <p>MIND MATRIX</p>
-        </Link>
-      </div>
-      <h1 className="register-header">
-        <span>Welcome Back!</span>
-      </h1>
-
       {/* Show alert if visible */}
-      {alert.visible && <Alert type={alert.type} string={alert.message} duration={3000} />}
+      {alert.visible && (
+        <Alert type={alert.type} string={alert.message} duration={3000} />
+      )}
 
       <div id="login-page-container">
+        <div className="register-header-container">
+          <Link to={"/"}>
+            <ArrowBackIcon />
+          </Link>
+          <h1 className="register-header">Welcome Again</h1>
+        </div>
         <div className="login-box">
-          <div className="login-illustration">
-            <img src="/images/login.svg" alt="Login Illustration" />
-          </div>
           <div className="login-section">
             {loading ? (
               <Loader barcolor="var(--primary-color)" bg="white" />
@@ -99,7 +99,9 @@ export const Login = () => {
               <form className="form" onSubmit={handleSubmit}>
                 <div className="flex-column">
                   <label>Email</label>
-                  {errors.email && <span className="error">{errors.email}</span>}
+                  {errors.email && (
+                    <span className="error">{errors.email}</span>
+                  )}
                 </div>
                 <div className="inputForm">
                   <input
@@ -113,7 +115,9 @@ export const Login = () => {
 
                 <div className="flex-column">
                   <label>Password</label>
-                  {errors.password && <span className="error">{errors.password}</span>}
+                  {errors.password && (
+                    <span className="error">{errors.password}</span>
+                  )}
                 </div>
                 <div className="inputForm">
                   <input
@@ -131,7 +135,7 @@ export const Login = () => {
 
                 <p className="p">
                   Don&apos;t have an account?{" "}
-                  <span className="span">
+                  <span className="span-link">
                     <Link to="/user/register">Sign Up</Link>
                   </span>
                 </p>

@@ -74,15 +74,20 @@ const HomepageLogoLoginBar = styled.div`
 `;
 
 const HomepageLogoSection = styled.div`
+  .logo-link{
+    text-decoration: none;
+    color:black;
+  }
   .logo-link p {
+    width: 120px;
     font-size: 1rem;
-    color: #000000; 
     text-decoration: none;
     margin: 0;
     letter-spacing: 2px;
     transition: color 0.3s ease;
     /* background-color: green; */
-    text-align: center;
+    display: flex;
+    justify-content: start;
   }
 `;
 
@@ -121,7 +126,7 @@ const HeroHeader = styled.h1`
   color: #000000;
   margin-bottom: 20px;
   line-height: 1.2;
-    font-weight: 400;
+    font-weight: 500;
 
   span {
     display: inline-block;
@@ -143,7 +148,7 @@ const HeroSubheader = styled.h2`
   color: #1f1f1f;
   margin-bottom: 20px;
   line-height: 1.6;
-  font-weight: 200;
+  font-weight: 400;
 
   @media (max-width: 1024px) {
     font-size: 1.2rem;

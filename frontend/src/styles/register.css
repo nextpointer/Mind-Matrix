@@ -5,8 +5,9 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-    background: linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0 / 130dvw 130dvh,
-    conic-gradient(from 90deg at 1px 1px, #8880 90deg, #e2e1e1 0) center -1px / 50px 50px;
+  background: linear-gradient(180deg, #fff0 0%, #ffff 100%) 0 0 / 130dvw 130dvh,
+    conic-gradient(from 90deg at 1px 1px, #8880 90deg, #e2e1e1 0) center -1px / 50px
+      50px;
 }
 
 .register-content {
@@ -20,15 +21,16 @@
   /* background-color: blue; */
 }
 
-.register-header-container{
+.register-header-container {
   display: flex;
   align-items: center;
   justify-content: start;
   /* background-color: red; */
   width: 70%;
   gap: 1rem;
+  padding-left: 0.5rem;
 }
-.register-header-container>a{
+.register-header-container > a {
   text-decoration: none;
   color: black;
   margin-top: 0.5rem;
@@ -39,6 +41,7 @@
   color: #1a365d;
   margin: 2rem 0;
   font-size: 2.5rem;
+  font-weight: 500;
 }
 
 .register-box {
@@ -49,48 +52,45 @@
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  
 }
-.register-box { 
-  --filter-glass3d: blur(10px) brightness(0.3) saturate(2.5); 
+.register-box {
+  --filter-glass3d: blur(10px) brightness(0.3) saturate(2.5);
   /* --color-glass3d: hsl(189 80% 10% / 0.2);  */
-  --noise-glass3d: none; 
+  --noise-glass3d: none;
 
-  position: relative; 
-  z-index: 4;  
+  position: relative;
+  z-index: 4;
 }
 
-.register-box::before { 
-  content: ""; 
-  position: absolute; 
-  inset: 0; 
-  pointer-events: none; 
-  border-radius: inherit; 
-  overflow: hidden; 
-  z-index: 3; 
-  
-  -webkit-backdrop-filter: var(--filter-glass3d); 
-  backdrop-filter: var(--filter-glass3d); 
-  background-size: 100px; 
-  background-repeat: repeat; 
+.register-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 3;
+
+  -webkit-backdrop-filter: var(--filter-glass3d);
+  backdrop-filter: var(--filter-glass3d);
+  background-size: 100px;
+  background-repeat: repeat;
 }
 
-.register-box::after { 
-  content: ""; 
-  position: absolute; 
-  inset: 0; 
-  pointer-events: none; 
-  border-radius: inherit; 
-  overflow: hidden; 
-  z-index: 5; 
-
+.register-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 5;
 }
 
-.register-box > * { 
-  position: relative; 
-  z-index: 6; 
+.register-box > * {
+  position: relative;
+  z-index: 6;
 }
-
 
 .register-section {
   flex: 1;
@@ -198,8 +198,6 @@
   }
 }
 
-
-
 .login-redirect {
   text-align: center;
   color: #dadada;
@@ -232,7 +230,7 @@
     flex-direction: column;
     width: 100%;
   }
-  .register-header-container{
+  .register-header-container {
     width: 100%;
   }
 

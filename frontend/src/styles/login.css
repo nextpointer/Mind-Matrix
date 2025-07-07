@@ -2,39 +2,68 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   overflow-x: hidden;
+  background: linear-gradient(180deg, #fff0 0%, #ffff 100%) 0 0 / 130dvw 130dvh,
+    conic-gradient(from 90deg at 1px 1px, #8880 90deg, #e2e1e1 0) center -1px / 50px
+      50px;
 }
 
 .login-box {
-  height: 75vh;
-  width: 80%;
   border-radius: 24px;
   display: flex;
-  background: white;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  padding: 2rem;
+  margin-top: 4rem;
+}
+.login-box { 
+  --filter-glass3d: blur(10px) brightness(0.3) saturate(2.5); 
+  /* --color-glass3d: hsl(189 80% 10% / 0.2);  */
+  --noise-glass3d: none; 
+
+  position: relative; 
+  z-index: 4;  
 }
 
-.login-illustration {
-  height: inherit;
-  width: 50%;
-  border-radius: 24px;
-  overflow: hidden;
+.login-box::before { 
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  border-radius: inherit; 
+  overflow: hidden; 
+  z-index: 3; 
+  
+  -webkit-backdrop-filter: var(--filter-glass3d); 
+  backdrop-filter: var(--filter-glass3d); 
+  background-size: 100px; 
+  background-repeat: repeat; 
 }
 
-.login-illustration img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.login-box::after { 
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  border-radius: inherit; 
+  overflow: hidden; 
+  z-index: 5; 
+
 }
+
+.login-box > * { 
+  position: relative; 
+  z-index: 6; 
+}
+
 
 .login-section {
   height: inherit;
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .form {
@@ -42,7 +71,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 14px;
   padding: 30px;
   width: 100%;
   max-width: 450px;
@@ -52,12 +81,13 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  /* background-color: red; */
+  /* gap: 50px; */
 }
 
 .flex-column label {
-  color: #151717;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .inputForm {
@@ -67,7 +97,6 @@
   height: 50px;
   display: flex;
   align-items: center;
-  padding-left: 10px;
   transition: 0.2s ease-in-out;
 }
 
@@ -81,6 +110,10 @@
   height: 100%;
   background-color: transparent;
   font-size: 16px;
+  background-color: rgb(247, 247, 247);
+  border-radius: 10px;
+  padding: 1rem;
+  outline: none;
 }
 
 .input:focus {
@@ -99,17 +132,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .p {
   text-align: center;
-  color: black;
-  font-size: 14px;
+  color: rgb(204, 203, 203);
+  font-size: 16px;
   margin: 5px 0;
 }
 
-.span {
-  color: #2d79f3;
+.span-link {
+  /* color: #07101d; */
   font-weight: 500;
   cursor: pointer;
 }

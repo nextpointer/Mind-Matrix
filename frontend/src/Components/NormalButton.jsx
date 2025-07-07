@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line no-unused-vars
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: '#000000',
+  color: '#ffffff',
   backgroundColor: 'transparent',
   '&:hover': {
     color: '#000',
@@ -14,7 +14,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
     boxShadow: "0px 0px 20px 1px #5353533e"
   },
   padding: '8px 16px',
-  borderRadius: '24px',
+  borderRadius: '10px',
   border: '1px solid #958f8f',
 }));
 

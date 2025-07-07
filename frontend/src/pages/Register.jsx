@@ -139,6 +139,7 @@ export const Register = () => {
                 <div className="input-field">
                   <label>First Name</label>
                   <input
+                    placeholder="Eg: John"
                     type="text"
                     name="FirstName"
                     value={formData.FirstName}
@@ -153,6 +154,7 @@ export const Register = () => {
                 <div className="input-field">
                   <label>Last Name</label>
                   <input
+                    placeholder="Eg: Doe"
                     type="text"
                     name="LastName"
                     value={formData.LastName}
@@ -169,6 +171,7 @@ export const Register = () => {
                 <div className="input-field">
                   <label>Age</label>
                   <input
+                    placeholder="Eg: 18"
                     type="number"
                     name="Age"
                     value={formData.Age}
@@ -224,6 +227,7 @@ export const Register = () => {
               <div className="input-field">
                 <label>Email</label>
                 <input
+                  placeholder="Eg: johndoe@example.com"
                   type="email"
                   name="Email"
                   value={formData.Email}
@@ -239,6 +243,7 @@ export const Register = () => {
                 <div className="input-field">
                   <label>Password</label>
                   <input
+                    placeholder="No example :)"
                     type="password"
                     name="Password"
                     value={formData.Password}
@@ -253,6 +258,7 @@ export const Register = () => {
                 <div className="input-field">
                   <label>Confirm Password</label>
                   <input
+                    placeholder="No example :)"
                     type="password"
                     name="ConfirmPassword"
                     value={formData.ConfirmPassword}
