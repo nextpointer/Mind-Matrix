@@ -4,12 +4,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+    background: linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0 / 130dvw 130dvh,
+    conic-gradient(from 90deg at 1px 1px, #8880 90deg, #e2e1e1 0) center -1px / 50px 50px;
 }
 
 .register-content {
   width: 100%;
   max-width: 1200px;
-  padding: 2rem;
+  /* padding: 2rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: blue; */
+}
+
+.register-header-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  /* background-color: red; */
+  width: 70%;
+  gap: 1rem;
+}
+.register-header-container>a{
+  text-decoration: none;
+  color: black;
+  margin-top: 0.5rem;
 }
 
 .register-header {
@@ -20,13 +42,55 @@
 }
 
 .register-box {
+  width: 70%;
   display: flex;
   gap: 2rem;
-  background: white;
+  /* background: #ffffff; */
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2rem;
+  
 }
+.register-box { 
+  --filter-glass3d: blur(10px) brightness(0.3) saturate(2.5); 
+  /* --color-glass3d: hsl(189 80% 10% / 0.2);  */
+  --noise-glass3d: none; 
+
+  position: relative; 
+  z-index: 4;  
+}
+
+.register-box::before { 
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  border-radius: inherit; 
+  overflow: hidden; 
+  z-index: 3; 
+  
+  -webkit-backdrop-filter: var(--filter-glass3d); 
+  backdrop-filter: var(--filter-glass3d); 
+  background-size: 100px; 
+  background-repeat: repeat; 
+}
+
+.register-box::after { 
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  border-radius: inherit; 
+  overflow: hidden; 
+  z-index: 5; 
+
+}
+
+.register-box > * { 
+  position: relative; 
+  z-index: 6; 
+}
+
 
 .register-section {
   flex: 1;
@@ -37,6 +101,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .input-group {
@@ -53,7 +118,7 @@
 
 .input-field label {
   font-weight: 500;
-  color: #4a5568;
+  color: #c8c8c8;
 }
 
 .input-field input {
@@ -96,8 +161,8 @@
 
 .submit-button {
   position: relative;
-  background: #2d79f3;
-  color: white;
+  background: var(--primary-color);
+  color: rgb(0, 0, 0);
   padding: 1rem;
   border: none;
   border-radius: 0.5rem;
@@ -110,13 +175,14 @@
 }
 
 .submit-button:disabled {
-  background: #cbd5e0;
+  background-color: rgb(201, 201, 201);
   cursor: not-allowed;
+  color: rgb(155, 155, 155);
 }
 
 .loader {
   border: 3px solid #f3f3f3;
-  border-top: 3px solid #2d79f3;
+  border-top: 3px solid var(--primary-color);
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -132,14 +198,11 @@
   }
 }
 
-.submit-button:disabled {
-  background: #cbd5e0;
-  cursor: not-allowed;
-}
+
 
 .login-redirect {
   text-align: center;
-  color: #4a5568;
+  color: #dadada;
 }
 
 .login-redirect a {
@@ -167,6 +230,10 @@
 @media (max-width: 768px) {
   .register-box {
     flex-direction: column;
+    width: 100%;
+  }
+  .register-header-container{
+    width: 100%;
   }
 
   .register-header {

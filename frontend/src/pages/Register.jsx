@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { api } from "../lib/axios.config";
 import "../styles/login.css";
 import "../styles/register.css";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export const Register = () => {
   const [formData, setFormData] = useState({
@@ -120,16 +121,14 @@ export const Register = () => {
 
   return (
     <div className="register-container">
-      <div id="homepage-logo-login-bar">
-        <div className="homepage-logo-section">
-          <Link to="/" className="logo-link">
-            <p>MIND MATRIX</p>
-          </Link>
-        </div>
-      </div>
-
       <div className="register-content">
-        <h1 className="register-header">Create Your Account</h1>
+        <div className="register-header-container">
+          <Link to={"/"}>
+            <ArrowBackIcon />
+          </Link>
+
+          <h1 className="register-header">Create Your Account</h1>
+        </div>
 
         {submitError && <div className="error-banner">{submitError}</div>}
 
@@ -284,13 +283,8 @@ export const Register = () => {
               </div>
             </form>
           </div>
-
-          <div className="register-illustration">
-            <img src="/images/signupp.svg" alt="Signup illustration" />
-          </div>
         </div>
       </div>
     </div>
   );
 };
-
