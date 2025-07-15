@@ -65,7 +65,7 @@ const HomepageLogoLoginBar = styled.div`
   align-items: center;
   padding: 20px 0;
   z-index: 10;
-
+  
   @media (max-width: 768px) {
     flex-direction: row;
     gap: 15px;
@@ -131,6 +131,7 @@ const HomepageHeroSection = styled.section`
   padding: 50px 20px;
   max-width: 1000px;
   z-index: 5;
+  /* background-color: red; */
 `;
 
 const HeroHeader = styled.h1`
@@ -261,6 +262,16 @@ const CardDescription = styled.p`
   line-height: 1.7;
   color: #a0a0a0;
 `;
+
+const Nextpointer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p{
+    font-size: 1.2rem;
+  }
+`
 
 export const Home = () => {
   const cardsRef = useRef([]);
@@ -418,6 +429,9 @@ export const Home = () => {
           })}
         </HomeFeatures>
       </HomepageHeroSection>
+      <Nextpointer>
+        <p>Made by @nextpointer❤️</p>
+      </Nextpointer>
     </HomepageContainer>
   );
 };
