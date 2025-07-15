@@ -82,6 +82,7 @@
         border-radius: 50px;
         border: none;
         padding-left: 20px;
+        padding-right: 20px;
         outline: none;
         font-size: 1.3rem;
         font-weight: 100;
@@ -136,6 +137,9 @@
     }
     .chatbot-input{
         width: 90%;
+        input{
+            font-size: 1rem;
+        }
     }
     
 }
