@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import PropTypes from "prop-types";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Loader from "../Components/Loader";
+// import Loader from "../Components/Loader"; // Removed
 import { useAlert } from "../Store/useAlert";
 import { api } from "../lib/axios.config";
 import { useAuthStore } from "../Store/authStore";
@@ -15,31 +15,36 @@ export const Nav = (props) => {
   const { _, setAlert } = useAlert();
 
   const handleLogout = async () => {
-    setLoading(true);
+    setLoading(true); // Start loading
 
     try {
       await api.post("/user/logout");
-      logout();
+      logout(); // Clear auth state
+
       setAlert({ type: "success", message: "Logout successful!", visible: true });
       setTimeout(() => navigate("/user/login"), 2000);
     } catch (error) {
       const errorMessage = error.response?.data?.message || "Logout failed. Please try again.";
       setAlert({ type: "error", message: errorMessage, visible: true });
     } finally {
-      setLoading(false);
+      setLoading(false); // Stop loading
     }
   };
 
   const handleClick = (e) => {
     if (props.label === "Logout") {
-      e.preventDefault();
+      e.preventDefault(); // Prevent navigation when clicking Logout
       handleLogout();
     }
   };
 
   return (
     <>
-      {loading && <Loader barcolor="var(--primary-color)" bg="white" />}
+      {loading && (
+        <LoaderOverlay>
+          <CircularLoader />
+        </LoaderOverlay>
+      )}
 
       <StyledLink
         to={props.label === "Logout" ? "#" : props.link}
@@ -58,6 +63,33 @@ export const Nav = (props) => {
     </>
   );
 };
+
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+const LoaderOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+`;
+
+const CircularLoader = styled.div`
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid var(--primary-color); /* Primary color */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: ${spin} 1s linear infinite;
+`;
 
 const StyledLink = styled(Link)`
   height: 50px;

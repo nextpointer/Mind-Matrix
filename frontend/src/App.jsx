@@ -15,6 +15,7 @@ import { Counsellor } from "./pages/Counsellor";
 import { Video } from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
 import AboutPage from "./pages/About";
+import BasicAlerts from './Components/Alert'; // Import the BasicAlerts component
 
 function App() {
   const router = createBrowserRouter([
@@ -92,6 +93,7 @@ function App() {
 
   return (
     <>
+      <BasicAlerts /> 
       <RouterProvider router={router} />
     </>
   );
