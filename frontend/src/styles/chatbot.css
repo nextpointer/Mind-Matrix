@@ -1,16 +1,17 @@
 #ChatBot-Container{
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
-    /* background-color: rgb(215, 215, 215); */
+    /* background-color: rgb(213, 26, 26); */
     border-radius: 24px;
     display: flex;
     justify-content: start;
     align-items: center;
+    padding-bottom: 1rem;
 
 }
 
 #ChatBot-Body{
-    height: 100vh;
+    height: 80vh;
     width: 100%;
     /* background-color: aquamarine; */
     /* background-color: #131314; */
@@ -65,15 +66,16 @@
 }
 
 .chatbot-input{
-    height: 8vh;
-    width: 69%;
+    height: 12vh;
+    width: 80%;
     /* background-color: rgb(67, 66, 66); */
-    border-radius: 50px ;
+    /* border-radius: 50px ; */
     position: fixed;
-    top: 90vh;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    
     input{
         height: 60px;
         width: 90%;
@@ -107,7 +109,7 @@
 
 #chatbot-interface{
     height: auto;
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: start;
     overflow-y: scroll;

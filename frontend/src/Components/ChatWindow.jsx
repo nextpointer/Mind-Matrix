@@ -19,6 +19,7 @@ const styles = {
     overflow: 'hidden',
     // backgroundColor: '#c870b2',
     padding: '20px',
+    paddingBottom: '5rem'
   },
 };
 
