@@ -11,12 +11,9 @@ export const Nav = (props) => {
   const { logout } = useAuthStore();
   const location = useLocation();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const { _, setAlert } = useAlert();
 
   const handleLogout = async () => {
-    setLoading(true); // Start loading
-
     try {
       await api.post("/user/logout");
       logout(); // Clear auth state
@@ -27,7 +24,6 @@ export const Nav = (props) => {
       const errorMessage = error.response?.data?.message || "Logout failed. Please try again.";
       setAlert({ type: "error", message: errorMessage, visible: true });
     } finally {
-      setLoading(false); // Stop loading
     }
   };
 
@@ -40,11 +36,6 @@ export const Nav = (props) => {
 
   return (
     <>
-      {loading && (
-        <LoaderOverlay>
-          <CircularLoader />
-        </LoaderOverlay>
-      )}
 
       <StyledLink
         to={props.label === "Logout" ? "#" : props.link}
