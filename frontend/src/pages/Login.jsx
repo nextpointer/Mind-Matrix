@@ -63,9 +63,6 @@ export const Login = () => {
     if (!validateForm()) return;
 
     setLoading(true);
-    // Directly use setAlert from useAlert store, without local setTimeout
-    setAlert({ type: "info", message: "", visible: false }); // Hide any existing alerts
-
     try {
       const response = await api.post("/user/login", {
         Email: email.trim(),

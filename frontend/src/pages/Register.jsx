@@ -6,6 +6,7 @@ import "../styles/register.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Navigate } from "react-router-dom";
 import { useAuthStore } from "../Store/authStore";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
   const [formData, setFormData] = useState({
@@ -18,17 +19,32 @@ export const Register = () => {
     Gender: "",
   });
 
+
   const [errors, setErrors] = useState({});
   const [formValid, setFormValid] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [touched, setTouched] = useState({}); // Track touched fields
   const [isSubmitting, setIsSubmitting] = useState(false); // Track form submission state
-    const currentUser = useAuthStore((s) => s.currentUser);
+  const currentUser = useAuthStore((s) => s.currentUser);
   const isAuthenticated = !!currentUser;
+  const navigate = useNavigate();
+  const [showLongLoadMessage, setShowLongLoadMessage] = useState(false);
 
   if (isAuthenticated) {
     return <Navigate to="/user/dashboard" replace />;
   }
+
+  useEffect(() => {
+    let timer;
+    if (isSubmitting) {
+      timer = setTimeout(() => {
+        setShowLongLoadMessage(true);
+      }, 3000);
+    } else {
+      setShowLongLoadMessage(false);
+    }
+    return () => clearTimeout(timer);
+  }, [isSubmitting]);
 
   const validateField = (name, value) => {
     let error = "";
@@ -102,28 +118,36 @@ export const Register = () => {
       Password: true,
       ConfirmPassword: true,
       Gender: true,
-    }); // Mark all fields as touched on submit
+    });
     validateForm();
 
     if (!formValid) return;
 
     setIsSubmitting(true); // Start loading
-    setSubmitError(""); // Clear previous errors
-
+    setSubmitError(""); 
     try {
       const dataToSend = { ...formData };
       delete dataToSend.ConfirmPassword;
       const response = await api.post("/user/register", dataToSend);
       if (response.data) {
-        alert("Registration successful! Redirecting to login...");
-        // Redirect to login page
+        setAlert({
+          type: "success",
+          message: "User Registered successful!",
+          visible: true,
+        });
       }
+
+      navigate("/user/login");
     } catch (err) {
       setSubmitError(
-        err.response?.data?.message || "Registration failed. Please try again."
+        setAlert({
+          type: "error",
+          message: "User Registered Failed!",
+          visible: true,
+        })
       );
     } finally {
-      setIsSubmitting(false); // Stop loading
+      setIsSubmitting(false); 
     }
   };
 
