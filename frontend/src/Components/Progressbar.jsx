@@ -1,18 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Box = styled.div`
-  background: transparent;
-  width: 300px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  flex-direction: column;
-  transition: transform 0.2s;
-`;
-
 const Percent = styled.div`
   width: 150px;
   height: 150px;
@@ -74,7 +62,6 @@ const Progressbar = ({ percentage }) => {
   const offset = 440 - (440 * percentage) / 100;
 
   return (
-    <Box>
       <Percent>
         <SVG>
           <Circle cx="70" cy="70" r="70" offset="0" />
@@ -84,9 +71,6 @@ const Progressbar = ({ percentage }) => {
           <H2>{percentage}<span>%</span></H2>
         </Num>
       </Percent>
-      {/* Uncomment if needed */}
-      {/* <Text>Progress</Text> */}
-    </Box>
   );
 };
 

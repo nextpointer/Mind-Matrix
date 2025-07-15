@@ -312,7 +312,7 @@ const SubmitButtonWrapper = styled.div`
 `;
 
 const StyledSubmitButton = styled.button`
-  background-color: #3b82f6;
+  background-color: #000000;
   color: white;
   padding: 12px 25px;
   border: none;
@@ -325,6 +325,7 @@ const StyledSubmitButton = styled.button`
 
   &:hover {
     background-color: var(--primary-color);
+    color: black;
   }
 
   &:disabled {
