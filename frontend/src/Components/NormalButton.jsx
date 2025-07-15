@@ -3,10 +3,10 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line no-unused-vars
+
 const StyledButton = styled(Button)(({ theme }) => ({
   color: '#000000',
-  backgroundColor: 'transparent',
+  backgroundColor: 'white',
   '&:hover': {
     color: '#000',
     backgroundColor: 'white', 
@@ -15,13 +15,13 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
   padding: '8px 16px',
   borderRadius: '10px',
-  border: '1px solid #cbcbcb',
+  border: 'none',
 }));
 
 export default function NormalButtons(props) {
   return (
     <Stack spacing={2} direction="row">
-      <StyledButton variant="outlined" type={props.type} onClick={props.onClick}>
+      <StyledButton variant="contained" type={props.type} onClick={props.onClick}>
         {props.text}
       </StyledButton>
     </Stack>
@@ -31,5 +31,5 @@ export default function NormalButtons(props) {
 NormalButtons.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  onClick: PropTypes.func, // Add this line to specify the onClick prop type
+  onClick: PropTypes.func,
 };

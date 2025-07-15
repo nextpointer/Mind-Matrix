@@ -12,7 +12,6 @@ import { Catagory } from "./pages/Catagory";
 import { ScreeningTest } from "./pages/ScreeningTest";
 import { TestResult } from "./pages/TestResult";
 import { Counsellor } from "./pages/Counsellor";
-import { Meditation } from "./pages/Meditation";
 import { Video } from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
 import AboutPage from "./pages/About";
@@ -48,14 +47,6 @@ function App() {
           element: (
             <ProtectedRoute>
               <Video />
-            </ProtectedRoute>
-          ),
-        },
-        {
-          path: "/user/meditation",
-          element: (
-            <ProtectedRoute>
-              <Meditation />
             </ProtectedRoute>
           ),
         },
