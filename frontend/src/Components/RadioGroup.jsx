@@ -42,7 +42,7 @@ export default function RadioGroup({ value, onChange }) {
         {...controlProps("2")}
         sx={{
           "& .MuiSvgIcon-root": {
-            fontSize: 32,
+            fontSize: 28,
             color: "rgba(0, 0, 0)",
           },
         }}
@@ -51,7 +51,7 @@ export default function RadioGroup({ value, onChange }) {
         {...controlProps("3")}
         sx={{
           "& .MuiSvgIcon-root": {
-            fontSize: 38,
+            fontSize: 28,
             color: "rgba(0, 0, 0)",
           },
         }}
@@ -60,7 +60,7 @@ export default function RadioGroup({ value, onChange }) {
         {...controlProps("4")}
         sx={{
           "& .MuiSvgIcon-root": {
-            fontSize: 32,
+            fontSize: 28,
             color: "rgba(0, 0, 0)",
           },
         }}
