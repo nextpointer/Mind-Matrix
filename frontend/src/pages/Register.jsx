@@ -7,6 +7,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Navigate } from "react-router-dom";
 import { useAuthStore } from "../Store/authStore";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { useAlert } from "../Store/useAlert";
 
 export const Register = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +21,7 @@ export const Register = () => {
     Gender: "",
   });
 
+  const { setAlert } = useAlert();
 
   const [errors, setErrors] = useState({});
   const [formValid, setFormValid] = useState(false);
@@ -124,11 +127,12 @@ export const Register = () => {
     if (!formValid) return;
 
     setIsSubmitting(true); // Start loading
-    setSubmitError(""); 
+    setSubmitError("");
     try {
       const dataToSend = { ...formData };
       delete dataToSend.ConfirmPassword;
       const response = await api.post("/user/register", dataToSend);
+
       if (response.data) {
         setAlert({
           type: "success",
@@ -139,15 +143,16 @@ export const Register = () => {
 
       navigate("/user/login");
     } catch (err) {
-      setSubmitError(
-        setAlert({
-          type: "error",
-          message: "User Registered Failed!",
-          visible: true,
-        })
-      );
+      const errorMsg =
+        err.response?.data?.message || "Registration failed. Please try again.";
+      setSubmitError(errorMsg);
+      setAlert({
+        type: "error",
+        message: errorMsg,
+        visible: true,
+      });
     } finally {
-      setIsSubmitting(false); 
+      setIsSubmitting(false);
     }
   };
 
@@ -161,8 +166,6 @@ export const Register = () => {
 
           <h1 className="register-header">Create Your Account</h1>
         </div>
-
-        {submitError && <div className="error-banner">{submitError}</div>}
 
         <div className="register-box">
           <div className="register-section">
@@ -314,6 +317,11 @@ export const Register = () => {
                   "Create Account"
                 )}
               </button>
+              {showLongLoadMessage && (
+                <LongLoadMessage>
+                  Server might be waking up, please wait a moment...
+                </LongLoadMessage>
+              )}
 
               <div className="login-redirect">
                 Already have an account?{" "}
@@ -326,3 +334,10 @@ export const Register = () => {
     </div>
   );
 };
+
+const LongLoadMessage = styled.p`
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+`;
