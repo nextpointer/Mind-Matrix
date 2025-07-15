@@ -75,7 +75,7 @@ const NavSectionWrapper = styled.div`
 `;
 
 const StyledHamburgerButton = styled.button`
-  @media (min-width: 768px) {
+  @media (min-width: 468px) {
     display: none;
   }
   position: fixed;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line no-unused-vars
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: '#ffffff',
+  color: '#000000',
   backgroundColor: 'transparent',
   '&:hover': {
     color: '#000',
@@ -15,7 +15,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
   padding: '8px 16px',
   borderRadius: '10px',
-  border: '1px solid #958f8f',
+  border: '1px solid #cbcbcb',
 }));
 
 export default function NormalButtons(props) {
