@@ -13,7 +13,7 @@ export const NavSection = () => {
 
   const navItems = [
     { label: "Home", icon: "https://api.iconify.design/lucide:home.svg", link: "/user/dashboard" },
-    { label: "Meditation", icon: "https://api.iconify.design/lucide:leaf.svg", link: "/user/meditation" },
+    { label: "Tests", icon: "https://api.iconify.design/lucide:leaf.svg", link: "/user/screeningtest/catagory" },
     { label: "AI", icon: "https://api.iconify.design/lucide:bot.svg", link: "/user/ai" },
     { label: "Counsellor", icon: "https://api.iconify.design/lucide:stethoscope.svg", link: "/user/counsellor" },
     { label: "Videos", icon: "https://api.iconify.design/lucide:play-circle.svg", link: "/user/video" },
