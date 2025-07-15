@@ -112,9 +112,13 @@ const HomepageLoginSection = styled.div`
   .already-user {
     font-size: 0.8rem;
     color: #505050;
+
   }
 
   @media (max-width: 768px) {
+    .already-user{
+      display: none;
+    }
     flex-direction: row;
     gap: 10px;
     width: 100%;
