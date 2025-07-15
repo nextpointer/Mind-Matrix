@@ -63,58 +63,56 @@ const StyledLink = styled(Link)`
   height: 50px;
   width: 100%;
   text-decoration: none;
-  color: #4b5563; /* Default text color */
+  color: #374151;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Increased gap for better spacing */
-  border-radius: 8px; /* Slightly rounded corners for the link item */
-  transition: all 0.2s ease-in-out; /* Smooth transitions for hover/active */
-  padding: 0 15px; /* Added horizontal padding */
-  box-sizing: border-box; /* Include padding in width calculation */
+  gap: 10px;
+  border-radius: 18px;
+  transition: all 0.2s ease-in-out;
+  padding: 0 15px;
+  box-sizing: border-box;
 
   ${(props) =>
     props.isactive === "true" &&
     `
     color: var(--primary-color);
-    font-weight: 600; /* Slightly bolder for active */
-    background-color: rgba(59, 130, 246, 0.1); /* Light blue background for active */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Subtle shadow for active */
+    font-weight: 600;
+    background-color: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   `}
 
   &:hover {
-    color: #1f2937; /* Darker text on hover */
-    background-color: rgba(0, 0, 0, 0.05); /* Light gray background on hover */
+    color: #1f2937;
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   &:active {
     color: var(--primary-color);
-    background-color: rgba(59, 130, 246, 0.15); /* Slightly darker active background on click */
+    background-color: rgba(59, 130, 246, 0.15);
   }
 
-  /* No specific span styling needed as p tag is directly used for label */
-
-  @media (max-width: 767px) { /* Adjusted breakpoint for mobile consistency */
-    height: 45px; /* Slightly smaller height for mobile */
-    padding: 0 10px; /* Adjusted padding for mobile */
-    gap: 8px; /* Adjusted gap for mobile */
+  @media (max-width: 767px) {
+    height: 45px;
+    padding: 0 10px;
+    gap: 8px;
   }
 `;
 
 const NavIcon = styled.div`
-  height: 30px; /* Slightly smaller icon container */
+  height: 30px;
   width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* Prevent icon from shrinking */
+  flex-shrink: 0;
 
   img {
-    height: 20px; /* Adjusted icon size */
+    height: 20px;
     width: 20px;
   }
 
-  @media (max-width: 767px) { /* Adjusted breakpoint */
+  @media (max-width: 767px) {
     height: 25px;
     width: 25px;
 
@@ -126,31 +124,31 @@ const NavIcon = styled.div`
 `;
 
 const NavItemName = styled.div`
-  flex-grow: 1; /* Allow text to take available space */
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide overflow if text is too long */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   p {
-    font-size: 1rem; /* Standard font size for desktop */
-    text-align: left; /* Align text to the left */
-    margin: 0; /* Remove default paragraph margin */
+    font-size: 1rem;
+    text-align: left;
+    margin: 0;
   }
 
-  @media (max-width: 767px) { /* Adjusted breakpoint */
+  @media (max-width: 767px) {
     p {
-      font-size: 0.9rem; /* Slightly smaller font size for mobile */
-      text-align: left; /* Keep text aligned left */
+      font-size: 0.9rem;
+      text-align: left;
     }
   }
 `;
 
 const NavContainer = styled.div`
   height: inherit;
-  width: 100%; /* Ensure it takes full width of StyledLink */
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align content to the start */
+  justify-content: flex-start;
 `;
 
 Nav.propTypes = {

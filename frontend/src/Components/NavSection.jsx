@@ -41,6 +41,7 @@ export const NavSection = () => {
 
       <StyledNavbarSection isOpen={isOpen}>
         <StyledDashboardLogo>
+          <img src="/Icons/logo.png" alt="" />
           <p>MINDMATRIX</p>
         </StyledDashboardLogo>
 
@@ -151,18 +152,23 @@ const StyledDashboardLogo = styled.div`
   height: 5rem;
   background-color: white;
   border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   margin-bottom: 1rem;
 
   p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     letter-spacing: 0.05em;
     font-weight: 500;
     color: #1f2937;
+  }
+  img{
+    height: 25px;
+    width: 50px;
   }
 `;
 
@@ -171,7 +177,7 @@ const StyledProfileSection = styled.div`
   height: 10rem;
   background-color: white;
   border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,7 +215,7 @@ const StyledNavigationLinksSection = styled.div`
   width: 100%;
   background-color: white;
   border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -230,7 +236,7 @@ const StyledLogoutSection = styled.div`
   height: 4rem;
   background-color: white;
   border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
