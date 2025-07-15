@@ -99,8 +99,7 @@ const StyledLink = styled(Link)`
   ${(props) =>
     props.isactive === "true" &&
     `
-    color: var(--primary-color);
-    font-weight: 600;
+    color: black;
     background-color: rgba(59, 130, 246, 0.1);
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   `}

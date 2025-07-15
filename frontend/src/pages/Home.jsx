@@ -4,9 +4,9 @@ import gsap from "gsap";
 import styled from "styled-components";
 
 // Material UI Icons
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import ChatIcon from '@mui/icons-material/Chat';
-import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+import PsychologyIcon from "@mui/icons-material/Psychology";
+import ChatIcon from "@mui/icons-material/Chat";
+import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
 
 const StyledButton = styled.button`
   padding: 15px 40px;
@@ -31,7 +31,7 @@ const StyledNormalButton = styled.button`
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  background-color: #000000; 
+  background-color: #000000;
   color: white;
 
   &:hover {
@@ -51,11 +51,11 @@ const HomepageContainer = styled.main`
   position: relative;
   overflow: hidden;
   padding-bottom: 50px;
-  background: linear-gradient(180deg, #FFF0 0%, #FFFF 100%) 0 0 / 130dvw 130dvh,
-    conic-gradient(from 90deg at 1px 1px, #8880 90deg, #e2e1e1 0) center -1px / 50px 50px;
+  background: linear-gradient(180deg, #fff0 0%, #ffff 100%) 0 0 / 130dvw 130dvh,
+    conic-gradient(from 90deg at 1px 1px, #8880 90deg, #e2e1e1 0) center -1px / 50px
+      50px;
   color: #000000;
 `;
-
 
 const HomepageLogoLoginBar = styled.div`
   width: 90%;
@@ -74,13 +74,25 @@ const HomepageLogoLoginBar = styled.div`
 `;
 
 const HomepageLogoSection = styled.div`
-  .logo-link{
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    height: 25px;
+    width: 50px;
+  }
+  .logo-link {
     text-decoration: none;
-    color:black;
+    color: black;
+    margin-top: 2px;
   }
   .logo-link p {
     width: 120px;
     font-size: 1rem;
+    line-height: 0.5rem;
     text-decoration: none;
     margin: 0;
     letter-spacing: 2px;
@@ -99,7 +111,7 @@ const HomepageLoginSection = styled.div`
 
   .already-user {
     font-size: 0.8rem;
-    color: #505050; 
+    color: #505050;
   }
 
   @media (max-width: 768px) {
@@ -126,7 +138,7 @@ const HeroHeader = styled.h1`
   color: #000000;
   margin-bottom: 20px;
   line-height: 1.2;
-    font-weight: 500;
+  font-weight: 500;
 
   span {
     display: inline-block;
@@ -199,13 +211,13 @@ const HomeCard = styled.div`
   /* Radial gradient for mousemove effect */
   background-image: radial-gradient(
     circle at var(--x) var(--y),
-    rgba(255, 255, 255, 0.08) 0%, 
-    transparent 50% 
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 50%
   );
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px var(--primary-color); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px var(--primary-color);
   }
 
   @media (max-width: 1024px) {
@@ -218,10 +230,10 @@ const HomeCard = styled.div`
   }
 `;
 
-const CardIcon = styled.div` 
-  .MuiSvgIcon-root { 
+const CardIcon = styled.div`
+  .MuiSvgIcon-root {
     font-size: 4.5rem;
-    color: var(--primary-color); 
+    color: var(--primary-color);
     margin-bottom: 20px;
   }
 
@@ -259,18 +271,21 @@ export const Home = () => {
   const features = [
     {
       title: "Mental Wellness Screenings",
-      description: "Quick and confidential assessments to understand your state of mind.",
-      icon: PsychologyIcon // Directly use the imported MUI component
+      description:
+        "Quick and confidential assessments to understand your state of mind.",
+      icon: PsychologyIcon, // Directly use the imported MUI component
     },
     {
       title: "AI Chatbot Support",
-      description: "Get instant, empathetic responses and coping strategies 24/7.",
-      icon: ChatIcon // Directly use the imported MUI component
+      description:
+        "Get instant, empathetic responses and coping strategies 24/7.",
+      icon: ChatIcon, // Directly use the imported MUI component
     },
     {
       title: "Daily Mood Tracking",
-      description: "Monitor your emotional well-being and identify patterns over time.",
-      icon: SentimentVerySatisfiedIcon // Directly use the imported MUI component
+      description:
+        "Monitor your emotional well-being and identify patterns over time.",
+      icon: SentimentVerySatisfiedIcon, // Directly use the imported MUI component
     },
   ];
 
@@ -320,7 +335,7 @@ export const Home = () => {
 
     // Animate subheader
     tl.fromTo(
-      ".hero-subheader", 
+      ".hero-subheader",
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 0.5 },
       "-=0.3"
@@ -328,7 +343,7 @@ export const Home = () => {
 
     // Animate buttons
     tl.fromTo(
-      ".linkdashboard", 
+      ".linkdashboard",
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.5 },
       "-=0.3"
@@ -352,6 +367,7 @@ export const Home = () => {
     <HomepageContainer>
       <HomepageLogoLoginBar>
         <HomepageLogoSection>
+          <img src="/Icons/logo.svg" alt="logo" />
           <Link to={"/"} className="logo-link">
             <p>MIND MATRIX</p>
           </Link>
@@ -365,9 +381,10 @@ export const Home = () => {
       </HomepageLogoLoginBar>
 
       <HomepageHeroSection>
-        <HeroHeader className="hero-header"> 
-          {"Feeling space Stressed, space Anxious, space or space Worried?".split(" ").map(
-            (char, index) => (
+        <HeroHeader className="hero-header">
+          {"Feeling space Stressed, space Anxious, space or space Worried?"
+            .split(" ")
+            .map((char, index) => (
               <span
                 key={index}
                 ref={(el) => (headerRef.current[index] = el)}
@@ -375,25 +392,24 @@ export const Home = () => {
               >
                 {char === "space" ? "\u00A0" : char}
               </span>
-            )
-          )}
+            ))}
         </HeroHeader>
-        <HeroSubheader className="hero-subheader"> 
+        <HeroSubheader className="hero-subheader">
           You're not alone. Take control of your mental health with Mind Matrix
         </HeroSubheader>
-        <LinkDashboard to={"/user/register"} className="linkdashboard"> 
+        <LinkDashboard to={"/user/register"} className="linkdashboard">
           <StyledButton>Get Started</StyledButton>
         </LinkDashboard>
         <HomeFeatures>
           {features.map((feature, index) => {
-            const IconComponent = feature.icon; 
+            const IconComponent = feature.icon;
             return (
               <HomeCard
                 key={index}
                 ref={(el) => (cardsRef.current[index] = el)}
               >
                 <CardIcon>
-                  <IconComponent /> 
+                  <IconComponent />
                 </CardIcon>
                 <CardTitle>{feature.title}</CardTitle>
                 <CardDescription>{feature.description}</CardDescription>

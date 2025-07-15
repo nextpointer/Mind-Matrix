@@ -41,7 +41,7 @@ export const NavSection = () => {
 
       <StyledNavbarSection isOpen={isOpen}>
         <StyledDashboardLogo>
-          <img src="/Icons/logo.png" alt="" />
+          <img src="/Icons/logo.svg" alt="logo" />
           <p>MINDMATRIX</p>
         </StyledDashboardLogo>
 
@@ -162,9 +162,10 @@ const StyledDashboardLogo = styled.div`
 
   p {
     font-size: 1rem;
-    letter-spacing: 0.05em;
-    font-weight: 500;
+    letter-spacing: 0.25em;
+    /* font-weight: 500; */
     color: #1f2937;
+    margin-top: 2px;
   }
   img{
     height: 25px;
