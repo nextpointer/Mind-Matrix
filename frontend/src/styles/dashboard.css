@@ -52,7 +52,7 @@
 #dashboard-screening-test {
   position: relative;
   height: 190px;
-  width: 45%;
+  width: 47%;
   min-width: 280px;
   /* border: 1px solid black; */
   /* background-color: var(--primary-color); */
@@ -94,7 +94,7 @@
 #dashboard-daily-test {
   position: relative;
   height: 190px;
-  width: 45%;
+  width: 47%;
   min-width: 280px;
   padding: 15px;
   /* border: 1px solid black; */
@@ -209,58 +209,70 @@
 
 /* Phones (Portrait) */
 @media (max-width: 480px) {
-    #dashboard-recommendation-section{
-        display: none;
-    }
+  #dashboard-recommendation-section {
+    display: none;
+  }
 
-    #dashboard-test{
-        padding: 16px;
-    }
-    #dashboard-greeting p{
-        font-size: 1.5rem; 
-    }
-    #dashboard-test-stat-section{
-        /* background-color: antiquewhite; */
-        overflow-y: scroll;
-        min-width: 100%;
-    }
-    /* .dashboard-profile-navbar-section{
+  #dashboard-screening-test {
+    width: 100%;
+  }
+  #dashboard-daily-test {
+    width: 100%;
+  }
+
+  #dashboard-test {
+    padding: 16px;
+  }
+  #dashboard-greeting p {
+    font-size: 2rem;
+    margin-top: 0.6rem;
+  }
+  #dashboard-test-stat-section {
+    /* background-color: antiquewhite; */
+    overflow-y: scroll;
+    min-width: 100%;
+  }
+  /* .dashboard-profile-navbar-section{
         display: none;
     } */
-    #dashboard-stat{
-        height: 20vh;
-        margin-bottom: 16px;
-    }
+  #dashboard-stat {
+    height: 20vh;
+    margin-bottom: 16px;
+  }
 
-    /* .hide-and-seek{
+  /* .hide-and-seek{
         display: none;
     } */
 
-    #dashboard-greeting{
-        margin-bottom: 3rem;
-    }
-    #dashboard-motivationalQuote p:nth-child(1){
-        font-size: 1.2rem;
-    }
-    #dashboard-motivationalQuote p:nth-child(2){
-        font-size: 1rem;
-        color: #000;
-    }
+  #dashboard-greeting {
+    margin-bottom: 1rem;
+  }
+  #dashboard-motivationalQuote p:nth-child(1) {
+    font-size: 1.2rem;
+  }
+  #dashboard-motivationalQuote p:nth-child(2) {
+    font-size: 1rem;
+    color: #000;
+  }
 }
 
 /* Phones (Landscape) */
 @media (max-width: 768px) {
-    #dashboard-recommendation-section{
-        display: none;
-    }
+  #dashboard-recommendation-section {
+    display: none;
+  }
 
-    #dashboard-test-stat-section{
-        min-width: 100%;
-    }
+  #dashboard-test-stat-section {
+    min-width: 100%;
+  }
+
+  #dashboard-greeting p {
+    font-size: 2.5rem;
+    margin-top: 0.6rem;
+  }
 }
 @media (max-width: 1300px) {
-    #dashboard-recommendation-section{
-        display: none;
-    }
-
+  #dashboard-recommendation-section {
+    display: none;
+  }
 }
