@@ -15,9 +15,20 @@ import { Counsellor } from "./pages/Counsellor";
 import { Video } from "./pages/Video";
 import ProtectedRoute from "./lib/ProtectedRoute";
 import AboutPage from "./pages/About";
-import BasicAlerts from './Components/Alert'; // Import the BasicAlerts component
+import BasicAlerts from "./Components/Alert"; // Import the BasicAlerts component
+import { useAuthStore } from "./Store/authStore";
+import { useEffect } from "react";
 
 function App() {
+  const checkAuth = useAuthStore((s) => s.checkAuth);
+  
+
+  useEffect(() => {
+    (async()=>{
+      await checkAuth();
+    })()
+    
+  }, []);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -93,7 +104,7 @@ function App() {
 
   return (
     <>
-      <BasicAlerts /> 
+      <BasicAlerts />
       <RouterProvider router={router} />
     </>
   );

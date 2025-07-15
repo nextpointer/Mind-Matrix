@@ -1,23 +1,19 @@
-import { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
-import { useAuthStore } from '../Store/authStore';
-import Loader from '../Components/Loader';
+import { Navigate } from "react-router-dom";
+import { useAuthStore } from "../Store/authStore";
+import Loader from "../Components/Loader";
 
 const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated, loading, checkAuth, error } = useAuthStore();
-  
-  useEffect(() => {
-    checkAuth();
-  }, []);
+  const currentUser = useAuthStore((s) => s.currentUser);
+  const loading = useAuthStore((s) => s.loading);
+  if (!children && currentUser) {
+    <Navigate to="/user/dashboard" />;
+  }
 
   if (loading) {
     return <Loader barcolor="var(--primary-color)" bg="white" />;
   }
 
-  if (error) {
-    console.error('Auth error:', error);
-  }
-
+  const isAuthenticated = !!currentUser;
   return isAuthenticated ? children : <Navigate to="/user/login" />;
 };
 

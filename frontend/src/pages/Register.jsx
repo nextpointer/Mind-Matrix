@@ -4,6 +4,8 @@ import { api } from "../lib/axios.config";
 import "../styles/login.css";
 import "../styles/register.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Navigate } from "react-router-dom";
+import { useAuthStore } from "../Store/authStore";
 
 export const Register = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +23,12 @@ export const Register = () => {
   const [submitError, setSubmitError] = useState("");
   const [touched, setTouched] = useState({}); // Track touched fields
   const [isSubmitting, setIsSubmitting] = useState(false); // Track form submission state
+    const currentUser = useAuthStore((s) => s.currentUser);
+  const isAuthenticated = !!currentUser;
+
+  if (isAuthenticated) {
+    return <Navigate to="/user/dashboard" replace />;
+  }
 
   const validateField = (name, value) => {
     let error = "";

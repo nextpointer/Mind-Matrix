@@ -5,6 +5,7 @@ import { useAlert } from "../Store/useAlert";
 import { useAuthStore } from "../Store/authStore";
 import { api } from "../lib/axios.config";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Navigate } from "react-router-dom";
 
 export const Login = () => {
   const { login } = useAuthStore();
@@ -28,6 +29,13 @@ export const Login = () => {
     }
     return () => clearTimeout(timer);
   }, [loading]);
+
+  const currentUser = useAuthStore((s) => s.currentUser);
+  const isAuthenticated = !!currentUser;
+
+  if (isAuthenticated) {
+    return <Navigate to="/user/dashboard" replace />;
+  }
 
   const validateForm = () => {
     const trimmedEmail = email.trim();
@@ -56,7 +64,7 @@ export const Login = () => {
 
     setLoading(true);
     // Directly use setAlert from useAlert store, without local setTimeout
-    setAlert({ type: 'info', message: '', visible: false }); // Hide any existing alerts
+    setAlert({ type: "info", message: "", visible: false }); // Hide any existing alerts
 
     try {
       const response = await api.post("/user/login", {
@@ -65,7 +73,11 @@ export const Login = () => {
       });
 
       login(response.data.data.user, response.data.data.AccessToken);
-      setAlert({ type: "success", message: "Login successful!", visible: true });
+      setAlert({
+        type: "success",
+        message: "Login successful!",
+        visible: true,
+      });
       navigate("/user/dashboard");
     } catch (error) {
       const errorMessage =
@@ -90,9 +102,7 @@ export const Login = () => {
             <Form className="form" onSubmit={handleSubmit}>
               <div className="flex-column">
                 <label htmlFor="email">Email</label>
-                {errors.email && (
-                  <span className="error">{errors.email}</span>
-                )}
+                {errors.email && <span className="error">{errors.email}</span>}
               </div>
               <div className="inputForm">
                 <input
@@ -270,7 +280,7 @@ const ButtonSubmit = styled.div`
 const StyledLoginButton = styled.button`
   width: 100%;
   padding: 12px 20px;
-  background-color: black; 
+  background-color: black;
   color: #e4e4e4;
   border: none;
   border-radius: 8px;
@@ -284,12 +294,12 @@ const StyledLoginButton = styled.button`
   gap: 8px;
 
   &:hover:not(:disabled) {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     color: black;
   }
 
   &:disabled {
-    background-color: #9ca3af; 
+    background-color: #9ca3af;
     cursor: not-allowed;
     opacity: 0.7;
   }
